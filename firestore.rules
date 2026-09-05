@@ -1,0 +1,32 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn(){ return request.auth != null; }
+    function me(){ return get(/databases/$(database)/documents/users/$(request.auth.uid)); }
+    function active(){ return signedIn() && me().data.status == 'active'; }
+    function admin(){ return active() && (me().data.role == 'admin' || me().data.role == 'headAdmin'); }
+    function headAdmin(){ return active() && me().data.role == 'headAdmin'; }
+    function self(uid){ return signedIn() && request.auth.uid == uid; }
+
+    match /users/{uid} {
+      allow read: if self(uid) || admin();
+      allow write: if false; // via beveiligde Cloud Functions
+    }
+    match /seasons/{seasonId} {
+      allow read: if active();
+      allow write: if admin();
+      match /couples/{coupleId} { allow read: if active(); allow write: if admin(); }
+      match /playDates/{playDateId} {
+        allow read: if active();
+        allow write: if admin();
+        match /couplePlans/{coupleId} { allow read: if active(); allow write: if false; }
+        match /public/{docId} { allow read: if active(); allow write: if admin(); }
+        match /results/{resultId} { allow read: if active(); allow write: if false; }
+      }
+      match /standings/{coupleId} { allow read: if active(); allow write: if false; }
+      match /payments/{paymentId} { allow read: if admin(); allow write: if false; }
+    }
+    match /auditLogs/{id} { allow read: if admin(); allow write: if false; }
+    match /{document=**} { allow read, write: if false; }
+  }
+}
