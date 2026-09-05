@@ -1,3 +1,14 @@
+# Changelog
+
+## v0.3
+- Mooier eerder gekozen Wildenhorst-appicoon voor telefoon/PWA.
+- Beheer → Seizoen: alle zaterdagen 3-10-2026 t/m 27-03-2027 aan/uit zetten en opslaan; 26-12 en 02-01 standaard uit.
+- Beheer → Spelers: privé bulkimport via lokaal JSON-bestand; geen persoonsgegevens in GitHub-code.
+- 16 vaste spelers, 8 koppels en 5 reserves kunnen in één import naar Firestore.
+- De hoofdbeheerder wordt bij import automatisch aan het juiste koppel gekoppeld.
+- Beheertabs op mobiel in twee rijen zodat Uitslagen zichtbaar blijft.
+- Firestore-regels uitgebreid voor veilige hoofdbeheerder-import en seizoenbeheer.
+
 # Wijzigingen
 
 ## v0.2

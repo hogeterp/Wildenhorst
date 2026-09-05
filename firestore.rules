@@ -10,15 +10,34 @@ service cloud.firestore {
 
     match /users/{uid} {
       allow read: if self(uid) || admin();
-      allow write: if false; // via beveiligde Cloud Functions
+      // Alleen bootstrap-koppeling voor de hoofdbeheerder zelf; rollen/status/e-mail blijven beschermd.
+      allow update: if headAdmin() && self(uid)
+                    && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['coupleId']);
+      allow create, delete: if false;
     }
+
     match /seasons/{seasonId} {
       allow read: if active();
-      allow write: if admin();
-      match /couples/{coupleId} { allow read: if active(); allow write: if admin(); }
+      allow create, update: if admin();
+      allow delete: if headAdmin();
+
+      match /players/{playerId} {
+        allow read, create, update: if admin();
+        allow delete: if headAdmin();
+      }
+      match /reserves/{reserveId} {
+        allow read, create, update: if admin();
+        allow delete: if headAdmin();
+      }
+      match /couples/{coupleId} {
+        allow read: if active();
+        allow create, update: if admin();
+        allow delete: if headAdmin();
+      }
       match /playDates/{playDateId} {
         allow read: if active();
-        allow write: if admin();
+        allow create, update: if admin();
+        allow delete: if headAdmin();
         match /couplePlans/{coupleId} { allow read: if active(); allow write: if false; }
         match /public/{docId} { allow read: if active(); allow write: if admin(); }
         match /results/{resultId} { allow read: if active(); allow write: if false; }

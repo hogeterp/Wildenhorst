@@ -1,6 +1,6 @@
 # Wildenhorst Badhoevedorp – zaterdagmorgen dubbelcompetitie
 
-Versie **v0.2** voor GitHub Pages + Firebase.
+Versie **v0.3** voor GitHub Pages + Firebase.
 
 ## Status
 - GitHub repository `hogeterp/Wildenhorst`: aangemaakt.
@@ -46,5 +46,15 @@ Mutaties zoals koppelplanning, e-mailwijziging, accountstatus, beheerrechten en 
 - het eerder gekozen definitieve Wildenhorst-appicoon kan later de tijdelijke iconen vervangen.
 
 
-## GitHub-upload v0.2
+## GitHub-upload v0.3
 Deze ZIP is bewust **plat gemaakt** zoals bij Supertiebreak: er zijn geen `assets`- of `functions`-mappen. Alle webbestanden en iconen staan direct in de hoofdmap. De Cloud Functions-backend wordt later apart naar Firebase gedeployed en hoort niet bij de eenvoudige GitHub Pages-upload.
+
+
+## v0.3 gebruiken
+1. Upload alle bestanden uit deze ZIP naar de root van GitHub (bestanden vervangen).
+2. Publiceer daarna de inhoud van `firestore.rules` in Firebase Console → Firestore → Rules.
+3. Open de app opnieuw.
+4. Onder Beheer → Seizoen kun je alle zaterdagen aan/uit zetten en opslaan.
+5. Onder Beheer → Spelers kies je lokaal het aparte privé JSON-bestand en importeer je spelers, koppels en reserves in één keer.
+
+**Privacy:** het privé begingegevensbestand hoort NIET in GitHub en zit daarom niet in deze openbare GitHub-ZIP. De bulkimport maakt ook geen Firebase Authentication-accounts voor de andere spelers; die stap volgt apart zodat iedere speler een eigen wachtwoord kan kiezen.
