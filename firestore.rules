@@ -7,10 +7,29 @@ service cloud.firestore {
     function admin(){ return active() && (me().data.role == 'admin' || me().data.role == 'headAdmin'); }
     function headAdmin(){ return active() && me().data.role == 'headAdmin'; }
     function self(uid){ return signedIn() && request.auth.uid == uid; }
+    function validStatus(s){ return s == 'speelt' || s == 'reserve' || s == 'afwezig'; }
+    function validPair(a,b){
+      return (a == 'speelt' && (b == 'reserve' || b == 'afwezig'))
+          || (b == 'speelt' && (a == 'reserve' || a == 'afwezig'))
+          || (a == 'afwezig' && b == 'afwezig');
+    }
+    function validCouplePlan(seasonId, coupleId){
+      let c = get(/databases/$(database)/documents/seasons/$(seasonId)/couples/$(coupleId));
+      return request.resource.data.keys().hasOnly([
+               'coupleId','member1Id','member1Status','member2Id','member2Status','updatedBy','updatedAt'
+             ])
+          && request.resource.data.coupleId == coupleId
+          && request.resource.data.member1Id == c.data.memberIds[0]
+          && request.resource.data.member2Id == c.data.memberIds[1]
+          && validStatus(request.resource.data.member1Status)
+          && validStatus(request.resource.data.member2Status)
+          && validPair(request.resource.data.member1Status, request.resource.data.member2Status)
+          && request.resource.data.updatedBy == request.auth.uid
+          && request.resource.data.updatedAt == request.time;
+    }
 
     match /users/{uid} {
       allow read: if self(uid) || admin();
-      // Alleen bootstrap-koppeling voor de hoofdbeheerder zelf; rollen/status/e-mail blijven beschermd.
       allow update: if headAdmin() && self(uid)
                     && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['coupleId']);
       allow create, delete: if false;
@@ -38,7 +57,19 @@ service cloud.firestore {
         allow read: if active();
         allow create, update: if admin();
         allow delete: if headAdmin();
-        match /couplePlans/{coupleId} { allow read: if active(); allow write: if false; }
+
+        match /couplePlans/{coupleId} {
+          allow read: if active();
+          allow create, update: if admin() || (
+            active()
+            && me().data.coupleId == coupleId
+            && get(/databases/$(database)/documents/seasons/$(seasonId)/playDates/$(playDateId)).data.status == 'active'
+            && get(/databases/$(database)/documents/seasons/$(seasonId)/playDates/$(playDateId)).data.closeAt is timestamp
+            && request.time < get(/databases/$(database)/documents/seasons/$(seasonId)/playDates/$(playDateId)).data.closeAt
+            && validCouplePlan(seasonId, coupleId)
+          );
+          allow delete: if headAdmin();
+        }
         match /public/{docId} { allow read: if active(); allow write: if admin(); }
         match /results/{resultId} { allow read: if active(); allow write: if false; }
       }

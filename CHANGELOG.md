@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.4
+- Mijn koppel toont nu beide namen bij alle 24 speelzaterdagen.
+- Per speler duidelijke knoppen: Speelt, Reserve en Afwezig.
+- Normale planning gaat sneller: kies wie Speelt en de partner wordt automatisch Reserve.
+- Beide spelers afwezig wordt direct gemarkeerd als “Vervanger nodig”.
+- Iedere zaterdag heeft een eigen knop “Keuze opslaan” en een duidelijke bevestiging.
+- Spelers kunnen hun eigen koppelplanning wijzigen tot vrijdag 18:00; daarna alleen een beheerder.
+- Firestore-regels valideren de koppelstatussen en de deadline server-side.
+- Beheer → Seizoen legt bij opslaan nu ook per speelzaterdag de deadline vrijdag 18:00 vast.
+- Bij Speeldata opslaan staat nu duidelijk wanneer en waarom je die knop gebruikt.
+- Versie en PWA-cache verhoogd naar v0.4.
+
 ## v0.3
 - Mooier eerder gekozen Wildenhorst-appicoon voor telefoon/PWA.
 - Beheer → Seizoen: alle zaterdagen 3-10-2026 t/m 27-03-2027 aan/uit zetten en opslaan; 26-12 en 02-01 standaard uit.

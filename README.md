@@ -1,6 +1,6 @@
 # Wildenhorst Badhoevedorp – zaterdagmorgen dubbelcompetitie
 
-Versie **v0.3** voor GitHub Pages + Firebase.
+Versie **v0.4** voor GitHub Pages + Firebase.
 
 ## Status
 - GitHub repository `hogeterp/Wildenhorst`: aangemaakt.
@@ -36,7 +36,7 @@ Versie **v0.3** voor GitHub Pages + Firebase.
 ## Beveiliging
 De structuur volgt het sterke deel van Supertiebreak v2.3.6/v2.3.7: permanente Firestore Security Rules, server-side beheeracties en Firebase Authentication. Wildenhorst wordt sterker doordat iedere speler een eigen account krijgt.
 
-Mutaties zoals koppelplanning, e-mailwijziging, accountstatus, beheerrechten en later uitslagberekening lopen server-side. De browser mag dus niet zelfstandig competitiepunten of beheerdersrechten schrijven.
+Koppelplanning wordt in v0.4 rechtstreeks naar Firestore geschreven, maar alleen binnen streng gevalideerde Security Rules: het eigen koppel, een geldige Speelt/Reserve/Afwezig-combinatie en vóór vrijdag 18:00. Gevoelige mutaties zoals e-mailwijziging, accountstatus, beheerrechten en later uitslagberekening blijven server-side. De browser mag nooit zelfstandig competitiepunten of beheerdersrechten schrijven.
 
 ## Bewust nog niet definitief
 - Firebase-config is nu gekoppeld;
@@ -46,11 +46,11 @@ Mutaties zoals koppelplanning, e-mailwijziging, accountstatus, beheerrechten en 
 - het eerder gekozen definitieve Wildenhorst-appicoon kan later de tijdelijke iconen vervangen.
 
 
-## GitHub-upload v0.3
+## GitHub-upload v0.4
 Deze ZIP is bewust **plat gemaakt** zoals bij Supertiebreak: er zijn geen `assets`- of `functions`-mappen. Alle webbestanden en iconen staan direct in de hoofdmap. De Cloud Functions-backend wordt later apart naar Firebase gedeployed en hoort niet bij de eenvoudige GitHub Pages-upload.
 
 
-## v0.3 gebruiken
+## v0.4 gebruiken
 1. Upload alle bestanden uit deze ZIP naar de root van GitHub (bestanden vervangen).
 2. Publiceer daarna de inhoud van `firestore.rules` in Firebase Console → Firestore → Rules.
 3. Open de app opnieuw.
@@ -58,3 +58,12 @@ Deze ZIP is bewust **plat gemaakt** zoals bij Supertiebreak: er zijn geen `asset
 5. Onder Beheer → Spelers kies je lokaal het aparte privé JSON-bestand en importeer je spelers, koppels en reserves in één keer.
 
 **Privacy:** het privé begingegevensbestand hoort NIET in GitHub en zit daarom niet in deze openbare GitHub-ZIP. De bulkimport maakt ook geen Firebase Authentication-accounts voor de andere spelers; die stap volgt apart zodat iedere speler een eigen wachtwoord kan kiezen.
+
+
+## v0.4 na uploaden
+1. Publiceer de meegeleverde `firestore.rules` in Firebase Console → Firestore → Rules.
+2. Ga daarna als beheerder naar Beheer → Seizoen en klik één keer op **Speeldata opslaan**. Daarmee wordt voor alle speeldata ook `closeAt` (vrijdag 18:00) opgeslagen.
+3. Open **Mijn koppel**. Kies per zaterdag wie speelt; de partner wordt automatisch Reserve. Gebruik Afwezig wanneer nodig.
+4. Klik per zaterdag op **Keuze opslaan**.
+
+Het privé begingegevensbestand hoeft niet opnieuw geïmporteerd te worden.
