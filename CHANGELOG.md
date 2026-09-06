@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.15
+- Koppels kunnen bij twee afwezige spelers zelf een reserve of andere vervanger doorgeven.
+- Vervanger wacht op goedkeuring van een beheerder.
+- Beheerder kan voorgestelde vervanger goedkeuren of afwijzen.
+- Alleen goedgekeurde vervangers tellen mee in de baanindeling.
+- Home en Mijn koppel tonen vervanger en goedkeuringsstatus.
+- Tekst over speelsterkte verwijderd bij Spelers & reserves.
+- Beheer → Indeling heeft foutafhandeling zodat “Laden…” niet eindeloos blijft staan.
+
+# Changelog
+
 ## v0.14
 - Alle WhatsApp-knoppen tonen eerst een bewerkbaar voorbeeld met Open WhatsApp / Annuleren.
 - Bij Mijn koppel staat standaard “Keuze opgeslagen”; na een wijziging wordt dit “Wijziging opslaan”.

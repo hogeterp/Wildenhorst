@@ -25,6 +25,31 @@ service cloud.firestore {
           && request.resource.data.updatedBy == request.auth.uid
           && request.resource.data.updatedAt == request.time;
     }
+    function ownCoupleBeforeClose(seasonId, playDateId, coupleId){
+      return active()
+          && me().data.coupleId == coupleId
+          && get(/databases/$(database)/documents/seasons/$(seasonId)/playDates/$(playDateId)).data.status == 'active'
+          && get(/databases/$(database)/documents/seasons/$(seasonId)/playDates/$(playDateId)).data.closeAt is timestamp
+          && request.time < get(/databases/$(database)/documents/seasons/$(seasonId)/playDates/$(playDateId)).data.closeAt;
+    }
+    function validSubstituteProposal(seasonId, playDateId, coupleId){
+      return ownCoupleBeforeClose(seasonId, playDateId, coupleId)
+          && resource.data.member1Status == 'afwezig'
+          && resource.data.member2Status == 'afwezig'
+          && request.resource.data.member1Status == 'afwezig'
+          && request.resource.data.member2Status == 'afwezig'
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+            'substituteId','substituteName','substituteType','substituteApproval',
+            'substituteSubmittedBy','substituteSubmittedAt','updatedAt'
+          ])
+          && request.resource.data.substituteName is string
+          && request.resource.data.substituteName.size() > 1
+          && (request.resource.data.substituteType == 'reserve' || request.resource.data.substituteType == 'external')
+          && request.resource.data.substituteApproval == 'pending'
+          && request.resource.data.substituteSubmittedBy == request.auth.uid
+          && request.resource.data.substituteSubmittedAt == request.time
+          && request.resource.data.updatedAt == request.time;
+    }
 
     match /users/{uid} {
       allow read: if self(uid) || admin();
@@ -78,14 +103,14 @@ service cloud.firestore {
 
         match /couplePlans/{coupleId} {
           allow read: if active();
-          allow create, update: if admin() || (
-            active()
-            && me().data.coupleId == coupleId
-            && get(/databases/$(database)/documents/seasons/$(seasonId)/playDates/$(playDateId)).data.status == 'active'
-            && get(/databases/$(database)/documents/seasons/$(seasonId)/playDates/$(playDateId)).data.closeAt is timestamp
-            && request.time < get(/databases/$(database)/documents/seasons/$(seasonId)/playDates/$(playDateId)).data.closeAt
+          allow create: if admin() || (
+            ownCoupleBeforeClose(seasonId, playDateId, coupleId)
             && validCouplePlan(seasonId, coupleId)
           );
+          allow update: if admin() || (
+            ownCoupleBeforeClose(seasonId, playDateId, coupleId)
+            && validCouplePlan(seasonId, coupleId)
+          ) || validSubstituteProposal(seasonId, playDateId, coupleId);
           allow delete: if headAdmin();
         }
         match /public/{docId} { allow read: if active(); allow write: if admin(); }
