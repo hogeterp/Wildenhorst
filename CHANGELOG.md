@@ -27,3 +27,12 @@
 - Enkelspel toont duidelijk of de speler zelf enkelspel heeft aangevinkt.
 - Uitslaginvoer vernieuwd met aparte setstanden en automatische puntenvoorvertoning.
 - Betalingen uitgebreid met totaal betaald/openstaand, voortgang en WhatsApp-herinnering voor openstaande spelers.
+
+## v0.7
+- Bevestiging voordat een speelzaterdag wordt uitgevinkt.
+- Mijn gegevens: eigen telefoonnummer en enkelspelvoorkeur wijzigen.
+- Beheer → Spelers: vaste spelers en reserves bewerken.
+- Indeling: aantal banen compact getoond; alleen via Wijzigen aanpassen.
+- Per baan compact wisselen tussen Dubbel, Enkel en Niet gebruiken.
+- Beheerders: knop Beheerder toevoegen voor geactiveerde accounts; reserves mogen beheerder zijn.
+- Test als speler: beheerder kan tijdelijk een vaste speler kiezen om Mijn koppel en spelersschermen te testen.

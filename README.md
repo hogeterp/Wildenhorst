@@ -1,4 +1,4 @@
-# Wildenhorst Badhoevedorp v0.6
+# Wildenhorst Badhoevedorp v0.7
 Mobiele PWA voor de zaterdagmorgen dubbelcompetitie.
 
 ## Installatie
