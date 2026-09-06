@@ -1,8 +1,8 @@
-# Wildenhorst Badhoevedorp v0.15
+# Wildenhorst Badhoevedorp v0.16
 
 Mobiele webapp/PWA voor de zaterdagmorgen dubbelcompetitie.
 
-Belangrijk in v0.15:
+Belangrijk in v0.16:
 - een koppel kan bij twee afwezige spelers zelf een reservespeler of andere vervanger doorgeven;
 - de vervanger krijgt eerst de status “Wacht op goedkeuring beheerder”;
 - de beheerder kan voorgestelde vervangers goedkeuren of afwijzen;
@@ -16,4 +16,7 @@ Belangrijk in v0.15:
 Upload alle bestanden uit deze ZIP naar de hoofdmap van de GitHub Pages-repository.
 
 ## Firebase
-Voor v0.15 moeten de meegeleverde Firestore-regels worden gepubliceerd. Daarmee mag een koppel veilig alleen een vervanger voor het eigen koppel voorstellen; goedkeuren blijft alleen voor beheerders.
+Voor v0.16 moeten de meegeleverde Firestore-regels worden gepubliceerd. Daarmee mag een koppel veilig alleen een vervanger voor het eigen koppel voorstellen; goedkeuren blijft alleen voor beheerders.
+
+
+Extra in v0.16: Beheer → Indeling laadt de vijf Firebase-onderdelen zichtbaar en afzonderlijk met een time-out. Bij een probleem wordt exact getoond welk onderdeel niet reageert. De beheerder kan de handmatige spelersselectie direct openen en bijvoorbeeld 8 spelers kiezen om de baanindeling te testen. Geen nieuwe Firestore-regels nodig ten opzichte van v0.15.

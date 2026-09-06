@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.16
+- Beheer → Indeling blijft niet meer onbeperkt op Laden staan.
+- Spelerskeuzes, vaste spelers, reserves, koppels en gepubliceerde indeling worden afzonderlijk gecontroleerd.
+- Elk onderdeel krijgt zichtbaar ✓ geladen of een duidelijke fout/timeout.
+- Na 8 seconden zonder Firebase-antwoord volgt een concrete melding en knop Opnieuw proberen.
+- Handmatige spelersselectie staat standaard open, zodat een beheerder bijvoorbeeld 8 spelers kan kiezen om de indeling te testen zonder de echte spelerskeuzes te wijzigen.
+- Geen wijziging van Firestore-regels ten opzichte van v0.15.
+
+
 ## v0.15
 - Koppels kunnen bij twee afwezige spelers zelf een reserve of andere vervanger doorgeven.
 - Vervanger wacht op goedkeuring van een beheerder.
@@ -10,6 +19,15 @@
 - Beheer → Indeling heeft foutafhandeling zodat “Laden…” niet eindeloos blijft staan.
 
 # Changelog
+
+## v0.16
+- Beheer → Indeling blijft niet meer onbeperkt op Laden staan.
+- Spelerskeuzes, vaste spelers, reserves, koppels en gepubliceerde indeling worden afzonderlijk gecontroleerd.
+- Elk onderdeel krijgt zichtbaar ✓ geladen of een duidelijke fout/timeout.
+- Na 8 seconden zonder Firebase-antwoord volgt een concrete melding en knop Opnieuw proberen.
+- Handmatige spelersselectie staat standaard open, zodat een beheerder bijvoorbeeld 8 spelers kan kiezen om de indeling te testen zonder de echte spelerskeuzes te wijzigen.
+- Geen wijziging van Firestore-regels ten opzichte van v0.15.
+
 
 ## v0.14
 - Alle WhatsApp-knoppen tonen eerst een bewerkbaar voorbeeld met Open WhatsApp / Annuleren.
