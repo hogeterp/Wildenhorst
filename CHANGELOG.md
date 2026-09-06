@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.13
+- WhatsApp-reparatie uit v0.12 meegenomen.
+- Het onduidelijke label “Open/Gesloten” bij een speeldag vervangen door “Spelerskeuze open” en “Spelerskeuze gesloten”.
+- Bij een open spelerskeuze wordt de sluitingsdag en -tijd direct getoond.
+- Na de deadline staat duidelijk dat alleen een beheerder Speelt, Reserve of Afwezig nog kan wijzigen.
+- Ook beheerders zien na de deadline dat de spelerskeuze gesloten is, terwijl hun beheerdersknoppen beschikbaar blijven.
+
+## v0.12
+- WhatsApp-knoppen hersteld: de ontbrekende `waOpen()`-functie is toegevoegd.
+- Vervanger gezocht, planning-herinnering, baanindeling en betaalherinnering openen weer een WhatsApp-conceptbericht.
+
 ## v0.11
 - Speelsterkte 1–9 toegevoegd voor vaste spelers en reserves; alleen zichtbaar in beheer.
 - Automatische baanindeling op basis van speelsterkte toegevoegd; speelsterktes worden niet gepubliceerd.

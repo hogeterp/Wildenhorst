@@ -1,15 +1,15 @@
-# Wildenhorst Badhoevedorp v0.11
+# Wildenhorst Badhoevedorp v0.13
 
 Mobiele webapp/PWA voor de zaterdagmorgen dubbelcompetitie.
 
-Belangrijk in v0.11:
-- speelsterkte is uitsluitend zichtbaar voor beheerders;
-- automatische indeling gebruikt speelsterkte intern, maar toont deze nooit aan spelers;
-- koppels kunnen na het spelen zelf de uitslag van hun eigen gepubliceerde dubbelwedstrijd invoeren;
-- vervangers en WhatsApp-herinneringen zijn uitgebreid.
+Belangrijk in v0.13:
+- de WhatsApp-fix uit v0.12 is meegenomen;
+- bij de koppelkeuze staat nu duidelijk “Spelerskeuze open” met de deadline;
+- na de deadline staat “Spelerskeuze gesloten” met de uitleg dat alleen een beheerder nog kan wijzigen;
+- alle functies uit v0.11 blijven behouden.
 
 ## Publiceren
 Upload alle bestanden uit deze ZIP naar de hoofdmap van de GitHub Pages-repository.
 
 ## Firebase
-Publiceer ook de meegeleverde `firestore.rules`, omdat v0.11 vaste spelers toestemming geeft om uitsluitend een uitslag van hun eigen wedstrijd op te slaan.
+Voor v0.13 zijn geen nieuwe Firestore-regels nodig ten opzichte van v0.11/v0.12. Als de regels van v0.11 al zijn gepubliceerd, hoef je in Firebase niets opnieuw te publiceren.
