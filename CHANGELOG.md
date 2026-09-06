@@ -18,3 +18,12 @@
 
 ## v0.4
 - Mijn koppel planning voor alle speelzaterdagen.
+
+## v0.6
+- Beheer-tab Banen hernoemd naar Indeling.
+- Aantal banen per zaterdag instelbaar (0 t/m 4).
+- Beheerder kan spelers handmatig aanwijzen om een baanindeling te testen.
+- WhatsApp-uitnodiging en WhatsApp-baanindeling met namen toegevoegd.
+- Enkelspel toont duidelijk of de speler zelf enkelspel heeft aangevinkt.
+- Uitslaginvoer vernieuwd met aparte setstanden en automatische puntenvoorvertoning.
+- Betalingen uitgebreid met totaal betaald/openstaand, voortgang en WhatsApp-herinnering voor openstaande spelers.
