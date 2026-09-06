@@ -28,7 +28,7 @@
 - Uitslaginvoer vernieuwd met aparte setstanden en automatische puntenvoorvertoning.
 - Betalingen uitgebreid met totaal betaald/openstaand, voortgang en WhatsApp-herinnering voor openstaande spelers.
 
-## v0.7
+## v0.8
 - Bevestiging voordat een speelzaterdag wordt uitgevinkt.
 - Mijn gegevens: eigen telefoonnummer en enkelspelvoorkeur wijzigen.
 - Beheer → Spelers: vaste spelers en reserves bewerken.
