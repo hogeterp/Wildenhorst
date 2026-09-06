@@ -65,6 +65,12 @@ service cloud.firestore {
         allow create, update: if admin();
         allow delete: if headAdmin();
       }
+      match /public/{docId} {
+        allow read: if active();
+        allow create, update: if admin();
+        allow delete: if headAdmin();
+      }
+
       match /playDates/{playDateId} {
         allow read: if active();
         allow create, update: if admin();

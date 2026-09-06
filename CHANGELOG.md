@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.14
+- Alle WhatsApp-knoppen tonen eerst een bewerkbaar voorbeeld met Open WhatsApp / Annuleren.
+- Bij Mijn koppel staat standaard “Keuze opgeslagen”; na een wijziging wordt dit “Wijziging opslaan”.
+- De technische datum (zoals 2026-10-03) is verwijderd uit Beheer → Seizoen.
+- Koppels worden netter als losse kaartjes met koppelnummer en spelers op aparte regels weergegeven.
+- Meer → Spelers & reserves toegevoegd voor alle spelers, zonder speelsterkte of contactgegevens.
+- De uitleg over enkelspel is verwijderd uit Mijn gegevens; de spelregel blijft bij Uitleg / spelregels.
+- Bij Uitleg / spelregels toegevoegd: inspeeltijd 10.00–10.15 uur en aanvang wedstrijd 10.15 uur.
+- Publieke spelerslijst bevat alleen koppelnummers en namen; privégegevens blijven afgeschermd.
+
 ## v0.13
 - WhatsApp-reparatie uit v0.12 meegenomen.
 - Het onduidelijke label “Open/Gesloten” bij een speeldag vervangen door “Spelerskeuze open” en “Spelerskeuze gesloten”.
