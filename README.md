@@ -1,11 +1,15 @@
-# Wildenhorst Badhoevedorp v0.10
-Mobiele PWA voor de zaterdagmorgen dubbelcompetitie.
+# Wildenhorst Badhoevedorp v0.11
 
-## Installatie
-Upload alle bestanden uit deze map naar de hoofdmap van de GitHub Pages repository.
-Publiceer daarna `firestore.rules` in Firebase Console → Firestore Database → Rules.
+Mobiele webapp/PWA voor de zaterdagmorgen dubbelcompetitie.
 
-## v0.5
-De app bevat dynamische Home-informatie, koppelstatistieken, uitgebreider seizoenbeheer inclusief `Start nieuw seizoen`, spelers-/koppeloverzicht, baanindeling, beheerinvoer voor uitslagen, betalingen, beheerders en uitgebreide uitleg.
+Belangrijk in v0.11:
+- speelsterkte is uitsluitend zichtbaar voor beheerders;
+- automatische indeling gebruikt speelsterkte intern, maar toont deze nooit aan spelers;
+- koppels kunnen na het spelen zelf de uitslag van hun eigen gepubliceerde dubbelwedstrijd invoeren;
+- vervangers en WhatsApp-herinneringen zijn uitgebreid.
 
-Persoonsgegevens horen in Firebase en niet in GitHub. Het eerdere privé JSON-bestand is alleen gebruikt voor de eenmalige initiële import en hoort niet in deze repository.
+## Publiceren
+Upload alle bestanden uit deze ZIP naar de hoofdmap van de GitHub Pages-repository.
+
+## Firebase
+Publiceer ook de meegeleverde `firestore.rules`, omdat v0.11 vaste spelers toestemming geeft om uitsluitend een uitslag van hun eigen wedstrijd op te slaan.

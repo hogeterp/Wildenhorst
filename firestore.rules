@@ -83,7 +83,18 @@ service cloud.firestore {
           allow delete: if headAdmin();
         }
         match /public/{docId} { allow read: if active(); allow write: if admin(); }
-        match /results/{resultId} { allow read: if active(); allow create, update, delete: if admin(); }
+        match /results/{resultId} {
+          allow read: if active();
+          allow create, update: if admin() || (
+            active()
+            && me().data.participantType == 'fixed'
+            && (request.resource.data.coupleAId == me().data.coupleId || request.resource.data.coupleBId == me().data.coupleId)
+            && request.resource.data.enteredBy == request.auth.uid
+            && get(/databases/$(database)/documents/seasons/$(seasonId)/playDates/$(playDateId)/public/lineup).data.published == true
+            && request.resource.data.keys().hasOnly(['courtNumber','mode','coupleAId','coupleAName','coupleBId','coupleBName','scoreText','pointsA','pointsB','unfinishedLastSet','unfinishedGamePoints','note','enteredBy','enteredAt'])
+          );
+          allow delete: if admin();
+        }
       }
       match /standings/{coupleId} { allow read: if active(); allow write: if admin(); }
       match /payments/{paymentId} { allow read, create, update: if admin(); allow delete: if headAdmin(); }
