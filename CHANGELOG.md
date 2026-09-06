@@ -1,4 +1,12 @@
 # Changelog
+## v0.10
+- Vaste koppelnummers 1 t/m 8 zichtbaar bij koppels en uitslagen.
+- Bij twee afwezige koppelspelers kan direct een WhatsApp-bericht “Vervanger gezocht” worden gemaakt met koppelnummer en namen.
+- Beheer → Indeling kan een vaste speler of reserve als vervanger vastleggen; een vaste invaller wordt ook bij zijn eigen koppel vermeld.
+- Enkelspeltekst verduidelijkt: alleen als noodoplossing voor de baanindeling en 0 competitiepunten.
+- Uitslagen ondersteunen bij een onvoltooide laatste set ook de puntenstand in de lopende game, zoals 3–3 en 30–15.
+- Uitleg/spelregels bijgewerkt.
+
 
 ## v0.5
 - Home toont nu de volgende speeldag, deadline met dag/datum/tijd, aantal geplande spelers, ingevulde koppels en persoonlijke status.
