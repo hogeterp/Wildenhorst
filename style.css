@@ -31,6 +31,6 @@
 .pending-sub{background:#fff4dc!important;border:1px solid #e6c777!important;color:#725000}.pending-sub span,.pending-text{display:block;color:#9a6500;font-size:.78rem;margin-top:4px}.home-sub{margin-top:10px;padding:10px;border-radius:11px;background:#e9f6ee;border:1px solid #bcd9c8}.home-sub b,.home-sub span{display:block}.home-sub span{font-size:.8rem;margin-top:4px}.sub-propose{width:100%;margin-top:7px;background:#fff;color:var(--g);border:1px solid #78b28d}.sub-choice{display:flex;align-items:center;gap:9px;padding:10px;border:1px solid var(--line);border-radius:10px;margin:6px 0;background:#fff}.sub-choice input{width:20px;height:20px}.sub-choice span{font-weight:700}.pending-approval{border-color:#e6c777;background:#fffaf0}.approval-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;padding:11px 0;border-top:1px solid #eee3c4}.approval-row span{display:block;margin-top:4px;font-size:.84rem}.approval-actions{display:flex;gap:6px}.approval-actions button{font-size:.78rem;padding:8px 10px}.simple-row b small{font-weight:400}
 @media(max-width:520px){.approval-row{grid-template-columns:1fr}.approval-actions button{flex:1}.approval-actions{display:flex}}
 
-/* v0.16 */
+/* v0.17 */
 .load-check{background:#f6f8f6;border:1px solid #d8e1da;border-radius:14px;padding:16px;margin:10px 0;display:grid;gap:8px}
 .load-check>div{padding:7px 0;border-top:1px solid #e5e9e6}.load-check>div:first-of-type{margin-top:5px}

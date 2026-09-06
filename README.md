@@ -1,22 +1,16 @@
-# Wildenhorst Badhoevedorp v0.16
+# Wildenhorst Badhoevedorp v0.17
 
 Mobiele webapp/PWA voor de zaterdagmorgen dubbelcompetitie.
 
-Belangrijk in v0.16:
-- een koppel kan bij twee afwezige spelers zelf een reservespeler of andere vervanger doorgeven;
-- de vervanger krijgt eerst de status “Wacht op goedkeuring beheerder”;
-- de beheerder kan voorgestelde vervangers goedkeuren of afwijzen;
-- pas na goedkeuring telt een vervanger mee voor de baanindeling;
-- Home en Mijn koppel tonen de vervanger en goedkeuringsstatus;
-- de uitleg over speelsterkte is verwijderd van de gewone pagina Spelers & reserves;
-- Beheer → Indeling toont voortaan een duidelijke foutmelding als Firebase-data niet geladen kan worden, in plaats van eindeloos “Laden…”;
-- alle functies en verbeteringen uit v0.14 blijven behouden.
+Belangrijk in v0.17:
+- Beheer → Indeling bouwt het scherm robuuster op nadat de Firebase-data geladen is;
+- de app toont ook een fout als juist de opbouwfase mislukt;
+- koppeldata wordt defensief verwerkt zodat afwijkende gegevens niet meteen de hele indeling blokkeren;
+- handmatige spelersselectie blijft beschikbaar om bijvoorbeeld 8 spelers te kiezen voor een testindeling;
+- alle functies uit v0.15 en v0.16 blijven behouden.
 
 ## Publiceren
 Upload alle bestanden uit deze ZIP naar de hoofdmap van de GitHub Pages-repository.
 
 ## Firebase
-Voor v0.16 moeten de meegeleverde Firestore-regels worden gepubliceerd. Daarmee mag een koppel veilig alleen een vervanger voor het eigen koppel voorstellen; goedkeuren blijft alleen voor beheerders.
-
-
-Extra in v0.16: Beheer → Indeling laadt de vijf Firebase-onderdelen zichtbaar en afzonderlijk met een time-out. Bij een probleem wordt exact getoond welk onderdeel niet reageert. De beheerder kan de handmatige spelersselectie direct openen en bijvoorbeeld 8 spelers kiezen om de baanindeling te testen. Geen nieuwe Firestore-regels nodig ten opzichte van v0.15.
+Voor v0.17 zijn geen nieuwe Firestore-regels nodig. De gepubliceerde regels van v0.15 blijven gelden.
