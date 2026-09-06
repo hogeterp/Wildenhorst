@@ -6,17 +6,18 @@
 <meta name="theme-color" content="#126b3a">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <title>Wildenhorst Badhoevedorp</title>
-<link rel="manifest" href="manifest.webmanifest?v=0.8">
+<link rel="manifest" href="manifest.webmanifest?v=0.9">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="stylesheet" href="style.css?v=0.8">
+<link rel="stylesheet" href="style.css?v=0.9">
 </head>
 <body>
-<header class="topbar"><img src="club-logo.png" alt="Wildenhorst"><div><strong>Wildenhorst Badhoevedorp</strong><small>Zaterdagmorgen dubbelcompetitie</small></div><span>v0.8</span></header>
+<header class="topbar"><img src="club-logo.png" alt="Wildenhorst"><div><strong>Wildenhorst Badhoevedorp</strong><small>Zaterdagmorgen dubbelcompetitie</small></div><span>v0.9</span></header>
 <main id="app">
 <section id="setup" class="card hidden"><h1>Firebase nog niet gekoppeld</h1><p>De appbestanden zijn voorbereid. Zodra het nieuwe Firebase-project beschikbaar is, vullen we alleen de Firebase-config in en publiceren we backend en regels.</p><div class="notice"><b>GitHub:</b> gereed · <b>Firebase:</b> wacht op nieuw project</div></section>
-<section id="login" class="auth hidden"><img class="login-logo" src="club-logo.png" alt="Wildenhorst"><h1>Inloggen</h1><p>Seizoen 2026/2027 · zaterdag 10:00–12:00</p><form id="loginForm"><label>E-mailadres</label><input id="email" type="email" required autocomplete="username"><label>Wachtwoord</label><input id="password" type="password" required autocomplete="current-password"><button>Inloggen</button></form><div class="links"><button id="forgotPassword" class="link">Wachtwoord vergeten?</button><button id="forgotLogin" class="link">Inlognaam vergeten?</button></div><div id="loginMessage" class="message hidden"></div></section>
+<section id="login" class="auth hidden"><img class="login-logo" src="club-logo.png" alt="Wildenhorst"><h1>Inloggen</h1><p>Seizoen 2026/2027 · zaterdag 10:00–12:00</p><form id="loginForm"><label>E-mailadres</label><input id="email" type="email" required autocomplete="username"><label>Wachtwoord</label><input id="password" type="password" required autocomplete="current-password"><button>Inloggen</button></form><div class="links"><button id="activateAccount" class="link">Account activeren</button><button id="forgotPassword" class="link">Wachtwoord vergeten?</button><button id="forgotLogin" class="link">Inlognaam vergeten?</button></div><div id="loginMessage" class="message hidden"></div></section>
 <section id="main" class="hidden"><div id="screen"></div><nav class="bottom"><button data-route="home">🏠<small>Home</small></button><button data-route="couple">👥<small>Mijn koppel</small></button><button data-route="saturday">🎾<small>Zaterdag</small></button><button data-route="standings">🏆<small>Stand</small></button><button data-route="more">☰<small>Meer</small></button></nav></section>
 </main>
+<dialog id="activateDialog"><form id="activateForm" class="dialog"><h2>Account activeren</h2><p>Gebruik het e-mailadres dat bij de Wildenhorst is geregistreerd en kies zelf je wachtwoord.</p><label>E-mailadres</label><input id="activateEmail" type="email" required autocomplete="email"><label>Kies wachtwoord</label><input id="activatePassword" type="password" required minlength="6" autocomplete="new-password"><label>Herhaal wachtwoord</label><input id="activatePassword2" type="password" required minlength="6" autocomplete="new-password"><button type="submit">Account activeren</button><button type="button" class="secondary" id="cancelActivate">Annuleren</button><div id="activateMessage" class="message hidden"></div></form></dialog>
 <dialog id="forgotLoginDialog"><form method="dialog" class="dialog"><h2>Inlognaam vergeten?</h2><p>Je inlognaam is het e-mailadres waarmee je voor Wildenhorst Badhoevedorp bent geregistreerd.</p><p>Weet je niet meer welk e-mailadres dat is? Neem contact op met de beheerder. De beheerder kan je geregistreerde e-mailadres voor je opzoeken.</p><button>← Terug naar inloggen</button></form></dialog>
-<script src="firebase-config.js?v=0.8"></script><script src="install.js?v=0.8" defer></script><script type="module" src="app.js?v=0.8"></script>
+<script src="firebase-config.js?v=0.9"></script><script src="install.js?v=0.9" defer></script><script type="module" src="app.js?v=0.9"></script>
 </body></html>
