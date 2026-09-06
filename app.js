@@ -2,8 +2,8 @@ import{initializeApp}from'https://www.gstatic.com/firebasejs/12.18.0/firebase-ap
 import{getAuth,onAuthStateChanged,signInWithEmailAndPassword,signOut,sendPasswordResetEmail,createUserWithEmailAndPassword,setPersistence,browserLocalPersistence}from'https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js';
 import{getFirestore,doc,getDoc,collection,query,where,getDocs,orderBy,limit,writeBatch,setDoc,updateDoc,serverTimestamp,deleteDoc}from'https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js';
 const $=id=>document.getElementById(id),cfg=window.WILDENHORST_FIREBASE||{};let auth,db,user,profile,season;
-const APP_VERSION='0.17';
-let testPlayer=null,activating=false,substituteContext=null;
+const APP_VERSION='0.18';
+let testPlayer=null,activating=false,substituteContext=null,lineupState=null;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function waOpen(text){const dlg=$('waPreviewDialog'),ta=$('waPreviewText');if(!dlg||!ta)return;ta.value=String(text||'');dlg.showModal()}
 function waSend(){const text=$('waPreviewText')?.value||'';const url='https://wa.me/?text='+encodeURIComponent(text);$('waPreviewDialog')?.close();const w=window.open(url,'_blank');if(!w)window.location.href=url}

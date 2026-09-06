@@ -1,6 +1,11 @@
+# v0.18
+- Herstelt Beheer → Indeling: `lineupState` wordt nu correct als globale appstatus gedeclareerd voordat de baanindeling wordt opgebouwd.
+- Hierdoor kan de indelingspagina na het succesvol laden van de Firebase-gegevens verder renderen.
+- Geen wijziging aan Firestore-regels nodig.
+
 # Changelog
 
-## v0.17
+## v0.18
 - Beheer → Indeling: aparte foutopvang toegevoegd voor de opbouwfase nádat alle Firebase-data is geladen.
 - Afwijkende koppeldata wordt robuuster genormaliseerd.
 - Ontbrekende knoppen/DOM-elementen stoppen de hele render niet meer.
