@@ -1,4 +1,17 @@
-# v0.19
+# Changelog
+
+## v0.19
+- Beheer → Seizoen uitgebreid met compact seizoensdashboard.
+- Overzicht per vaste speler: gespeeld, ingevallen en totaal.
+- Apart overzicht van reserves en hoe vaak zij zijn ingevallen.
+- Toekomstige spelerskeuzes per koppel en per speeldatum toegevoegd (S/R/A/–), horizontaal schuifbaar op mobiel.
+- Open uitlegblok onder de spelerskeuze verwijderd; de deadlinebadge blijft staan.
+- Baanindeling compacter gemaakt: teamleden samen op één regel en duidelijk tegenover het andere team.
+- Beheer → Spelers: NAW-export voor vaste spelers en reserves naar PDF/Excel toegevoegd.
+- Beheer → Betalen: betalingsoverzicht naar PDF/Excel toegevoegd.
+- Geen nieuwe Firestore-regels nodig ten opzichte van v0.15.
+
+# v0.20
 - Mijn koppel toont nu per speler het aantal keren dat hij dit seizoen voor een ander koppel is ingevallen.
 - Alleen gepubliceerde baanindelingen van voor vandaag tellen mee.
 - De tekst “enkelspelvoorkeur” is verwijderd van het kaartje Mijn gegevens.
