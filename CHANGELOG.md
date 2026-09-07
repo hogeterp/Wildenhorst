@@ -1,98 +1,33 @@
 # Changelog
 
+## v0.22
+- Nieuwe veilige seizoenwizard toegevoegd.
+- Vooraf waarschuwing: pas bij de laatste bevestiging wordt het huidige seizoen gearchiveerd.
+- Stap 1: nieuwe speeldata, tijden, banen en sluitingsmoment instellen.
+- Stap 2: per deelnemer kiezen: vaste speler, reserve of niet meenemen; nieuwe deelnemer toevoegen.
+- Stap 3: nieuwe koppels samenstellen; ieder koppel moet exact twee vaste spelers hebben.
+- Stap 4: samenvatting en laatste bevestiging.
+- Huidig seizoen blijft volledig bewaard als archief; er wordt niets verwijderd.
+- Nieuw seizoen start zonder oude uitslagen/punten/spelerskeuzes.
+- Vorige seizoenen zichtbaar onder Beheer → Seizoen.
+- Toekomstige spelerskeuzes: koppel- en spelerskolom blijven vast staan tijdens horizontaal schuiven.
+- Baanindeling: speelsterkte alleen als cijfer achter de naam, alleen in beheer.
+- Handmatige spelersselectie/testen naar onderaan de indelingspagina verplaatst.
+- Start nieuw seizoen naar onderaan Beheer → Seizoen verplaatst.
+- Firestore-regels uitgebreid zodat alleen de hoofdbeheerder bij de seizoenwissel `participantType` en `coupleId` van gebruikers kan bijwerken.
+
+## v0.21
+- Baanindeling wijzigen verduidelijkt.
+- Spelers wisselen door twee namen na elkaar aan te tikken.
+- Spelvorm Dubbel / Enkel / Niet gebruiken apart instelbaar.
+- Speelsterkte zichtbaar voor beheerder bij indelen.
+- Toekomstige spelerskeuzes per koppel gegroepeerd.
+
+## v0.20
+- Seizoensoverzicht gespeeld/ingevallen toegevoegd.
+- Toekomstige spelerskeuzes toegevoegd.
+- Compacte baanindeling.
+- NAW- en betalingsexport naar PDF/Excel.
+
 ## v0.19
-- Beheer → Seizoen uitgebreid met compact seizoensdashboard.
-- Overzicht per vaste speler: gespeeld, ingevallen en totaal.
-- Apart overzicht van reserves en hoe vaak zij zijn ingevallen.
-- Toekomstige spelerskeuzes per koppel en per speeldatum toegevoegd (S/R/A/–), horizontaal schuifbaar op mobiel.
-- Open uitlegblok onder de spelerskeuze verwijderd; de deadlinebadge blijft staan.
-- Baanindeling compacter gemaakt: teamleden samen op één regel en duidelijk tegenover het andere team.
-- Beheer → Spelers: NAW-export voor vaste spelers en reserves naar PDF/Excel toegevoegd.
-- Beheer → Betalen: betalingsoverzicht naar PDF/Excel toegevoegd.
-- Geen nieuwe Firestore-regels nodig ten opzichte van v0.15.
-
-# v0.20
-- Mijn koppel toont nu per speler het aantal keren dat hij dit seizoen voor een ander koppel is ingevallen.
-- Alleen gepubliceerde baanindelingen van voor vandaag tellen mee.
-- De tekst “enkelspelvoorkeur” is verwijderd van het kaartje Mijn gegevens.
-- Geen wijziging aan Firestore-regels nodig.
-
-# v0.18
-- Herstelt Beheer → Indeling: `lineupState` wordt nu correct als globale appstatus gedeclareerd voordat de baanindeling wordt opgebouwd.
-- Hierdoor kan de indelingspagina na het succesvol laden van de Firebase-gegevens verder renderen.
-- Geen wijziging aan Firestore-regels nodig.
-
-# Changelog
-
-## v0.17
-- Beheer → Indeling: aparte foutopvang toegevoegd voor de opbouwfase nádat alle Firebase-data is geladen.
-- Afwijkende koppeldata wordt robuuster genormaliseerd.
-- Ontbrekende knoppen/DOM-elementen stoppen de hele render niet meer.
-- Handmatige testselectie van spelers blijft beschikbaar.
-- Geen nieuwe Firestore-regels nodig ten opzichte van v0.15.
-
-## v0.16
-- Spelerskeuzes, vaste spelers, reserves, koppels en gepubliceerde indeling worden afzonderlijk gecontroleerd.
-- Elk onderdeel krijgt zichtbaar ✓ geladen of een duidelijke fout/timeout.
-- Na 8 seconden zonder Firebase-antwoord volgt een concrete melding en knop Opnieuw proberen.
-- Handmatige spelersselectie toegevoegd om de baanindeling te testen zonder echte spelerskeuzes te wijzigen.
-- Geen wijziging van Firestore-regels ten opzichte van v0.15.
-
-## v0.15
-- Koppels kunnen bij twee afwezige spelers zelf een reserve of andere vervanger doorgeven.
-- Vervanger wacht op goedkeuring van een beheerder.
-- Beheerder kan voorgestelde vervanger goedkeuren of afwijzen.
-- Alleen goedgekeurde vervangers tellen mee in de baanindeling.
-- Home en Mijn koppel tonen vervanger en goedkeuringsstatus.
-- Tekst over speelsterkte verwijderd bij Spelers & reserves.
-- Beheer → Indeling heeft foutafhandeling zodat “Laden…” niet eindeloos blijft staan.
-
-# Changelog
-
-## v0.16
-- Beheer → Indeling blijft niet meer onbeperkt op Laden staan.
-- Spelerskeuzes, vaste spelers, reserves, koppels en gepubliceerde indeling worden afzonderlijk gecontroleerd.
-- Elk onderdeel krijgt zichtbaar ✓ geladen of een duidelijke fout/timeout.
-- Na 8 seconden zonder Firebase-antwoord volgt een concrete melding en knop Opnieuw proberen.
-- Handmatige spelersselectie staat standaard open, zodat een beheerder bijvoorbeeld 8 spelers kan kiezen om de indeling te testen zonder de echte spelerskeuzes te wijzigen.
-- Geen wijziging van Firestore-regels ten opzichte van v0.15.
-
-
-## v0.14
-- Alle WhatsApp-knoppen tonen eerst een bewerkbaar voorbeeld met Open WhatsApp / Annuleren.
-- Bij Mijn koppel staat standaard “Keuze opgeslagen”; na een wijziging wordt dit “Wijziging opslaan”.
-- De technische datum (zoals 2026-10-03) is verwijderd uit Beheer → Seizoen.
-- Koppels worden netter als losse kaartjes met koppelnummer en spelers op aparte regels weergegeven.
-- Meer → Spelers & reserves toegevoegd voor alle spelers, zonder speelsterkte of contactgegevens.
-- De uitleg over enkelspel is verwijderd uit Mijn gegevens; de spelregel blijft bij Uitleg / spelregels.
-- Bij Uitleg / spelregels toegevoegd: inspeeltijd 10.00–10.15 uur en aanvang wedstrijd 10.15 uur.
-- Publieke spelerslijst bevat alleen koppelnummers en namen; privégegevens blijven afgeschermd.
-
-## v0.13
-- WhatsApp-reparatie uit v0.12 meegenomen.
-- Het onduidelijke label “Open/Gesloten” bij een speeldag vervangen door “Spelerskeuze open” en “Spelerskeuze gesloten”.
-- Bij een open spelerskeuze wordt de sluitingsdag en -tijd direct getoond.
-- Na de deadline staat duidelijk dat alleen een beheerder Speelt, Reserve of Afwezig nog kan wijzigen.
-- Ook beheerders zien na de deadline dat de spelerskeuze gesloten is, terwijl hun beheerdersknoppen beschikbaar blijven.
-
-## v0.12
-- WhatsApp-knoppen hersteld: de ontbrekende `waOpen()`-functie is toegevoegd.
-- Vervanger gezocht, planning-herinnering, baanindeling en betaalherinnering openen weer een WhatsApp-conceptbericht.
-
-## v0.11
-- Speelsterkte 1–9 toegevoegd voor vaste spelers en reserves; alleen zichtbaar in beheer.
-- Automatische baanindeling op basis van speelsterkte toegevoegd; speelsterktes worden niet gepubliceerd.
-- Home-statistieken zijn klikbaar: spelers gepland, koppels ingevuld en koppels die nog moeten invullen.
-- WhatsApp-herinnering toegevoegd voor koppels die de planning nog niet hebben ingevuld.
-- Koppelnummers worden ook in Beheer → Spelers → Koppels getoond.
-- Vervanger gezocht via WhatsApp blijft zichtbaar zodra beide spelers afwezig zijn.
-- Beheerder kan vaste speler, reserve of een externe vervanger met naam + speelsterkte vastleggen.
-- Bij een vaste invaller wordt bij het eigen koppel geregistreerd voor welk koppel diegene invalt.
-- Speelzaterdag aan/uit wordt na bevestiging direct opgeslagen.
-- Knop hernoemd naar “Algemene instellingen opslaan” voor sluitingsinstellingen en standaard banen.
-- Vaste koppels kunnen na een gespeelde, gepubliceerde dubbelwedstrijd zelf hun uitslag invoeren.
-- Afgebroken laatste set ondersteunt ook gelijke games met puntenstand, zoals 3–3 en 30–15.
-- Gepubliceerde baanindeling bewaart ook technische speler-/koppelkoppelingen voor veilige uitslaginvoer; deze IDs zijn niet zichtbaar in de spelersweergave.
-
-## v0.10
-- Koppelnummers, vervangers, WhatsApp vervanger gezocht en uitgebreide zoemer-/halve-puntinvoer.
+- Mijn koppel toont aantal keren ingevallen per speler.

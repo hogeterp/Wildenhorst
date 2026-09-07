@@ -55,7 +55,7 @@ service cloud.firestore {
       allow read: if self(uid) || admin();
       allow update: if
         (self(uid) && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['phone','singlesAllowed','updatedAt']))
-        || (headAdmin() && self(uid) && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['coupleId']))
+        || (headAdmin() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['coupleId','participantType','playerId','reserveId','updatedAt']))
         || (headAdmin() && !self(uid) && resource.data.role != 'headAdmin'
             && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['role'])
             && (request.resource.data.role == 'admin' || request.resource.data.role == 'player'));
