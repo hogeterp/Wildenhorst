@@ -1,3 +1,9 @@
+# v0.19
+- Mijn koppel toont nu per speler het aantal keren dat hij dit seizoen voor een ander koppel is ingevallen.
+- Alleen gepubliceerde baanindelingen van voor vandaag tellen mee.
+- De tekst “enkelspelvoorkeur” is verwijderd van het kaartje Mijn gegevens.
+- Geen wijziging aan Firestore-regels nodig.
+
 # v0.18
 - Herstelt Beheer → Indeling: `lineupState` wordt nu correct als globale appstatus gedeclareerd voordat de baanindeling wordt opgebouwd.
 - Hierdoor kan de indelingspagina na het succesvol laden van de Firebase-gegevens verder renderen.
@@ -5,7 +11,7 @@
 
 # Changelog
 
-## v0.18
+## v0.17
 - Beheer → Indeling: aparte foutopvang toegevoegd voor de opbouwfase nádat alle Firebase-data is geladen.
 - Afwijkende koppeldata wordt robuuster genormaliseerd.
 - Ontbrekende knoppen/DOM-elementen stoppen de hele render niet meer.
