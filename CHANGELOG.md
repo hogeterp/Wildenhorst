@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.23
+- Toekomstige spelerskeuzes compacter: koppelnummer en speler in één vaste kolom zodat meer zaterdagen tegelijk zichtbaar zijn.
+- Speler bewerken opent nu direct in een dialoog; compacte bewerkknoppen.
+- NAW-export samengevoegd onder één knop Exporteren met keuze PDF/Excel.
+- Gepubliceerde baanindeling voor de eerstvolgende zaterdag staat nu ook op Home.
+- Nieuw-seizoenwizard laat in stap 1 zaterdagen uitsluiten vóór definitief aanmaken.
+- Beheer-indeling toont speelsterkte alleen als cijfer en nettere Team A / VS / Team B-weergave.
+- Uitslag invoeren volgt automatisch de gepubliceerde baanindeling en toont de werkelijk gespeelde spelers.
+- Meer dan drie sets mogelijk via Set toevoegen.
+- Punten worden automatisch aan de vertegenwoordigde vaste koppels gekoppeld en de stand wordt na opslaan/verwijderen opnieuw opgebouwd.
+
+
 ## v0.22
 - Nieuwe veilige seizoenwizard toegevoegd.
 - Vooraf waarschuwing: pas bij de laatste bevestiging wordt het huidige seizoen gearchiveerd.
