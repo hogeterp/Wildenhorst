@@ -1,8 +1,8 @@
-# Wildenhorst Badhoevedorp v0.24
+# Wildenhorst Badhoevedorp v0.25
 
 Mobiele webapp/PWA voor de zaterdagmorgen dubbelcompetitie.
 
-Belangrijk in v0.24:
+Belangrijk in v0.25:
 - Nieuwe seizoenwizard met waarschuwing vóórdat er iets verandert.
 - Nieuw seizoen in 4 stappen: speeldata, vaste spelers/reserves, koppels en definitieve controle.
 - Het vorige seizoen wordt alleen op niet-actief gezet en blijft volledig bewaard met spelerskeuzes, baanindelingen, uitslagen, standen en betalingen.
@@ -18,10 +18,10 @@ Belangrijk in v0.24:
 - In de nieuw-seizoenwizard kunnen zaterdagen vooraf worden uitgesloten.
 - Uitslag invoeren volgt de gepubliceerde baanindeling, ondersteunt extra sets en kent punten automatisch toe aan de vertegenwoordigde koppels.
 - Start nieuw seizoen staat onderaan Beheer → Seizoen.
-- Versie/cache bijgewerkt naar v0.24.
+- Versie/cache bijgewerkt naar v0.25.
 
 ## Publiceren
 Upload alle bestanden uit deze ZIP naar de hoofdmap van de GitHub Pages-repository.
 
 ## Firebase
-v0.24 gebruikt dezelfde Firestore-regels als v0.22. Als de v0.22-regels al zijn gepubliceerd, hoef je de regels voor v0.24 niet opnieuw te publiceren.
+v0.25 gebruikt dezelfde Firestore-regels als v0.22. Als de v0.22-regels al zijn gepubliceerd, hoef je de regels voor v0.25 niet opnieuw te publiceren.

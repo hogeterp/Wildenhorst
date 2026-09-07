@@ -122,7 +122,7 @@ service cloud.firestore {
             && (request.resource.data.coupleAId == me().data.coupleId || request.resource.data.coupleBId == me().data.coupleId)
             && request.resource.data.enteredBy == request.auth.uid
             && get(/databases/$(database)/documents/seasons/$(seasonId)/playDates/$(playDateId)/public/lineup).data.published == true
-            && request.resource.data.keys().hasOnly(['courtNumber','mode','coupleAId','coupleAName','coupleBId','coupleBName','scoreText','pointsA','pointsB','unfinishedLastSet','unfinishedGamePoints','note','enteredBy','enteredAt'])
+            && request.resource.data.keys().hasOnly(['courtNumber','mode','coupleAId','coupleAName','coupleBId','coupleBName','scoreText','pointsA','pointsB','sets','lastGamePoints','unfinishedLastSet','unfinishedGamePoints','note','enteredBy','enteredAt'])
           );
           allow delete: if admin();
         }

@@ -1,3 +1,13 @@
+## v0.25
+- Uitslagen: geen zoemer-vinkje meer.
+- Punten in de lopende game kunnen onafhankelijk worden ingevuld (0/15/30/40).
+- Bij gelijke games en gelijke gamepunten krijgt ieder 0,25 punt; bij een voorsprong in de lopende game krijgt de leider 0,5 punt.
+- Extra sets blijven mogelijk.
+- Opmerkingenveld heeft duidelijke voorbeelden.
+- Beheerder kan een opgeslagen uitslag openen, wijzigen en daarna de stand opnieuw laten berekenen.
+- Uitslagen worden ook gestructureerd met sets en lastGamePoints opgeslagen.
+- Firestore-regels uitgebreid voor de nieuwe uitslagvelden.
+
 ## v0.24
 - Hotfix: leeg scherm in v0.23 opgelost door foutieve functiedeclaratie te herstellen.
 - Extra controle toegevoegd zodat appfouten zichtbaar kunnen worden gemaakt in plaats van een leeg scherm.
