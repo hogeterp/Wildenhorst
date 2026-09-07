@@ -1,6 +1,10 @@
+## v0.24
+- Hotfix: leeg scherm in v0.23 opgelost door foutieve functiedeclaratie te herstellen.
+- Extra controle toegevoegd zodat appfouten zichtbaar kunnen worden gemaakt in plaats van een leeg scherm.
+
 # Changelog
 
-## v0.23
+## v0.24
 - Toekomstige spelerskeuzes compacter: koppelnummer en speler in één vaste kolom zodat meer zaterdagen tegelijk zichtbaar zijn.
 - Speler bewerken opent nu direct in een dialoog; compacte bewerkknoppen.
 - NAW-export samengevoegd onder één knop Exporteren met keuze PDF/Excel.
