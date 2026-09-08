@@ -1,10 +1,10 @@
-## v0.26
+## v0.27
 - Gamepunten staan nu compact direct achter alleen de laatste set; bij een extra set verhuist het veld automatisch mee.
 - De grote aparte kaart “Punten in lopende game” is verwijderd.
 - Het veld Opmerking is uit de uitslaginvoer verwijderd.
 - Beheer → Uitslagen bevat nu een 🧪 Testdag die niets in Firestore of in de stand opslaat.
 - Bestaande uitslagen blijven bewerkbaar en handmatige puntencorrectie blijft beschikbaar voor beheerders.
-- Versie/cache bijgewerkt naar v0.26.
+- Versie/cache bijgewerkt naar v0.27.
 
 ## v0.25
 - Lopende gamepunten toegevoegd aan uitslagberekening, los van de reden waarom een wedstrijd stopte.
