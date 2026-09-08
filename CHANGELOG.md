@@ -1,3 +1,12 @@
+# v0.29
+- Iedere vaste speler die die zaterdag daadwerkelijk meespeelt kan een nog ontbrekende uitslag van Baan 1 of Baan 2 invoeren.
+- Na opslaan is de uitslag voor spelers vergrendeld; alleen beheerders kunnen wijzigen of verwijderen.
+- Home toont automatisch de nieuwste zaterdag met opgeslagen uitslagen, per baan met spelers, score en punten.
+- Zaterdag heeft nu een apart tabblad Uitslagen met het volledige uitslagenarchief, nieuwste eerst.
+- Per speeldag staat hoeveel baanuitslagen zijn ingevoerd.
+- Stand wordt live uit opgeslagen uitslagen opgebouwd, zodat spelersinvoer direct zichtbaar is.
+- Gepubliceerde indelingen bewaren participantIds voor veilige spelersrechten in Firestore.
+
 ## v0.28
 - Spelers die op een gepubliceerde baan staan krijgen bij Zaterdag een knop **Uitslag invoeren**.
 - Na opslaan wordt de uitslag voor spelers vergrendeld; alleen een beheerder kan hem daarna wijzigen of verwijderen.
