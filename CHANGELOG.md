@@ -1,3 +1,13 @@
+# v0.30
+
+- Mijn koppel compacter gemaakt met alleen voornamen in speeldagkaarten.
+- Veilige wijzigingsmodus toegevoegd: keuzes zijn standaard vergrendeld.
+- Keuze invullen / wijzigen activeert pas de keuzeknoppen; daarna volgt bewust Keuze opslaan.
+- Na opslaan is de spelerskeuze direct gepubliceerd.
+- WhatsApp-spelersoverzicht toegevoegd aan Mijn koppel; geen uitslagen, wel wie daadwerkelijk heeft gespeeld.
+- WhatsApp-export toegevoegd bij Beheer → Spelers & koppels, zonder speelsterktes.
+- Geen Firestore-regelwijziging nodig ten opzichte van v0.29.
+
 # v0.29
 - Iedere vaste speler die die zaterdag daadwerkelijk meespeelt kan een nog ontbrekende uitslag van Baan 1 of Baan 2 invoeren.
 - Na opslaan is de uitslag voor spelers vergrendeld; alleen beheerders kunnen wijzigen of verwijderen.
