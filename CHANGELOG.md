@@ -1,3 +1,10 @@
+## v0.28
+- Spelers die op een gepubliceerde baan staan krijgen bij Zaterdag een knop **Uitslag invoeren**.
+- Na opslaan wordt de uitslag voor spelers vergrendeld; alleen een beheerder kan hem daarna wijzigen of verwijderen.
+- Wedstrijdweergaven gebruiken overal een **–** in plaats van VS/TEGEN.
+- Firestore-regels aangescherpt: spelers mogen een uitslag alleen aanmaken, niet later bijwerken.
+- Versie/cache bijgewerkt naar v0.28.
+
 ## v0.27
 - Gamepunten staan nu compact direct achter alleen de laatste set; bij een extra set verhuist het veld automatisch mee.
 - De grote aparte kaart “Punten in lopende game” is verwijderd.
