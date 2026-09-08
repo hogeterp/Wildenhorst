@@ -1,4 +1,15 @@
-# v0.30
+# v0.31
+- Compacte unieke namen op Home, Zaterdag en seizoensoverzicht (Eric R., Eric v.d.G., Marcel K., Marcel S.).
+- Mijn koppel WhatsApp-overzicht: hele seizoen voor beide spelers, inclusief gespeeld/ingevallen en totalen.
+- Beheer WhatsApp-export: volledige naam, e-mail en telefoon; geen speelsterkte.
+- Excel-export: inclusief speelsterkte.
+- PDF-export bij Spelers & koppels verwijderd.
+
+- Compacte unieke namen op Home, Zaterdag en seizoensoverzicht (o.a. Eric R., Eric v.d.G., Marcel K., Marcel S.).
+- Mijn koppel WhatsApp-overzicht bevat het hele seizoen voor beide koppelspelers plus totalen gespeeld/ingevallen.
+- Beheer WhatsApp-export bevat volledige namen, e-mail en telefoon; geen speelsterkte.
+- Excel-export bevat alle gegevens inclusief speelsterkte.
+- PDF-export bij Spelers & koppels verwijderd.
 
 - Mijn koppel compacter gemaakt met alleen voornamen in speeldagkaarten.
 - Veilige wijzigingsmodus toegevoegd: keuzes zijn standaard vergrendeld.

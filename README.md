@@ -1,6 +1,6 @@
-# Wildenhorst Badhoevedorp v0.30
+# Wildenhorst Badhoevedorp v0.31
 
-Belangrijk in v0.30:
+Belangrijk in v0.31:
 - Mijn koppel is compacter: volledige namen staan alleen bovenaan; per speeldag worden alleen voornamen gebruikt.
 - Speelt / Reserve / Afwezig zijn standaard vergrendeld om onbedoelde wijzigingen te voorkomen.
 - Tik eerst op Keuze invullen of Keuze wijzigen. Pas daarna worden de keuzes actief.
