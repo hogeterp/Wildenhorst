@@ -1,12 +1,15 @@
+## v0.26
+- Gamepunten staan nu compact direct achter alleen de laatste set; bij een extra set verhuist het veld automatisch mee.
+- De grote aparte kaart “Punten in lopende game” is verwijderd.
+- Het veld Opmerking is uit de uitslaginvoer verwijderd.
+- Beheer → Uitslagen bevat nu een 🧪 Testdag die niets in Firestore of in de stand opslaat.
+- Bestaande uitslagen blijven bewerkbaar en handmatige puntencorrectie blijft beschikbaar voor beheerders.
+- Versie/cache bijgewerkt naar v0.26.
+
 ## v0.25
-- Uitslagen: geen zoemer-vinkje meer.
-- Punten in de lopende game kunnen onafhankelijk worden ingevuld (0/15/30/40).
-- Bij gelijke games en gelijke gamepunten krijgt ieder 0,25 punt; bij een voorsprong in de lopende game krijgt de leider 0,5 punt.
-- Extra sets blijven mogelijk.
-- Opmerkingenveld heeft duidelijke voorbeelden.
-- Beheerder kan een opgeslagen uitslag openen, wijzigen en daarna de stand opnieuw laten berekenen.
-- Uitslagen worden ook gestructureerd met sets en lastGamePoints opgeslagen.
-- Firestore-regels uitgebreid voor de nieuwe uitslagvelden.
+- Lopende gamepunten toegevoegd aan uitslagberekening, los van de reden waarom een wedstrijd stopte.
+- Gelijke games en gelijke gamepunten geven ieder 0,25 punt; voorsprong in de lopende game geeft de leider 0,5 punt.
+- Opgeslagen uitslagen kunnen door beheerders worden bewerkt; handmatige puntencorrectie is mogelijk.
 
 ## v0.24
 - Hotfix: leeg scherm in v0.23 opgelost door foutieve functiedeclaratie te herstellen.
