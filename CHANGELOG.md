@@ -1,3 +1,11 @@
+## v0.34
+
+- Home toont voor beheerders een compact overzicht van het aantal definitieve spelers en de status van invallers.
+- Beheer → Indeling toont direct hoeveel spelers definitief zijn, hoeveel koppels nog moeten invullen en welke invallers ontbreken, wachten of geregeld zijn.
+- Automatische indeling wordt niet meer stil automatisch uitgevoerd bij het openen van de pagina.
+- Bij precies 3 spelers geeft Automatische indeling een duidelijke melding; alleen bij voldoende enkelspeltoestemming wordt een enkel voorgesteld en blijft de derde speler zichtbaar als niet ingedeeld.
+- Geen nieuwe Firestore-regels nodig ten opzichte van v0.33.
+
 ## v0.33
 - Vaste middenkolom voor het streepje in baanindelingen.
 - Enkelspelvoorkeur zichtbaar in spelersbeheer.

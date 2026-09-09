@@ -109,3 +109,6 @@
 .whatsapp-hub{margin-top:16px}
 .compact-setting{margin-top:10px}
 @media(max-width:430px){.home-court>div,.match.compact-match{grid-template-columns:minmax(0,1fr) 16px minmax(0,1fr)!important;column-gap:4px!important}}
+
+/* v0.34: direct overzicht voor beheerder */
+.admin-readiness{margin-top:9px;padding:10px;border:1px solid var(--line);border-radius:11px;background:#fff;display:grid;gap:4px}.admin-readiness>b{color:var(--g)}.admin-readiness span{display:block;font-size:.82rem}.admin-readiness.ready{background:#edf8f1}.admin-readiness.attention{background:#fffaf0}.lineup-status-card h3{margin:0 0 9px}.lineup-status-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}.lineup-status-grid>div{border:1px solid var(--line);border-radius:10px;padding:8px;text-align:center;background:#f8faf9}.lineup-status-grid b,.lineup-status-grid span{display:block}.lineup-status-grid b{font-size:1.2rem;color:var(--g)}.lineup-status-grid span{font-size:.68rem;color:var(--muted);margin-top:2px}.sub-status-list{display:grid;gap:4px;margin-top:8px;padding-top:8px;border-top:1px solid var(--line)}.sub-status-list span{font-size:.8rem}.sub-status-list.warning{color:#8a211b}.sub-status-list.pending{color:#805600}@media(max-width:520px){.lineup-status-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
