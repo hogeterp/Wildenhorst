@@ -1,3 +1,11 @@
+## v0.32
+- Compacte namen toegevoegd aan Stand en Toekomstige spelerskeuzes.
+- Seizoenmatrix op mobiel verticaal compacter gemaakt.
+- Baanregels op Home rond één centrale dash-kolom uitgelijnd.
+- WhatsApp-acties in Beheer → Indeling samengebracht.
+- WhatsApp-baanindeling gebruikt compacte unieke namen.
+- ‘Seizoen Seizoen’ in koppeloverzicht hersteld.
+
 # v0.31
 - Compacte unieke namen op Home, Zaterdag en seizoensoverzicht (Eric R., Eric v.d.G., Marcel K., Marcel S.).
 - Mijn koppel WhatsApp-overzicht: hele seizoen voor beide spelers, inclusief gespeeld/ingevallen en totalen.

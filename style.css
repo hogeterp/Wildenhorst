@@ -80,3 +80,22 @@
 .compact-match{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:nowrap;white-space:nowrap;font-weight:700}
 .compact-match strong{color:#176f43;flex:0 0 auto}
 @media(max-width:430px){.compact-match{font-size:16px;gap:7px}.court-card{padding-top:18px;padding-bottom:16px}}
+
+
+/* v0.32: compacte seizoenmatrix, stand en gecentreerde baanregels */
+.home-court>div{grid-template-columns:minmax(0,max-content) 18px minmax(0,max-content);justify-content:center;column-gap:8px}
+.home-court>div span:first-child,.home-court>div span:last-child{text-align:left}
+.home-court>div strong{text-align:center}
+.whatsapp-hub{margin-top:10px;margin-bottom:12px;padding:12px}
+.whatsapp-hub h3{margin:0 0 5px}.whatsapp-hub p{margin:0 0 9px;color:var(--muted)}
+.wa-hub-actions{display:flex;gap:7px;flex-wrap:wrap}.wa-hub-actions button,.whatsapp-hub #lineupShare button{width:auto;padding:8px 10px;font-size:.76rem}
+.whatsapp-hub #lineupShare{margin-top:7px}
+.future-table{font-size:.68rem;line-height:1}
+.future-table th,.future-table td{padding:2px 3px!important;height:25px;box-sizing:border-box}
+.future-table .sticky-player{min-width:112px!important;max-width:128px!important}
+.future-table th:not(.sticky-player),.future-table td:not(.sticky-player){min-width:37px!important;padding-left:2px!important;padding-right:2px!important}
+.future-table .compact-person{grid-template-columns:18px minmax(0,1fr);gap:3px;line-height:1;white-space:nowrap}
+.future-table .couple-mini{width:17px;height:17px;font-size:.58rem}
+.future-table .choice-code{width:18px;height:18px;font-size:.58rem;margin:0}
+.future-player-row{height:25px}
+@media(max-width:430px){.future-table{font-size:.64rem}.future-table th,.future-table td{height:23px}.future-player-row{height:23px}.future-table .sticky-player{min-width:106px!important;max-width:118px!important}.future-table .choice-code{width:17px;height:17px}.choice-legend{margin:5px 0;font-size:.66rem}.choice-legend .choice-code{width:18px;height:18px}.home-court>div{column-gap:6px}.home-court{padding:8px 0}}
