@@ -44,7 +44,7 @@ service cloud.firestore {
           ])
           && request.resource.data.substituteName is string
           && request.resource.data.substituteName.size() > 1
-          && (request.resource.data.substituteType == 'reserve' || request.resource.data.substituteType == 'external')
+          && (request.resource.data.substituteType == 'fixed' || request.resource.data.substituteType == 'reserve' || request.resource.data.substituteType == 'external')
           && request.resource.data.substituteApproval == 'pending'
           && request.resource.data.substituteSubmittedBy == request.auth.uid
           && request.resource.data.substituteSubmittedAt == request.time

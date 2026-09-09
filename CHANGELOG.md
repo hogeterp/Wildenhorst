@@ -1,3 +1,11 @@
+## v0.33
+- Vaste middenkolom voor het streepje in baanindelingen.
+- Enkelspelvoorkeur zichtbaar in spelersbeheer.
+- WhatsApp-hub en Banen wijzigen lager geplaatst in Beheer → Indeling.
+- Webapplink automatisch onder alle WhatsApp-berichten.
+- Vaste spelers kunnen door een afwezig koppel als vervanger worden voorgesteld, met beheerdergoedkeuring.
+- Firestore Rules uitgebreid voor vervangerstype `fixed`.
+
 ## v0.32
 - Compacte namen toegevoegd aan Stand en Toekomstige spelerskeuzes.
 - Seizoenmatrix op mobiel verticaal compacter gemaakt.
