@@ -1,3 +1,11 @@
+## v0.36
+- Automatische indeling houdt rekening met eerdere gepubliceerde baanindelingen in hetzelfde seizoen.
+- Herhaling van dezelfde teamgenoten wordt extra zwaar vermeden; ook herhaalde tegenstanders worden beperkt.
+- Speelsterkte blijft meewegen voor evenwichtige partijen.
+- Bij 6 spelers wordt de combinatie dubbel/enkel eveneens zo eerlijk mogelijk gekozen.
+- Beheerder kan de voorgestelde indeling nog steeds handmatig aanpassen of opnieuw laten indelen.
+- Geen nieuwe Firestore Rules nodig.
+
 ## v0.35
 - Stand verduidelijkt: punten uit sets zijn leidend.
 - Games alleen klein als aanvullende tiebreak-informatie; bij 0 games niet getoond.

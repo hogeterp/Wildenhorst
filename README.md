@@ -1,12 +1,11 @@
-# Wildenhorst Badhoevedorp v0.35
+# Wildenhorst Badhoevedorp v0.36
 
-Belangrijk in v0.35:
-- Stand verduidelijkt: competitiepunten uit sets staan centraal; games worden alleen klein als aanvullende tiebreak-informatie getoond en niet bij 0 games.
-- Baanindeling op Home en Zaterdag gebruikt een vaste middenkolom, zodat de streepjes van Baan 1 en Baan 2 exact onder elkaar staan.
-- Beheer → Spelers toont direct of een speler enkelspel accepteert.
-- Beheer → Indeling: WhatsApp en Banen wijzigen staan lager op de pagina, na de baanindeling/publicatie en vóór handmatig spelers aanwijzen.
-- Alle WhatsApp-concepten krijgen automatisch de link naar de Wildenhorst-webapp.
-- Een koppel met twee afwezige spelers kan nu ook een beschikbare vaste speler uit een ander koppel voorstellen als vervanger; goedkeuring door beheerder blijft verplicht.
-- Hiervoor zijn aangepaste Firestore Rules opgenomen; publiceer firestore.rules opnieuw.
+Belangrijk in v0.36:
+- Automatische baanindeling gebruikt nu ook eerdere gepubliceerde indelingen uit het seizoen.
+- De app probeert herhaling van dezelfde medespelers en tegenstanders te beperken.
+- Speelsterkte blijft meewegen zodat partijen zo gelijkwaardig mogelijk blijven.
+- Bij 6 spelers wordt ook de keuze van de enkelspelcombinatie op historie en speelsterkte beoordeeld.
+- Handmatig wijzigen en opnieuw indelen blijven mogelijk.
+- Geen nieuwe Firestore Rules nodig.
 
 Upload de 18 bestanden naar GitHub Pages.
