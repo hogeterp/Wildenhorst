@@ -1,3 +1,7 @@
+## v0.35
+- Stand verduidelijkt: punten uit sets zijn leidend.
+- Games alleen klein als aanvullende tiebreak-informatie; bij 0 games niet getoond.
+
 ## v0.34
 
 - Home toont voor beheerders een compact overzicht van het aantal definitieve spelers en de status van invallers.
