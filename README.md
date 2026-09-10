@@ -1,6 +1,8 @@
-# Wildenhorst Badhoevedorp v0.36
+# Wildenhorst Badhoevedorp v0.37
 
-Belangrijk in v0.36:
+Belangrijk in v0.37:
+- Beheer → Indeling toont inklapbare Speelhistorie per speler (met/tegen).
+- “Waarom deze indeling?” maakt de automatische keuze controleerbaar.
 - Automatische baanindeling gebruikt nu ook eerdere gepubliceerde indelingen uit het seizoen.
 - De app probeert herhaling van dezelfde medespelers en tegenstanders te beperken.
 - Speelsterkte blijft meewegen zodat partijen zo gelijkwaardig mogelijk blijven.

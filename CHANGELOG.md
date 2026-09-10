@@ -1,4 +1,7 @@
-## v0.36
+## v0.37
+- Speelhistorie zichtbaar voor beheerders: per speler hoe vaak met en tegen anderen gespeeld.
+- “Waarom deze indeling?” legt per baan uit hoeveel herhalingen de automatische indeling bevat.
+- Automatische indeling gebruikt dezelfde spelerhistorie transparant in de score.
 - Automatische indeling houdt rekening met eerdere gepubliceerde baanindelingen in hetzelfde seizoen.
 - Herhaling van dezelfde teamgenoten wordt extra zwaar vermeden; ook herhaalde tegenstanders worden beperkt.
 - Speelsterkte blijft meewegen voor evenwichtige partijen.
