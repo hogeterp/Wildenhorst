@@ -1,6 +1,6 @@
-# Wildenhorst Badhoevedorp v0.39
+# Wildenhorst Badhoevedorp v0.40
 
-Belangrijk in v0.39:
+Belangrijk in v0.40:
 - Hoofdbeheerder heeft onder Beheer → Seizoen de functie **Competitie schoon starten**.
 - Deze functie is bedoeld om na de testfase alle wedstrijd-/testgegevens van het huidige seizoen terug naar nul te zetten.
 - Er is een dubbele bevestiging: eerst een uitgebreide waarschuwing en daarna exact `WISSEN` typen.

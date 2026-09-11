@@ -1,3 +1,8 @@
+## v0.40
+- Reset testgegevens gerepareerd: geen invoerveld met WISSEN meer, maar twee duidelijke bevestigingen.
+- Na het wissen controleert de app Firestore en meldt hij als er toch testdocumenten zijn blijven staan.
+- Spelers, koppels, reserves, accounts, speeldata, speelsterktes, voorkeuren, seizoeninstellingen en spelregels blijven behouden.
+
 ## v0.39
 - Hoofdbeheerder kan het huidige seizoen na de testfase veilig schoon terugzetten naar nul.
 - Dubbele bevestiging: waarschuwing én exact `WISSEN` typen.

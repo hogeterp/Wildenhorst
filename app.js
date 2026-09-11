@@ -2,7 +2,7 @@ import{initializeApp}from'https://www.gstatic.com/firebasejs/12.18.0/firebase-ap
 import{getAuth,onAuthStateChanged,signInWithEmailAndPassword,signOut,sendPasswordResetEmail,createUserWithEmailAndPassword,setPersistence,browserLocalPersistence}from'https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js';
 import{getFirestore,doc,getDoc,collection,query,where,getDocs,orderBy,limit,writeBatch,setDoc,updateDoc,serverTimestamp,deleteDoc}from'https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js';
 const $=id=>document.getElementById(id),cfg=window.WILDENHORST_FIREBASE||{};let auth,db,user,profile,season;
-const APP_VERSION='0.39';
+const APP_VERSION='0.40';
 let testPlayer=null,activating=false,substituteContext=null,lineupState=null,newSeasonWizard=null;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const WEBAPP_URL='https://hogeterp.github.io/Wildenhorst/';
@@ -226,24 +226,41 @@ async function resetCurrentSeasonTestData(){
  const sid=seasonId(),btn=$('resetTestData'),msg=$('resetTestMsg');
  const first=confirm(`TESTGEGEVENS WISSEN?\n\nHiermee maak je ${season?.name||sid} volledig schoon voor de echte competitie.\n\nBLIJFT STAAN:\n• spelers, koppels en reserves\n• accounts en beheerders\n• speeldata en seizoeninstellingen\n• speelsterktes en enkelspelvoorkeuren\n• spelregels\n\nWORDT DEFINITIEF GEWIST:\n• alle spelerskeuzes en vervangers\n• alle baanindelingen\n• alle uitslagen en standen\n• gespeelde/invalbeurten en speelhistorie\n• alle betalingen\n\nDoorgaan?`);
  if(!first)return;
- const typed=prompt('Laatste controle. Typ WISSEN om alle testgegevens van het huidige seizoen definitief te verwijderen.');
- if(typed!=='WISSEN'){if(msg){msg.textContent='Wissen geannuleerd.';msg.className='message'}return}
+ const second=confirm('LAATSTE CONTROLE\n\nWeet je zeker dat alle testgegevens van dit seizoen definitief mogen worden gewist?\n\nDruk op OK om de competitie schoon op 0 te starten.');
+ if(!second){if(msg){msg.textContent='Wissen geannuleerd.';msg.className='message'}return}
  if(btn){btn.disabled=true;btn.textContent='Bezig met wissen…'};if(msg){msg.textContent='Testgegevens worden verwijderd…';msg.className='message'}
  try{
   const refs=[];
   const dates=await getDocs(collection(db,'seasons',sid,'playDates'));
   for(const d of dates.docs){
-   for(const sub of ['couplePlans','public','results']){const snap=await getDocs(collection(db,'seasons',sid,'playDates',d.id,sub));snap.docs.forEach(x=>refs.push(x.ref))}
+   for(const sub of ['couplePlans','public','results']){
+    const snap=await getDocs(collection(db,'seasons',sid,'playDates',d.id,sub));
+    snap.docs.forEach(x=>refs.push(x.ref));
+   }
   }
-  for(const sub of ['standings','payments']){const snap=await getDocs(collection(db,'seasons',sid,sub));snap.docs.forEach(x=>refs.push(x.ref))}
+  for(const sub of ['standings','payments']){
+   const snap=await getDocs(collection(db,'seasons',sid,sub));
+   snap.docs.forEach(x=>refs.push(x.ref));
+  }
   await deleteRefsInBatches(refs);
-  lineupState=null;substituteContext=null;
+  // Controle: na het wissen mogen de wedstrijd-/testcollecties echt leeg zijn.
+  let remaining=0;
+  const verifyDates=await getDocs(collection(db,'seasons',sid,'playDates'));
+  for(const d of verifyDates.docs){
+   for(const sub of ['couplePlans','public','results']) remaining+=(await getDocs(collection(db,'seasons',sid,'playDates',d.id,sub))).size;
+  }
+  for(const sub of ['standings','payments']) remaining+=(await getDocs(collection(db,'seasons',sid,sub))).size;
+  if(remaining)throw new Error(`Resetcontrole: ${remaining} testdocument(en) staan nog in Firestore.`);
+  lineupState=null;substituteContext=null;testPlayer=null;
   if(msg){msg.textContent=`✓ Klaar. ${refs.length} testdocumenten verwijderd. De competitie staat weer op nul.`;msg.className='message'}
   alert('Klaar. Alle testgegevens van het huidige seizoen zijn gewist. De competitie begint nu schoon vanaf nul.');
   await renderSeasonAdmin();
- }catch(e){console.error(e);if(msg){msg.textContent='Wissen is niet volledig gelukt. Er zijn geen spelers/koppels verwijderd. Probeer opnieuw of controleer de Firestore-regels.';msg.className='message error'}if(btn){btn.disabled=false;btn.textContent='🧹 Testgegevens wissen en op 0 starten'}}
+ }catch(e){
+  console.error(e);
+  if(msg){msg.textContent=`Wissen is niet volledig gelukt${e?.message?`: ${e.message}`:'.'} Spelers, koppels en reserves zijn niet verwijderd.`;msg.className='message error'}
+  if(btn){btn.disabled=false;btn.textContent='🧹 Testgegevens wissen en op 0 starten'}
+ }
 }
-
 async function startNewSeasonWizard(){
  if(!head())return;
  const ok=confirm(`Nieuw seizoen starten?\n\nWeet je dit zeker?\n\nHet huidige seizoen ${season?.name||seasonId()} wordt bij de definitieve stap afgesloten en als archief bewaard. Alle uitslagen, standen, betalingen, spelerskeuzes, baanindelingen en invalbeurten blijven bewaard.\n\nJe kunt eerst de nieuwe data, vaste spelers, reserves en koppels controleren. Er wordt nu nog niets gewijzigd.`);
