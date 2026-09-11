@@ -1,10 +1,17 @@
+## v0.39
+- Hoofdbeheerder kan het huidige seizoen na de testfase veilig schoon terugzetten naar nul.
+- Dubbele bevestiging: waarschuwing én exact `WISSEN` typen.
+- Wist spelerskeuzes en vervangers, gepubliceerde baanindelingen, uitslagen, stand, gespeelde/invalbeurten, speelhistorie en betalingen.
+- Behoudt spelers, koppels, reserves, accounts/beheerders, speeldata, speelsterktes, enkelspelvoorkeuren, seizoeninstellingen en spelregels.
+- Geen nieuwe Firestore Rules nodig.
+
 ## v0.38
 - Optionele finalezaterdag per seizoen; laatste actieve speeldag is de finale.
 - Automatische finale-indeling: 1+4 tegen 2+3 en 5+8 tegen 6+7 op basis van de stand na de voorlaatste speeldag.
 - Competitiepunten op de finale tellen dubbel; invallers blijven maximaal 2 punten krijgen; enkelspel blijft 0 punten.
 - Finaleregels toegevoegd aan Uitleg / spelregels en het beheerderhandboek.
 
-## v0.38
+## v0.37
 - Speelhistorie zichtbaar voor beheerders: per speler hoe vaak met en tegen anderen gespeeld.
 - “Waarom deze indeling?” legt per baan uit hoeveel herhalingen de automatische indeling bevat.
 - Automatische indeling gebruikt dezelfde spelerhistorie transparant in de score.

@@ -1,13 +1,11 @@
-# Wildenhorst Badhoevedorp v0.38
+# Wildenhorst Badhoevedorp v0.39
 
-Belangrijk in v0.38:
-- Beheer → Indeling toont inklapbare Speelhistorie per speler (met/tegen).
-- “Waarom deze indeling?” maakt de automatische keuze controleerbaar.
-- Automatische baanindeling gebruikt nu ook eerdere gepubliceerde indelingen uit het seizoen.
-- De app probeert herhaling van dezelfde medespelers en tegenstanders te beperken.
-- Speelsterkte blijft meewegen zodat partijen zo gelijkwaardig mogelijk blijven.
-- Bij 6 spelers wordt ook de keuze van de enkelspelcombinatie op historie en speelsterkte beoordeeld.
-- Handmatig wijzigen en opnieuw indelen blijven mogelijk.
-- Geen nieuwe Firestore Rules nodig.
+Belangrijk in v0.39:
+- Hoofdbeheerder heeft onder Beheer → Seizoen de functie **Competitie schoon starten**.
+- Deze functie is bedoeld om na de testfase alle wedstrijd-/testgegevens van het huidige seizoen terug naar nul te zetten.
+- Er is een dubbele bevestiging: eerst een uitgebreide waarschuwing en daarna exact `WISSEN` typen.
+- Wordt gewist: spelerskeuzes/vervangers, gepubliceerde baanindelingen, uitslagen, stand, gespeelde/invalbeurten, speelhistorie en betalingen.
+- Blijft behouden: spelers, koppels, reserves, accounts/beheerders, speeldata, speelsterktes, enkelspelvoorkeuren, seizoeninstellingen en spelregels.
+- Geen nieuwe Firestore Rules nodig ten opzichte van v0.38.
 
 Upload de 18 bestanden naar GitHub Pages.
