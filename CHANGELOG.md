@@ -1,3 +1,6 @@
+## v1.0
+- Eerste definitieve release. Functioneel gelijk aan v0.41; alleen versienummer/cache-referenties bijgewerkt.
+
 ## v0.40
 - Reset testgegevens gerepareerd: geen invoerveld met WISSEN meer, maar twee duidelijke bevestigingen.
 - Na het wissen controleert de app Firestore en meldt hij als er toch testdocumenten zijn blijven staan.

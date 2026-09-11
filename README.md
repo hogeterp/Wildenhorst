@@ -1,6 +1,8 @@
-# Wildenhorst Badhoevedorp v0.41
+# Wildenhorst Badhoevedorp v1.0
 
-Belangrijk in v0.41:
+v1.0 is de eerste definitieve release en bevat functioneel dezelfde app als v0.41.
+
+Belangrijk in de definitieve release:
 - Spelregels verduidelijkt voor de zoemer: bij gelijke gamestand (minimaal 3 games) wordt nog één beslissend punt gespeeld, bijvoorbeeld bij 3–3 0–0 en 3–3 30–30.
 - Invallerregel volgens Carels uitleg verduidelijkt: alleen een volledig afwezig koppel dat door een invaller wordt vertegenwoordigd is gemaximeerd op 2 competitiepunten.
 - Is minimaal één vaste speler van een koppel aanwezig, dan kan dat koppel de volledige punten behalen.
