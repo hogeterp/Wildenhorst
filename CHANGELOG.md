@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.3
+- E-mailtoegang wordt nu direct opnieuw gesynchroniseerd wanneer de hoofdbeheerder een speler- of reserve-e-mailadres wijzigt.
+- Bij Beheer → Spelers staat voor de hoofdbeheerder een knop “E-mailtoegang vernieuwen” om alle bekende e-mailadressen handmatig opnieuw te synchroniseren.
+- Dit voorkomt dat een correct geregistreerd e-mailadres ten onrechte als onbekend wordt gemeld bij Account activeren.
+
+# Changelog
+
 ## v1.2
 - Op Home ziet de hoofdbeheerder nu duidelijk hoeveel accountaanvragen op goedkeuring wachten.
 - De melding is aanklikbaar en opent direct Beheer → Beheerders.
