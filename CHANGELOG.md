@@ -1,3 +1,10 @@
+# Changelog
+
+## v1.2
+- Op Home ziet de hoofdbeheerder nu duidelijk hoeveel accountaanvragen op goedkeuring wachten.
+- De melding is aanklikbaar en opent direct Beheer → Beheerders.
+- De teller wordt rechtstreeks uit de openstaande accountaanvragen geladen.
+
 ## v1.1
 - Accountaanvragen kunnen door de hoofdbeheerder worden goedgekeurd of geweigerd.
 - Home toont een melding wanneer accounts op goedkeuring wachten.
@@ -122,7 +129,6 @@
 - Hotfix: leeg scherm in v0.23 opgelost door foutieve functiedeclaratie te herstellen.
 - Extra controle toegevoegd zodat appfouten zichtbaar kunnen worden gemaakt in plaats van een leeg scherm.
 
-# Changelog
 
 ## v0.24
 - Toekomstige spelerskeuzes compacter: koppelnummer en speler in één vaste kolom zodat meer zaterdagen tegelijk zichtbaar zijn.
