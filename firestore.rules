@@ -66,10 +66,18 @@ service cloud.firestore {
         && request.resource.data.status == 'pending'
         && request.resource.data.participantType == 'pending';
       allow update: if headAdmin() && !self(uid) && resource.data.status == 'pending'
-        && request.resource.data.status == 'active'
+        && (request.resource.data.status == 'active' || request.resource.data.status == 'rejected')
         && request.resource.data.role == 'player'
         && request.resource.data.email == resource.data.email;
       allow delete: if false;
+    }
+
+
+    match /accessEmails/{emailHash} {
+      // Alleen een gerichte controle op een hash is openbaar; de lijst zelf is niet uitleesbaar.
+      allow get: if true;
+      allow list: if false;
+      allow create, update, delete: if headAdmin();
     }
 
     match /seasons/{seasonId} {

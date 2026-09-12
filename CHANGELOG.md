@@ -1,3 +1,13 @@
+## v1.1
+- Accountaanvragen kunnen door de hoofdbeheerder worden goedgekeurd of geweigerd.
+- Home toont een melding wanneer accounts op goedkeuring wachten.
+- Account activeren controleert vooraf of het e-mailadres bij een actieve vaste speler of reserve bekend is.
+- Onbekend e-mailadres krijgt de melding dat het e-mailadres niet bekend is bij de beheerder.
+- Toegestane e-mailadressen worden privacyvriendelijk als SHA-256-hash gecontroleerd; e-mailadressen worden niet openbaar gemaakt.
+- Firestore-regels uitgebreid voor gerichte e-mailcontrole en weigeren van accountaanvragen.
+- Bij Account activeren staat duidelijk dat de aanvraag eerst door de beheerder moet worden goedgekeurd.
+- Beheer → Spelers toont per vaste speler en reserve de accountstatus: geactiveerd, wacht op goedkeuring, geweigerd of nog niet geactiveerd.
+
 ## v1.0
 - Eerste definitieve release. Functioneel gelijk aan v0.41; alleen versienummer/cache-referenties bijgewerkt.
 
