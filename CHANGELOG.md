@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.7
+- Een speler kan nu **Afwezig** opslaan als de partner voor die zaterdag nog niets heeft ingevuld.
+- Zo'n gedeeltelijke keuze wordt bewaard, maar telt nog niet als volledig ingevuld koppel.
+- Zodra de partner invult, wordt de normale combinatiecontrole weer gebruikt.
+- Als beide spelers afwezig zijn, blijft de bestaande vervanger-flow werken.
+- Firestore Rules aangepast om uitsluitend deze veilige gedeeltelijke situatie toe te staan.
+- Cache- en bestandsversie verhoogd naar v1.7.
+
 ## v1.6
 - E-mailadres wijzigen bij Beheer → Spelers & koppels geeft niet langer onterecht “Opslaan lukt niet”.
 - E-mailtoegang wordt bij een wijziging gericht bijgewerkt: het oude e-mailadres wordt verwijderd en het nieuwe toegevoegd, zonder de afgeschermde `accessEmails`-lijst uit te lezen.
