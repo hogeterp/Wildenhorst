@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.5
+- Privé-opmerking bij Mijn koppel herkent de ingelogde speler nu robuuster: eerst via playerId/account-id en, voor bestaande accounts zonder playerId, veilig via de naam binnen het eigen koppel.
+- Hierdoor verschijnt “📝 Mijn opmerking (alleen voor mij)” ook bij bestaande spelersaccounts zoals bedoeld.
+- Privacy-opslag en Firestore-regels uit v1.4 blijven ongewijzigd: de notitie blijft uitsluitend gekoppeld aan het eigen ingelogde uid.
+- Cache- en bestandsversie verhoogd naar v1.5.
+
 ## v1.4
 - De gele melding voor openstaande accountaanvragen op Home opent nu rechtstreeks Beheer → Beheerders, zonder dat de Seizoen-inhoud eroverheen kan laden.
 - Per speelzaterdag kan een speler bij zijn eigen naam een privé-opmerking van maximaal 300 tekens bewaren.
