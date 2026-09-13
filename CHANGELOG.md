@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.6
+- E-mailadres wijzigen bij Beheer → Spelers & koppels geeft niet langer onterecht “Opslaan lukt niet”.
+- E-mailtoegang wordt bij een wijziging gericht bijgewerkt: het oude e-mailadres wordt verwijderd en het nieuwe toegevoegd, zonder de afgeschermde `accessEmails`-lijst uit te lezen.
+- De bestaande Firestore-privacyregel `allow list: if false` kan daardoor ongewijzigd blijven.
+- De algemene knop “E-mailtoegang vernieuwen” schrijft alleen de actuele toegestane e-mailhashes en probeert de collectie niet meer te lezen.
+- Cache- en bestandsversie verhoogd naar v1.6.
+
 ## v1.5
 - Privé-opmerking bij Mijn koppel herkent de ingelogde speler nu robuuster: eerst via playerId/account-id en, voor bestaande accounts zonder playerId, veilig via de naam binnen het eigen koppel.
 - Hierdoor verschijnt “📝 Mijn opmerking (alleen voor mij)” ook bij bestaande spelersaccounts zoals bedoeld.

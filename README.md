@@ -1,4 +1,6 @@
-# Wildenhorst Badhoevedorp v1.5
+# Wildenhorst Badhoevedorp v1.6
+
+v1.6 lost een fout op bij het wijzigen van een e-mailadres in Beheer → Spelers & koppels. De hoofdbeheerder synchroniseert de toegang nu gericht op het oude en nieuwe e-mailadres, zonder de beveiligde `accessEmails`-collectie als lijst te hoeven uitlezen. Daardoor kan de wijziging worden opgeslagen terwijl de bestaande privacyregel `allow list: if false` behouden blijft. Ook is de service-worker/cache expliciet naar v1.6 verhoogd.
 
 v1.5 bouwt voort op v1.4. De privé-opmerking herkent nu ook bestaande spelersaccounts waarbij playerId nog niet aan het accountprofiel is gekoppeld. De eerdere v1.4-wijzigingen blijven behouden: de melding voor openstaande accountaanvragen op Home opent nu direct Beheer → Beheerders met de aanvragen, en iedere speler kan per zaterdag een technisch afgeschermde privé-opmerking bij de eigen spelerskeuze bewaren. Die opmerking is uitsluitend leesbaar en wijzigbaar door het eigen ingelogde account.
 
