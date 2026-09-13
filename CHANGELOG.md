@@ -1,3 +1,9 @@
+## v1.12
+- Toekomstige spelerskeuzes toegevoegd onder Meer voor alle ingelogde spelers.
+- Publieke weergave is alleen-lezen en gebruikt het bestaande publieke rooster plus de toegankelijke spelerskeuzes.
+- Beheerweergave blijft bestaan.
+- Cache- en assetversies gelijkgetrokken naar v1.12.
+
 ## v1.11
 - Meerdere open speelzaterdagen tegelijk invullen via Mijn koppel.
 - Een individuele keuze Afwezig kan worden bewaard terwijl de partner nog niet heeft gekozen.
