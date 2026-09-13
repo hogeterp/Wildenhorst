@@ -1,10 +1,10 @@
-# Wildenhorst Badhoevedorp v1.9
+# Wildenhorst Badhoevedorp v1.10
 
-## Nieuw in v1.9
-- Op Home ziet iedere ingelogde speler nu duidelijk welk koppel voor de eerstvolgende speelzaterdag nog een vervanger zoekt.
-- De melding verschijnt alleen als beide spelers van dat koppel afwezig zijn en er nog geen vervanger is geregeld.
-- Zodra een vervanger is goedgekeurd, verdwijnt de zoekmelding automatisch.
-- Alle functies uit v1.8 blijven behouden.
+## Nieuw in v1.10
+- Home controleert nu alle komende speelzaterdagen op koppels waarvan beide spelers afwezig zijn en waarvoor nog geen goedgekeurde vervanger is geregeld.
+- Daardoor verschijnt bijvoorbeeld ook een melding voor 10 oktober wanneer de eerstvolgende speeldag nog 3 oktober is.
+- Een voorgestelde vervanger die nog op goedkeuring wacht blijft zichtbaar als openstaande zoekactie, met een extra melding dat goedkeuring nog nodig is.
+- Alle functies uit v1.9 blijven behouden.
 
 ## Installatie
-Upload alle 18 bestanden naar GitHub Pages. De meegeleverde `firestore.rules` zijn inhoudelijk dezelfde regels als in v1.8; voor deze v1.9-wijziging hoef je de Firestore Rules niet opnieuw te publiceren als v1.7/v1.8 al correct staat.
+Upload alle 18 bestanden naar GitHub Pages. Voor deze v1.10-wijziging hoeven de Firestore Rules niet opnieuw te worden gepubliceerd als de v1.7/v1.8-regels al correct actief zijn.

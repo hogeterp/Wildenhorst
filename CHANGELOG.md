@@ -1,3 +1,9 @@
+## v1.10
+- Home zoekt nu over alle toekomstige speeldagen naar koppels die beide afwezig zijn en nog geen goedgekeurde vervanger hebben.
+- De melding “🔎 Vervanger gezocht” is daardoor niet langer beperkt tot alleen de eerstvolgende zaterdag.
+- Een vervanger in afwachting van goedkeuring blijft als openstaande vervanger zichtbaar.
+- Cache- en appversie verhoogd naar v1.10.
+
 ## v1.9
 - Home toont nu voor alle ingelogde spelers een duidelijke melding wanneer een koppel beide spelers afwezig heeft en nog een vervanger zoekt.
 - De melding noemt het betreffende koppel en de eerstvolgende speeldatum.
