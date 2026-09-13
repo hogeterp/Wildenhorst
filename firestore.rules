@@ -109,6 +109,27 @@ service cloud.firestore {
         allow create, update: if admin();
         allow delete: if headAdmin();
 
+        match /privateNotes/{uid} {
+          // v1.4: een privé-opmerking is uitsluitend voor het ingelogde account zelf.
+          // Ook beheerders en de hoofdbeheerder krijgen hier bewust geen leesrecht.
+          allow get: if active() && self(uid);
+          allow list: if false;
+          allow create: if active() && self(uid)
+            && request.resource.data.keys().hasOnly(['ownerUid','text','updatedAt'])
+            && request.resource.data.ownerUid == request.auth.uid
+            && request.resource.data.text is string
+            && request.resource.data.text.size() <= 300
+            && request.resource.data.updatedAt == request.time;
+          allow update: if active() && self(uid)
+            && resource.data.ownerUid == request.auth.uid
+            && request.resource.data.ownerUid == request.auth.uid
+            && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['text','updatedAt'])
+            && request.resource.data.text is string
+            && request.resource.data.text.size() <= 300
+            && request.resource.data.updatedAt == request.time;
+          allow delete: if active() && self(uid);
+        }
+
         match /couplePlans/{coupleId} {
           allow read: if active();
           allow create: if admin() || (

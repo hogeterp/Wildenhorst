@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.4
+- De gele melding voor openstaande accountaanvragen op Home opent nu rechtstreeks Beheer → Beheerders, zonder dat de Seizoen-inhoud eroverheen kan laden.
+- Per speelzaterdag kan een speler bij zijn eigen naam een privé-opmerking van maximaal 300 tekens bewaren.
+- Privé-opmerkingen staan in een aparte Firestore-subcollectie per speeldag en zijn uitsluitend via het eigen ingelogde uid-document leesbaar en wijzigbaar. Ook beheerders en de hoofdbeheerder hebben geen leesrecht.
+- Privé-opmerkingen worden niet gebruikt in WhatsApp, baanindeling, uitslagen, standen of beheer-overzichten.
+- Testweergave toont geen privé-opmerkingen.
+
 ## v1.3
 - E-mailtoegang wordt nu direct opnieuw gesynchroniseerd wanneer de hoofdbeheerder een speler- of reserve-e-mailadres wijzigt.
 - Bij Beheer → Spelers staat voor de hoofdbeheerder een knop “E-mailtoegang vernieuwen” om alle bekende e-mailadressen handmatig opnieuw te synchroniseren.

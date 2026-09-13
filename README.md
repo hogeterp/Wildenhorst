@@ -1,6 +1,6 @@
-# Wildenhorst Badhoevedorp v1.3
+# Wildenhorst Badhoevedorp v1.4
 
-v1.3 bouwt voort op v1.0 met duidelijker en veiliger accountbeheer: aanvragen kunnen worden geweigerd, openstaande aanvragen staan op Home, onbekende e-mailadressen worden vóór accountaanmaak tegengehouden en Beheer → Spelers laat per deelnemer de accountstatus zien.
+v1.4 bevat twee gerichte wijzigingen: de melding voor openstaande accountaanvragen op Home opent nu direct Beheer → Beheerders met de aanvragen, en iedere speler kan per zaterdag een technisch afgeschermde privé-opmerking bij de eigen spelerskeuze bewaren. Die opmerking is uitsluitend leesbaar en wijzigbaar door het eigen ingelogde account.
 
 Belangrijk in de definitieve release:
 - Spelregels verduidelijkt voor de zoemer: bij gelijke gamestand (minimaal 3 games) wordt nog één beslissend punt gespeeld, bijvoorbeeld bij 3–3 0–0 en 3–3 30–30.
