@@ -13,22 +13,15 @@ service cloud.firestore {
           || (b == 'speelt' && (a == 'reserve' || a == 'afwezig'))
           || (a == 'afwezig' && b == 'afwezig');
     }
-    // v1.7: één speler mag alvast Afwezig opslaan terwijl de partner nog niets heeft gekozen.
-    function validPlanStatus(s){ return s == '' || validStatus(s); }
-    function validPlan(a,b){
-      return validPair(a,b)
-          || (a == 'afwezig' && b == '')
-          || (b == 'afwezig' && a == '');
-    }
     function validCouplePlan(seasonId, coupleId){
       let c = get(/databases/$(database)/documents/seasons/$(seasonId)/couples/$(coupleId));
       return request.resource.data.keys().hasOnly(['coupleId','member1Id','member1Status','member2Id','member2Status','updatedBy','updatedAt'])
           && request.resource.data.coupleId == coupleId
           && request.resource.data.member1Id == c.data.memberIds[0]
           && request.resource.data.member2Id == c.data.memberIds[1]
-          && validPlanStatus(request.resource.data.member1Status)
-          && validPlanStatus(request.resource.data.member2Status)
-          && validPlan(request.resource.data.member1Status, request.resource.data.member2Status)
+          && validStatus(request.resource.data.member1Status)
+          && validStatus(request.resource.data.member2Status)
+          && validPair(request.resource.data.member1Status, request.resource.data.member2Status)
           && request.resource.data.updatedBy == request.auth.uid
           && request.resource.data.updatedAt == request.time;
     }

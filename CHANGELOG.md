@@ -1,3 +1,9 @@
+## v1.8
+- In **Toekomstige spelerskeuzes** verschijnt een blauwe **I** zodra beide vaste spelers afwezig zijn en een invaller is goedgekeurd.
+- De **A** blijft zichtbaar: de I staat ernaast, zodat duidelijk blijft dat de vaste speler afwezig is.
+- Per koppel wordt de I één keer getoond (op de eerste spelersregel), zodat één invaller niet dubbel wordt weergegeven.
+- Geen wijziging aan Firestore-regels nodig voor deze versie.
+
 # Changelog
 
 ## v1.7

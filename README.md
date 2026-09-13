@@ -1,9 +1,11 @@
-# Wildenhorst Badhoevedorp v1.7
+# Wildenhorst Badhoevedorp v1.8
 
-v1.7 maakt de spelerskeuze flexibeler: een speler kan nu **Afwezig** opslaan terwijl de partner voor die zaterdag nog niets heeft ingevuld. De speeldag blijft voor het koppel als “nog niet volledig ingevuld” gelden totdat de partner ook een keuze heeft gemaakt. Als beide spelers afwezig zijn, blijft de bestaande vervanger-flow actief.
+## Nieuw in v1.8
+In **Beheer → Seizoen → Toekomstige spelerskeuzes** is nu ook zichtbaar wanneer voor een volledig afwezig koppel een invaller is geregeld. Beide vaste spelers blijven met een rode **A** als afwezig zichtbaar. Zodra de invaller is goedgekeurd, verschijnt daarnaast één blauwe **I** bij de eerste spelersregel van dat koppel. Zo wordt één invaller niet dubbel weergegeven.
 
-De Firestore-regels zijn hierop aangepast, zodat deze gedeeltelijke keuze ook veilig kan worden opgeslagen. De privé-opmerking uit v1.5 en de e-mailfix uit v1.6 blijven behouden. Cache- en bestandsversies zijn verhoogd naar v1.7.
+Legenda: **S** = Speelt, **R** = Reserve, **A** = Afwezig, **I** = Invaller geregeld, **–** = Nog niet ingevuld.
 
-## Publiceren
+Alle eerdere functies uit v1.7 blijven behouden, waaronder het gedeeltelijk opslaan van Afwezig, privé-opmerkingen en de e-mailfix.
 
-Upload alle 18 bestanden naar GitHub Pages. **Belangrijk:** publiceer ook de meegeleverde `firestore.rules` in Firebase, omdat v1.7 een nieuwe toegestane spelerskeuze toevoegt.
+## Installatie
+Upload alle 18 bestanden naar GitHub Pages. De meegeleverde `firestore.rules` zijn inhoudelijk dezelfde regels als in v1.7; als die al gepubliceerd zijn, hoef je voor alleen deze v1.8-wijziging de Firestore Rules niet opnieuw te publiceren.
