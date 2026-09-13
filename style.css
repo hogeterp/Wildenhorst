@@ -132,3 +132,8 @@
 /* v1.8: invaller zichtbaar in toekomstige spelerskeuzes */
 .choice-code-wrap{display:inline-flex;align-items:center;justify-content:center;gap:3px;white-space:nowrap}
 .choice-code.substitute{background:#dbeafe;color:#1d4ed8;border:1px solid #93c5fd}
+
+
+/* v1.9: vervanger gezocht zichtbaar op Home voor alle spelers */
+.home-sub-search{display:grid;gap:7px;margin:12px 0;padding:13px 14px;border:1px solid #e2b7b3;border-radius:14px;background:#fff1ef;color:#5f201b}
+.home-sub-search>b{font-size:1rem}.home-sub-search span{display:block;line-height:1.35}.home-sub-search strong{color:#3f1713}

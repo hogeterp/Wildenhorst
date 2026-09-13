@@ -1,3 +1,8 @@
+## v1.9
+- Home toont nu voor alle ingelogde spelers een duidelijke melding wanneer een koppel beide spelers afwezig heeft en nog een vervanger zoekt.
+- De melding noemt het betreffende koppel en de eerstvolgende speeldatum.
+- Na goedkeuring van een vervanger verdwijnt de zoekmelding automatisch.
+
 ## v1.8
 - In **Toekomstige spelerskeuzes** verschijnt een blauwe **I** zodra beide vaste spelers afwezig zijn en een invaller is goedgekeurd.
 - De **A** blijft zichtbaar: de I staat ernaast, zodat duidelijk blijft dat de vaste speler afwezig is.

@@ -1,11 +1,10 @@
-# Wildenhorst Badhoevedorp v1.8
+# Wildenhorst Badhoevedorp v1.9
 
-## Nieuw in v1.8
-In **Beheer → Seizoen → Toekomstige spelerskeuzes** is nu ook zichtbaar wanneer voor een volledig afwezig koppel een invaller is geregeld. Beide vaste spelers blijven met een rode **A** als afwezig zichtbaar. Zodra de invaller is goedgekeurd, verschijnt daarnaast één blauwe **I** bij de eerste spelersregel van dat koppel. Zo wordt één invaller niet dubbel weergegeven.
-
-Legenda: **S** = Speelt, **R** = Reserve, **A** = Afwezig, **I** = Invaller geregeld, **–** = Nog niet ingevuld.
-
-Alle eerdere functies uit v1.7 blijven behouden, waaronder het gedeeltelijk opslaan van Afwezig, privé-opmerkingen en de e-mailfix.
+## Nieuw in v1.9
+- Op Home ziet iedere ingelogde speler nu duidelijk welk koppel voor de eerstvolgende speelzaterdag nog een vervanger zoekt.
+- De melding verschijnt alleen als beide spelers van dat koppel afwezig zijn en er nog geen vervanger is geregeld.
+- Zodra een vervanger is goedgekeurd, verdwijnt de zoekmelding automatisch.
+- Alle functies uit v1.8 blijven behouden.
 
 ## Installatie
-Upload alle 18 bestanden naar GitHub Pages. De meegeleverde `firestore.rules` zijn inhoudelijk dezelfde regels als in v1.7; als die al gepubliceerd zijn, hoef je voor alleen deze v1.8-wijziging de Firestore Rules niet opnieuw te publiceren.
+Upload alle 18 bestanden naar GitHub Pages. De meegeleverde `firestore.rules` zijn inhoudelijk dezelfde regels als in v1.8; voor deze v1.9-wijziging hoef je de Firestore Rules niet opnieuw te publiceren als v1.7/v1.8 al correct staat.
