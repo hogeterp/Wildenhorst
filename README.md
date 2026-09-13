@@ -1,10 +1,11 @@
-# Wildenhorst Badhoevedorp v1.10
+# Wildenhorst Badhoevedorp v1.11
 
-## Nieuw in v1.10
-- Home controleert nu alle komende speelzaterdagen op koppels waarvan beide spelers afwezig zijn en waarvoor nog geen goedgekeurde vervanger is geregeld.
-- Daardoor verschijnt bijvoorbeeld ook een melding voor 10 oktober wanneer de eerstvolgende speeldag nog 3 oktober is.
-- Een voorgestelde vervanger die nog op goedkeuring wacht blijft zichtbaar als openstaande zoekactie, met een extra melding dat goedkeuring nog nodig is.
-- Alle functies uit v1.9 blijven behouden.
+## Nieuw in v1.11
+- Bij Mijn koppel staat nu **📅 Meerdere zaterdagen invullen**. Een speler kan meerdere open speelzaterdagen aanvinken en in één keer Speelt, Reserve of Afwezig opslaan.
+- Afwezig kan ook worden opgeslagen wanneer de partner nog niets heeft ingevuld. De partner kan zijn keuze later aanvullen.
+- De melding **Vervanger gezocht** op Home begint nu met het koppelnummer, bijvoorbeeld **Koppel 6 · Eric & Bas**.
+- In verkorte naamweergaven gebruikt de app alleen de voornaam als die uniek is. Komt dezelfde voornaam voor bij vaste spelers of reserves, dan wordt een achternaam-initiaal toegevoegd, bijvoorbeeld Marcel K. en Marcel S.
+- Alle functies uit v1.10 blijven behouden.
 
 ## Installatie
-Upload alle 18 bestanden naar GitHub Pages. Voor deze v1.10-wijziging hoeven de Firestore Rules niet opnieuw te worden gepubliceerd als de v1.7/v1.8-regels al correct actief zijn.
+Upload alle 18 bestanden naar GitHub Pages. **Publiceer bij v1.11 ook `firestore.rules` opnieuw in Firebase**, omdat de regels zijn aangepast zodat een speler Afwezig kan opslaan terwijl de partner nog niets heeft ingevuld.

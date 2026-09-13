@@ -1,3 +1,11 @@
+## v1.11
+- Meerdere open speelzaterdagen tegelijk invullen via Mijn koppel.
+- Een individuele keuze Afwezig kan worden bewaard terwijl de partner nog niet heeft gekozen.
+- Home toont bij Vervanger gezocht eerst het koppelnummer.
+- Verkorte namen gebruiken alleen een achternaam-initiaal wanneer dezelfde voornaam bij vaste spelers/reserves meer dan één keer voorkomt.
+- Firestore-regels aangepast voor de gedeeltelijke Afwezig-keuze.
+- Cache- en appversie verhoogd naar v1.11.
+
 ## v1.10
 - Home zoekt nu over alle toekomstige speeldagen naar koppels die beide afwezig zijn en nog geen goedgekeurde vervanger hebben.
 - De melding “🔎 Vervanger gezocht” is daardoor niet langer beperkt tot alleen de eerstvolgende zaterdag.

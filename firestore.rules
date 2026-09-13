@@ -8,10 +8,16 @@ service cloud.firestore {
     function headAdmin(){ return active() && me().data.role == 'headAdmin'; }
     function self(uid){ return signedIn() && request.auth.uid == uid; }
     function validStatus(s){ return s == 'speelt' || s == 'reserve' || s == 'afwezig'; }
+    function validStatusOrBlank(s){ return s == '' || validStatus(s); }
     function validPair(a,b){
       return (a == 'speelt' && (b == 'reserve' || b == 'afwezig'))
           || (b == 'speelt' && (a == 'reserve' || a == 'afwezig'))
           || (a == 'afwezig' && b == 'afwezig');
+    }
+    function acceptablePair(a,b){
+      return validPair(a,b)
+          || (a == 'afwezig' && b == '')
+          || (b == 'afwezig' && a == '');
     }
     function validCouplePlan(seasonId, coupleId){
       let c = get(/databases/$(database)/documents/seasons/$(seasonId)/couples/$(coupleId));
@@ -19,9 +25,9 @@ service cloud.firestore {
           && request.resource.data.coupleId == coupleId
           && request.resource.data.member1Id == c.data.memberIds[0]
           && request.resource.data.member2Id == c.data.memberIds[1]
-          && validStatus(request.resource.data.member1Status)
-          && validStatus(request.resource.data.member2Status)
-          && validPair(request.resource.data.member1Status, request.resource.data.member2Status)
+          && validStatusOrBlank(request.resource.data.member1Status)
+          && validStatusOrBlank(request.resource.data.member2Status)
+          && acceptablePair(request.resource.data.member1Status, request.resource.data.member2Status)
           && request.resource.data.updatedBy == request.auth.uid
           && request.resource.data.updatedAt == request.time;
     }
