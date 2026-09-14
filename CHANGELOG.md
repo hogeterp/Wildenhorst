@@ -1,3 +1,12 @@
+## v1.14
+- Klikdetails op de drie Home-overzichtsvakken gerepareerd; handlers worden nu pas gekoppeld nadat Home volledig is gerenderd.
+- Klikdetails op de vier vakken bij Beheer → Indeling robuuster gemaakt en voorzien van automatisch doorscrollen naar de geopende informatie.
+- Het geselecteerde overzichtsvak krijgt een duidelijke actieve markering; opnieuw tikken sluit de details.
+- Detailinformatie werkt ook wanneer een teller 0 is.
+- Alle versiequery's in index.html en de service-worker zijn gelijkgetrokken naar v1.14 om oude gecachte assets te voorkomen.
+- README en CHANGELOG bijgewerkt zodat ze overeenkomen met de werkelijke inhoud van v1.14.
+- Geen nieuwe Firestore-regels nodig.
+
 ## v1.13
 - De functie **Meerdere zaterdagen invullen** is volledig uit de code verwijderd.
 - De drie overzichtsvakken op Home zijn weer aanklikbaar en tonen de bijbehorende spelers/koppels.

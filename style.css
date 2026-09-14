@@ -146,3 +146,6 @@
 .lineup-stat-btn:active,.stat-btn:active{transform:translateY(1px)}
 .compact-admin-detail{margin-top:10px;padding:10px 12px;background:#f8fbf9;border:1px solid var(--line);border-radius:10px}
 .compact-admin-detail h4{margin:0 0 8px}
+
+/* v1.14: duidelijke actieve toestand voor aanklikbare overzichtsvakken */
+.stat-btn.detail-open,.lineup-stat-btn.detail-open{outline:2px solid var(--g);outline-offset:1px;background:var(--g2)}
