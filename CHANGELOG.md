@@ -1,3 +1,10 @@
+## v1.13
+- De functie **Meerdere zaterdagen invullen** is volledig uit de code verwijderd.
+- De drie overzichtsvakken op Home zijn weer aanklikbaar en tonen de bijbehorende spelers/koppels.
+- De vier overzichtsvakken bij Beheer → Indeling zijn aanklikbaar en tonen detailinformatie, ook wanneer de teller 0 is.
+- Een speelzaterdag aan- of uitvinken wijzigt niet meer direct Firestore. De wijziging wordt pas opgeslagen via **Algemene instellingen opslaan**.
+- Bij het uitschakelen van één of meer actieve speeldagen volgt vóór opslaan een extra bevestiging.
+
 ## v1.12
 - Toekomstige spelerskeuzes toegevoegd onder Meer voor alle ingelogde spelers.
 - Publieke weergave is alleen-lezen en gebruikt het bestaande publieke rooster plus de toegankelijke spelerskeuzes.
