@@ -1,3 +1,9 @@
+## v1.15
+- Privé-opmerking bij de eigen speler onder Mijn koppel hersteld.
+- Eigen speler wordt weer robuust herkend via speler-ID met een veilige naamfallback binnen het gekoppelde koppel.
+- Bestaande privé-opmerkingen blijven op dezelfde Firestore-locatie staan en worden opnieuw zichtbaar.
+- README en cache-/bestandsversies bijgewerkt naar v1.15.
+
 ## v1.14
 - Klikdetails op de drie Home-overzichtsvakken gerepareerd; handlers worden nu pas gekoppeld nadat Home volledig is gerenderd.
 - Klikdetails op de vier vakken bij Beheer → Indeling robuuster gemaakt en voorzien van automatisch doorscrollen naar de geopende informatie.
