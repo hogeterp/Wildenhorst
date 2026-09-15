@@ -1,3 +1,8 @@
+## v1.17
+- Privé-opmerking gewijzigd van een meerregelig tekstvak naar een compact invoerveld van één regel.
+- Automatisch opslaan en bestaande privacyregels blijven ongewijzigd.
+- Cache- en bestandsversies gelijkgetrokken naar v1.17.
+
 ## v1.16
 - Privé-opmerkingenveld bij de eigen speler hersteld met extra koppeling op het ingelogde e-mailadres.
 - Bestaande privé-opmerkingen blijven op dezelfde beveiligde Firestore-locatie staan.
