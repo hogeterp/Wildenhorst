@@ -1,3 +1,9 @@
+## v1.18
+- Privé-opmerking uit de smalle spelersnaamkolom gehaald en over de beschikbare kaartbreedte geplaatst.
+- Mobiele layout aangepast zodat label, invoerveld en opslagmelding leesbaar blijven.
+- Automatisch opslaan en privacyregels blijven ongewijzigd.
+- Cache- en bestandsversies gelijkgetrokken naar v1.18.
+
 ## v1.17
 - Privé-opmerking gewijzigd van een meerregelig tekstvak naar een compact invoerveld van één regel.
 - Automatisch opslaan en bestaande privacyregels blijven ongewijzigd.

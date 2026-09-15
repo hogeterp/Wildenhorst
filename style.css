@@ -157,3 +157,21 @@
 .private-note{display:block;width:100%;height:38px;min-height:38px;margin-top:5px;padding:7px 9px;font-size:.78rem;line-height:1.2;background:#fffdf4;border:1px solid #dfd5a6;border-radius:10px}
 .private-note-msg{display:block;min-height:14px;margin-top:3px;font-size:.68rem;font-weight:400;color:var(--muted)}
 .private-note-msg.saved{color:#14733d}.private-note-msg.pending{color:#8a5b00}.private-note-msg.error{color:#a52d27}
+
+
+/* v1.18: privé-opmerking over de volle breedte onder de spelersregels */
+.private-note-wide{display:grid;grid-template-columns:210px minmax(0,1fr);column-gap:10px;align-items:center;margin:8px 0 3px}
+.private-note-title{font-style:normal;font-weight:700;color:var(--g);line-height:1.15}
+.private-note-title em{font-style:normal;font-weight:400;color:var(--muted)}
+.private-note-wide .private-note{margin:0;width:100%;height:38px;min-height:38px}
+.private-note-wide .private-note-msg{grid-column:2;margin-top:3px}
+@media(max-width:520px){
+  .private-note-wide{grid-template-columns:1fr;margin-top:8px}
+  .private-note-wide .private-note{margin-top:5px}
+  .private-note-wide .private-note-msg{grid-column:1}
+}
+@media(min-width:390px) and (max-width:520px){
+  .private-note-wide{grid-template-columns:150px minmax(0,1fr);column-gap:8px}
+  .private-note-wide .private-note{margin-top:0}
+  .private-note-wide .private-note-msg{grid-column:2}
+}
