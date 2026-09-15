@@ -1,3 +1,8 @@
+## v1.16
+- Privé-opmerkingenveld bij de eigen speler hersteld met extra koppeling op het ingelogde e-mailadres.
+- Bestaande privé-opmerkingen blijven op dezelfde beveiligde Firestore-locatie staan.
+- Versie- en cacheverwijzingen bijgewerkt naar v1.16.
+
 ## v1.15
 - Privé-opmerking bij de eigen speler onder Mijn koppel hersteld.
 - Eigen speler wordt weer robuust herkend via speler-ID met een veilige naamfallback binnen het gekoppelde koppel.

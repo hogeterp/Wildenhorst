@@ -1,4 +1,4 @@
-const CACHE='wildenhorst-v1.15';
+const CACHE='wildenhorst-v1.16';
 const SHELL=['./','./index.html','./style.css?v=1.14','./app.js?v=1.14','./install.js?v=1.14','./firebase-config.js?v=1.14','./manifest.webmanifest?v=1.14','./club-logo.png','./icon-192.png','./icon-512.png','./icon-maskable-192.png','./icon-maskable-512.png','./apple-touch-icon.png'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)));self.skipWaiting()});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim()});
