@@ -1,3 +1,9 @@
+## v1.19
+- `Mijn koppel` gerepareerd voor gewone spelers: de pagina leest geen afgeschermde `/players`-documenten meer tijdens het laden.
+- Foutafhandeling toegevoegd zodat `Mijn koppel` niet eindeloos op `Laden…` blijft staan.
+- Knop `Opnieuw proberen` toegevoegd bij een laadfout.
+- Geen wijziging aan Firestore-regels nodig.
+
 ## v1.18
 - Privé-opmerking uit de smalle spelersnaamkolom gehaald en over de beschikbare kaartbreedte geplaatst.
 - Mobiele layout aangepast zodat label, invoerveld en opslagmelding leesbaar blijven.
