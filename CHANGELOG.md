@@ -1,3 +1,11 @@
+## v1.20
+- Mijn koppel robuuster gemaakt tegen vastlopende Firebase-reads.
+- Timeout toegevoegd aan noodzakelijke reads.
+- Fouten op individuele koppelplannen blokkeren de pagina niet meer.
+- Privé-opmerkingen en historische invalstatistieken laden los van het hoofdscherm.
+- Duidelijke foutmelding en Opnieuw proberen als basisgegevens niet geladen kunnen worden.
+- Firestore-regels ongewijzigd.
+
 ## v1.19
 - `Mijn koppel` gerepareerd voor gewone spelers: de pagina leest geen afgeschermde `/players`-documenten meer tijdens het laden.
 - Foutafhandeling toegevoegd zodat `Mijn koppel` niet eindeloos op `Laden…` blijft staan.

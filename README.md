@@ -1,10 +1,12 @@
-# Wildenhorst Badhoevedorp v1.19
+# Wildenhorst Badhoevedorp v1.20
 
-## Nieuw in v1.19
-- Reparatie voor **Mijn koppel** dat bij gewone spelers op **Laden…** kon blijven staan.
-- De pagina probeert niet meer spelerrecords uit `/players` te lezen waarvoor gewone spelers volgens de bestaande Firestore-regels geen leesrecht hebben.
-- Als laden toch mislukt, blijft het scherm niet meer eindeloos op Laden… staan: er verschijnt een duidelijke foutmelding met **Opnieuw proberen**.
-- De brede privé-opmerking uit v1.18 blijft behouden.
+## Nieuw in v1.20
+- **Mijn koppel** kan niet meer onbeperkt op **Laden…** blijven staan: noodzakelijke Firebase-reads hebben nu een timeout.
+- Een probleem bij één speelzaterdag blokkeert niet langer de hele pagina.
+- Privé-opmerkingen worden pas na het hoofdscherm geladen. Een fout daarbij blokkeert **Mijn koppel** niet.
+- Historische invalstatistieken worden apart geladen en blokkeren het hoofdscherm niet.
+- Bij een probleem met de basisgegevens verschijnt een duidelijke melding met **Opnieuw proberen**.
+- De privacy van privé-opmerkingen en de bestaande Firestore-regels zijn ongewijzigd.
 
 ## Publiceren
-Upload alle 18 bestanden naar GitHub Pages. Voor v1.19 zijn geen nieuwe Firestore-regels nodig; `firestore.rules` is ongewijzigd opgenomen in de ZIP.
+Upload alle 18 bestanden naar GitHub Pages. Voor v1.20 zijn geen nieuwe Firestore-regels nodig; `firestore.rules` is ongewijzigd opgenomen in de ZIP.
