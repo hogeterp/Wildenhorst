@@ -1,12 +1,11 @@
-# Wildenhorst Badhoevedorp v1.20
+# Wildenhorst Badhoevedorp v1.21
 
-## Nieuw in v1.20
-- **Mijn koppel** kan niet meer onbeperkt op **Laden…** blijven staan: noodzakelijke Firebase-reads hebben nu een timeout.
-- Een probleem bij één speelzaterdag blokkeert niet langer de hele pagina.
-- Privé-opmerkingen worden pas na het hoofdscherm geladen. Een fout daarbij blokkeert **Mijn koppel** niet.
-- Historische invalstatistieken worden apart geladen en blokkeren het hoofdscherm niet.
-- Bij een probleem met de basisgegevens verschijnt een duidelijke melding met **Opnieuw proberen**.
-- De privacy van privé-opmerkingen en de bestaande Firestore-regels zijn ongewijzigd.
+## Nieuw in v1.21
+- **Toekomstige spelerskeuzes** toont onder de tabel nu een compact overzicht **Invallers**.
+- Per goedgekeurde invaller staat de speeldatum, de naam van de invaller en voor welk koppel hij/zij invalt.
+- De bestaande blauwe **I** in de tabel blijft staan.
+- Bestaande functies van v1.20, waaronder de robuustere laadprocedure van **Mijn koppel**, blijven behouden.
+- Firestore-regels zijn niet gewijzigd.
 
 ## Publiceren
-Upload alle 18 bestanden naar GitHub Pages. Voor v1.20 zijn geen nieuwe Firestore-regels nodig; `firestore.rules` is ongewijzigd opgenomen in de ZIP.
+Upload alle 18 bestanden naar GitHub Pages. Voor v1.21 zijn geen nieuwe Firestore-regels nodig.

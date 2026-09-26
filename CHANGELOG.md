@@ -1,3 +1,11 @@
+# Changelog
+
+## v1.21
+- Toekomstige spelerskeuzes uitgebreid met een overzicht van goedgekeurde invallers onder de tabel.
+- Het overzicht vermeldt datum, invaller en het koppel waarvoor die persoon invalt.
+- De blauwe I-indicator in de tabel blijft behouden.
+- Versie/cache bijgewerkt naar v1.21.
+
 ## v1.20
 - Mijn koppel robuuster gemaakt tegen vastlopende Firebase-reads.
 - Timeout toegevoegd aan noodzakelijke reads.

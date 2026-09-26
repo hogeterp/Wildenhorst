@@ -175,3 +175,12 @@
   .private-note-wide .private-note{margin-top:0}
   .private-note-wide .private-note-msg{grid-column:2}
 }
+
+
+/* v1.21: namen van invallers onder toekomstige spelerskeuzes */
+.future-substitutes{margin-top:12px;padding:11px 12px;background:#f7faf8;border:1px solid var(--line);border-radius:11px}
+.future-substitutes h3{margin:0 0 6px;color:var(--g)}
+.future-sub-row{display:grid;grid-template-columns:62px minmax(0,1fr);gap:8px;padding:6px 0;border-top:1px solid #e3ebe6;font-size:.78rem;line-height:1.3}
+.future-sub-row:first-of-type{border-top:0}
+.future-sub-row b{color:var(--g)}
+@media(max-width:390px){.future-sub-row{grid-template-columns:56px minmax(0,1fr);font-size:.74rem}}
