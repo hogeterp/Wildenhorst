@@ -31,6 +31,20 @@ service cloud.firestore {
           && request.resource.data.updatedBy == request.auth.uid
           && request.resource.data.updatedAt == request.time;
     }
+    function validCouplePlanUpdate(seasonId, coupleId){
+      let c = get(/databases/$(database)/documents/seasons/$(seasonId)/couples/$(coupleId));
+      return request.resource.data.coupleId == coupleId
+          && request.resource.data.member1Id == c.data.memberIds[0]
+          && request.resource.data.member2Id == c.data.memberIds[1]
+          && validStatusOrBlank(request.resource.data.member1Status)
+          && validStatusOrBlank(request.resource.data.member2Status)
+          && acceptablePair(request.resource.data.member1Status, request.resource.data.member2Status)
+          && request.resource.data.updatedBy == request.auth.uid
+          && request.resource.data.updatedAt == request.time
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+            'coupleId','member1Id','member1Status','member2Id','member2Status','updatedBy','updatedAt'
+          ]);
+    }
     function ownCoupleBeforeClose(seasonId, playDateId, coupleId){
       return active()
           && me().data.coupleId == coupleId
@@ -144,7 +158,7 @@ service cloud.firestore {
           );
           allow update: if admin() || (
             ownCoupleBeforeClose(seasonId, playDateId, coupleId)
-            && validCouplePlan(seasonId, coupleId)
+            && validCouplePlanUpdate(seasonId, coupleId)
           ) || validSubstituteProposal(seasonId, playDateId, coupleId);
           allow delete: if headAdmin();
         }

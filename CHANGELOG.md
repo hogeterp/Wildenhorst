@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.22
+- Voorkomt dat `substituteForCouple*`-informatie verdwijnt bij het wijzigen van de eigen spelerskeuze.
+- Mijn koppel herkent bestaande goedgekeurde invallers ook via de doel-koppelplannen, zodat oudere verdwenen bronmarkeringen niet meer tot een ontbrekende melding leiden.
+- Vaste invaller wordt waar veilig automatisch als Reserve in het eigen koppel gemarkeerd.
+- Firestore-updatevalidatie aangepast: spelers mogen alleen de normale koppelkeuzevelden wijzigen; beheerder-invallergegevens blijven onaangeroerd.
+- Versie/cache bijgewerkt naar v1.22.
+
 ## v1.21
 - Toekomstige spelerskeuzes uitgebreid met een overzicht van goedgekeurde invallers onder de tabel.
 - Het overzicht vermeldt datum, invaller en het koppel waarvoor die persoon invalt.
