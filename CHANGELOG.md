@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.25
+- Bij een al gepubliceerde baanindeling heet de publicatieknop nu **Wijzigingen zichtbaar maken voor iedereen**.
+- Wijzigingen aan de indeling worden pas voor spelers zichtbaar nadat de beheerder opnieuw publiceert.
+- De bevestiging na opnieuw publiceren meldt duidelijk dat de wijzigingen zichtbaar zijn.
+- Firestore-regels inhoudelijk ongewijzigd ten opzichte van v1.24.
+- Versie/cache bijgewerkt naar v1.25.
+
 ## v1.24
 - Fout bij **+ Nieuwe reserve** opgelost voor de hoofdbeheerder.
 - Synchronisatie van e-mailtoegang leest niet langer de volledige `accessEmails`-collectie uit; dat was volgens de bestaande Firestore-regels bewust niet toegestaan.
