@@ -1,10 +1,17 @@
 # Changelog
 
+## v1.29
+- Publiceren van een baanindeling is uitgesteld tot het moment waarop in het WhatsApp-voorbeeld op **Open WhatsApp** wordt gedrukt.
+- **Annuleren** in het WhatsApp-voorbeeld publiceert niets en wijzigt de bestaande publicatiestatus niet.
+- WhatsApp bepaalt dubbele voornamen alleen op basis van de spelerslijst en telt dezelfde speler niet nogmaals vanuit de baanindeling mee. Daardoor krijgt Rinze geen onterechte `H.` meer.
+- De v1.28-servercontrole voor de actuele publicatiestatus op Home en Zaterdag blijft behouden.
+- Firestore-regels inhoudelijk ongewijzigd.
+
 ## v1.28
 - Na **Publicatie ongedaan maken** lezen Home en Zaterdag de actuele publicatiestatus rechtstreeks van de server, zodat een ingetrokken indeling niet uit cache zichtbaar blijft voor spelers.
 - De opgeslagen baanindeling blijft voor de beheerder behouden voor herpublicatie.
-- WhatsApp gebruikt voor dubbele voornamen dezelfde achternaaminitiaal als Home (bijv. Marcel S. / Marcel K.).
-- Firestore-regels inhoudelijk ongewijzigd ten opzichte van v1.27.
+- WhatsApp gebruikt voor echte dubbele voornamen dezelfde achternaaminitiaal als Home.
+- Firestore-regels inhoudelijk ongewijzigd.
 
 ## v1.27
 - Release opgebouwd uit de door de gebruiker aangeleverde actuele v1.26-bestanden.
