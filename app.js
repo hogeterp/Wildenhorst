@@ -2,7 +2,7 @@ import{initializeApp}from'https://www.gstatic.com/firebasejs/12.18.0/firebase-ap
 import{getAuth,onAuthStateChanged,signInWithEmailAndPassword,signOut,sendPasswordResetEmail,createUserWithEmailAndPassword,setPersistence,browserLocalPersistence}from'https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js';
 import{getFirestore,doc,getDoc,collection,query,where,getDocs,orderBy,limit,writeBatch,setDoc,updateDoc,serverTimestamp,deleteDoc}from'https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js';
 const $=id=>document.getElementById(id),cfg=window.WILDENHORST_FIREBASE||{};let auth,db,user,profile,season;
-const APP_VERSION='1.26';
+const APP_VERSION='1.27';
 let testPlayer=null,activating=false,substituteContext=null,lineupState=null,newSeasonWizard=null;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 async function emailKey(email){const bytes=new TextEncoder().encode(String(email||'').trim().toLowerCase()),hash=await crypto.subtle.digest('SHA-256',bytes);return [...new Uint8Array(hash)].map(b=>b.toString(16).padStart(2,'0')).join('')}

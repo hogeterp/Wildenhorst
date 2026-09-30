@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.27
+- Release opgebouwd uit de door de gebruiker aangeleverde actuele v1.26-bestanden.
+- Versie- en cacheverwijzingen bijgewerkt naar v1.27.
+- Geen inhoudelijke wijziging aan Firestore-regels.
+
 ## v1.26
 - Na bewust publiceren opent direct het WhatsApp-voorbeeld met de baanindeling, klaar om naar de groep te sturen.
 - Nieuwe knop **Publicatie ongedaan maken** verbergt een gepubliceerde baanindeling weer voor spelers.

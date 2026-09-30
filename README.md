@@ -1,6 +1,6 @@
-# Wildenhorst Badhoevedorp v1.26
+# Wildenhorst Badhoevedorp v1.27
 
-## Nieuw in v1.26
+## Nieuw in v1.27
 - Na publiceren opent direct het WhatsApp-voorbeeld met de nieuwe of gewijzigde baanindeling.
 - Een beheerder kan een gepubliceerde baanindeling weer voor spelers verbergen met **Publicatie ongedaan maken**.
 - De laatst gemaakte baanindeling blijft daarbij voor de beheerder bewaard en wordt bij opnieuw openen hersteld.
