@@ -1,10 +1,11 @@
-# Wildenhorst Badhoevedorp v1.25
+# Wildenhorst Badhoevedorp v1.26
 
-## Nieuw in v1.25
-- Na de eerste publicatie heet de knop voortaan **Wijzigingen zichtbaar maken voor iedereen**.
-- Een aangepaste baanindeling blijft dus eerst een wijziging bij de beheerder; pas na opnieuw publiceren wordt die voor spelers zichtbaar.
-- Na opnieuw publiceren verschijnt de bevestiging **Wijzigingen zijn zichtbaar voor iedereen**.
-- Alle verbeteringen uit v1.24 blijven behouden.
+## Nieuw in v1.26
+- Na publiceren opent direct het WhatsApp-voorbeeld met de nieuwe of gewijzigde baanindeling.
+- Een beheerder kan een gepubliceerde baanindeling weer voor spelers verbergen met **Publicatie ongedaan maken**.
+- De laatst gemaakte baanindeling blijft daarbij voor de beheerder bewaard en wordt bij opnieuw openen hersteld.
+- Opnieuw publiceren maakt de indeling weer zichtbaar voor iedereen.
+- Firestore-regels inhoudelijk ongewijzigd ten opzichte van v1.25.
 
 ## Publiceren
-Upload alle 18 bestanden naar GitHub Pages. De `firestore.rules` zijn inhoudelijk gelijk aan v1.24 en hoeven niet opnieuw in Firebase te worden gepubliceerd als die regels al actief zijn.
+Upload alle 18 bestanden naar GitHub Pages. De `firestore.rules` zijn inhoudelijk gelijk aan v1.25 en hoeven niet opnieuw in Firebase te worden gepubliceerd als die regels al actief zijn.

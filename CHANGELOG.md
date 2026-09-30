@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.26
+- Na bewust publiceren opent direct het WhatsApp-voorbeeld met de baanindeling, klaar om naar de groep te sturen.
+- Nieuwe knop **Publicatie ongedaan maken** verbergt een gepubliceerde baanindeling weer voor spelers.
+- De laatst gemaakte baanindeling blijft voor de beheerder bewaard en wordt bij opnieuw openen hersteld.
+- Opnieuw publiceren maakt de indeling weer zichtbaar voor iedereen.
+- Firestore-regels inhoudelijk ongewijzigd ten opzichte van v1.25.
+- Versie/cache bijgewerkt naar v1.26.
+
 ## v1.25
 - Bij een al gepubliceerde baanindeling heet de publicatieknop nu **Wijzigingen zichtbaar maken voor iedereen**.
 - Wijzigingen aan de indeling worden pas voor spelers zichtbaar nadat de beheerder opnieuw publiceert.
