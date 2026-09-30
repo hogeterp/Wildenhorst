@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.28
+- Na **Publicatie ongedaan maken** lezen Home en Zaterdag de actuele publicatiestatus rechtstreeks van de server, zodat een ingetrokken indeling niet uit cache zichtbaar blijft voor spelers.
+- De opgeslagen baanindeling blijft voor de beheerder behouden voor herpublicatie.
+- WhatsApp gebruikt voor dubbele voornamen dezelfde achternaaminitiaal als Home (bijv. Marcel S. / Marcel K.).
+- Firestore-regels inhoudelijk ongewijzigd ten opzichte van v1.27.
+
 ## v1.27
 - Release opgebouwd uit de door de gebruiker aangeleverde actuele v1.26-bestanden.
 - Versie- en cacheverwijzingen bijgewerkt naar v1.27.

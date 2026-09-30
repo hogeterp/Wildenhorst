@@ -1,11 +1,10 @@
-# Wildenhorst Badhoevedorp v1.27
+# Wildenhorst Badhoevedorp v1.28
 
-## Nieuw in v1.27
-- Na publiceren opent direct het WhatsApp-voorbeeld met de nieuwe of gewijzigde baanindeling.
-- Een beheerder kan een gepubliceerde baanindeling weer voor spelers verbergen met **Publicatie ongedaan maken**.
-- De laatst gemaakte baanindeling blijft daarbij voor de beheerder bewaard en wordt bij opnieuw openen hersteld.
-- Opnieuw publiceren maakt de indeling weer zichtbaar voor iedereen.
-- Firestore-regels inhoudelijk ongewijzigd ten opzichte van v1.25.
+## Nieuw in v1.28
+- Na **Publicatie ongedaan maken** gebruiken Home en Zaterdag de actuele publicatiestatus van de server; een ingetrokken baanindeling wordt niet meer uit een oude cache getoond aan spelers.
+- De beheerder behoudt de gemaakte baanindeling zodat die later opnieuw gepubliceerd kan worden.
+- WhatsApp gebruikt bij dubbele voornamen dezelfde naamgeving als Home, met achternaaminitiaal (bijv. Marcel S. en Marcel K.).
+- Firestore-regels inhoudelijk ongewijzigd ten opzichte van v1.27.
 
 ## Publiceren
-Upload alle 18 bestanden naar GitHub Pages. De `firestore.rules` zijn inhoudelijk gelijk aan v1.25 en hoeven niet opnieuw in Firebase te worden gepubliceerd als die regels al actief zijn.
+Upload alle 18 bestanden naar GitHub Pages. De `firestore.rules` zijn inhoudelijk ongewijzigd en hoeven niet opnieuw in Firebase te worden gepubliceerd als de huidige regels al actief zijn.
