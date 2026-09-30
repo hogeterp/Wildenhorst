@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.24
+- Fout bij **+ Nieuwe reserve** opgelost voor de hoofdbeheerder.
+- Synchronisatie van e-mailtoegang leest niet langer de volledige `accessEmails`-collectie uit; dat was volgens de bestaande Firestore-regels bewust niet toegestaan.
+- Nieuwe toegestane e-mailhashes worden nu rechtstreeks toegevoegd, waarna reserve en publieke spelerslijst normaal kunnen worden opgeslagen/bijgewerkt.
+- Firestore-regels inhoudelijk ongewijzigd ten opzichte van v1.23.
+- Versie/cache bijgewerkt naar v1.24.
+
 ## v1.23
 - Knop **+ Nieuwe reserve** toegevoegd bij Beheer → Spelers & koppels → Reserves.
 - Nieuwe reserve kan direct met naam, e-mail, telefoon, enkelspelvoorkeur en speelsterkte worden toegevoegd.
