@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.23
+- Knop **+ Nieuwe reserve** toegevoegd bij Beheer → Spelers & koppels → Reserves.
+- Nieuwe reserve kan direct met naam, e-mail, telefoon, enkelspelvoorkeur en speelsterkte worden toegevoegd.
+- Publieke spelerslijst wordt na toevoegen automatisch bijgewerkt.
+- Hoofdbeheerder synchroniseert daarbij ook de e-mailtoegang voor accountactivatie.
+- Firestore-regels inhoudelijk ongewijzigd ten opzichte van v1.22.
+- Versie/cache bijgewerkt naar v1.23.
+
 ## v1.22
 - Voorkomt dat `substituteForCouple*`-informatie verdwijnt bij het wijzigen van de eigen spelerskeuze.
 - Mijn koppel herkent bestaande goedgekeurde invallers ook via de doel-koppelplannen, zodat oudere verdwenen bronmarkeringen niet meer tot een ontbrekende melding leiden.
