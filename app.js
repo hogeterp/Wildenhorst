@@ -2,7 +2,7 @@ import{initializeApp}from'https://www.gstatic.com/firebasejs/12.18.0/firebase-ap
 import{getAuth,onAuthStateChanged,signInWithEmailAndPassword,signOut,sendPasswordResetEmail,createUserWithEmailAndPassword,setPersistence,browserLocalPersistence}from'https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js';
 import{getFirestore,doc,getDoc,getDocFromServer,collection,query,where,getDocs,orderBy,limit,writeBatch,setDoc,updateDoc,serverTimestamp,deleteDoc}from'https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js';
 const $=id=>document.getElementById(id),cfg=window.WILDENHORST_FIREBASE||{};let auth,db,user,profile,season;
-const APP_VERSION='1.29';
+const APP_VERSION='1.30';
 let testPlayer=null,activating=false,substituteContext=null,lineupState=null,newSeasonWizard=null;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 async function emailKey(email){const bytes=new TextEncoder().encode(String(email||'').trim().toLowerCase()),hash=await crypto.subtle.digest('SHA-256',bytes);return [...new Uint8Array(hash)].map(b=>b.toString(16).padStart(2,'0')).join('')}
@@ -200,7 +200,7 @@ async function saturday(){
 async function renderSaturday(d){
  const host=$('satBody');host.innerHTML='<div class="card">Laden…</div>';
  const [ls,rs,rosterSnap]=await Promise.all([getDocFromServer(doc(db,'seasons',season.id,'playDates',d.id,'public','lineup')).catch(e=>{console.warn('Actuele publicatiestatus Zaterdag niet geladen',e);return null}),getDocs(collection(db,'seasons',season.id,'playDates',d.id,'results')),getDoc(doc(db,'seasons',season.id,'public','roster'))]),l=ls?.exists()?ls.data():null,allNames=rosterSnap.exists()?(rosterSnap.data().couples||[]).flatMap(x=>x.names||[]):[];
- const results=[...rs.docs].map(x=>({id:x.id,...x.data()})),resultByCourt=new Map(results.map(r=>[String(r.courtNumber),r])),courts=(l?.courts||[]).filter(c=>c.mode!=='Niet gebruiken'),canEnter=profilePlaysInLineup(l,profile);
+ const results=[...rs.docs].map(x=>({id:x.id,...x.data()})),resultByCourt=new Map(results.map(r=>[String(r.courtNumber),r])),courts=(l?.courts||[]).filter(c=>c.mode!=='Niet gebruiken'),canEnter=!!l?.published&&['fixed','reserve'].includes(String(activeProfile()?.participantType||''));
  const courtHtml=!l?.published?'<div class="card"><b>Indeling is nog niet bekend.</b></div>':courts.map(c=>{const r=resultByCourt.get(String(c.number));return `<div class="court-card"><h3>Baan ${esc(c.number)} · ${esc(c.mode||'Dubbel')}</h3><div class="match compact-match"><span>${esc(compactTeam(c.teamA||[],allNames))}</span><strong>–</strong><span>${esc(compactTeam(c.teamB||[],allNames))}</span></div>${r?`<div class="court-result"><b>${esc(r.scoreText||'–')}</b><small>${esc(pointText(r))}</small><span>🔒 Uitslag opgeslagen</span></div>`:canEnter?`<button class="result-entry-btn" data-court="${esc(c.number)}">🏆 Uitslag invoeren</button>`:'<div class="court-result muted"><small>Nog geen uitslag ingevoerd.</small></div>'}</div>`}).join('');
  host.innerHTML=`<section class="hero"><h1>${esc(dateText(d.dateKey))}</h1><p>${esc(d.startTime||season?.startTime||'10:00')}–${esc(d.endTime||season?.endTime||'12:00')}</p>${l?.changedAfterPublish?'<div class="message">⚠️ Indeling gewijzigd</div>':''}</section>${courtHtml}${l?.published?`<div class="card day-total"><b>${results.length} van ${courts.length} uitslagen ingevoerd</b>${results.length===courts.length&&courts.length?'<span> ✓ compleet</span>':''}</div>`:''}<div id="playerResultBox"></div>`;
  host.querySelectorAll('[data-court]').forEach(b=>b.onclick=()=>openPlayerResult(d,l,b.dataset.court))
@@ -211,7 +211,7 @@ async function renderResultArchive(ds){
  host.innerHTML=`<div class="card"><h2>🏆 Alle uitslagen</h2><p>Alle gespeelde zaterdagen, nieuwste eerst.</p></div>${days.length?days.map(({d,results})=>`<div class="card archive-day"><h3>${esc(dateText(d.dateKey))}</h3>${results.map(homeResultLine).join('')}</div>`).join(''):'<div class="card">Er zijn nog geen uitslagen opgeslagen.</div>'}`
 }
 async function openPlayerResult(d,lineup,courtNumber){
- const box=$('playerResultBox');if(!box||!profilePlaysInLineup(lineup,profile))return;
+ const box=$('playerResultBox');if(!box||!lineup?.published||!['fixed','reserve'].includes(String(activeProfile()?.participantType||'')))return;
  const match=(lineup.courts||[]).find(c=>String(c.number)===String(courtNumber));if(!match)return;
  const existing=await getDoc(doc(db,'seasons',seasonId(),'playDates',d.id,'results',`court-${match.number}`));if(existing.exists()){box.innerHTML='<div class="message">🔒 Deze uitslag is inmiddels al opgeslagen.</div>';return}
  const aCids=[...new Set(match.teamACoupleIds||[])],bCids=[...new Set(match.teamBCoupleIds||[])];let setCount=3,values=Array.from({length:3},()=>({a:'',b:''})),lastGameA='0',lastGameB='0';

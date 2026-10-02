@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.30
+- Uitslaginvoer op **Zaterdag** beschikbaar gemaakt voor iedere actieve vaste speler en reservespeler zolang voor die baan nog geen uitslag is opgeslagen.
+- Na opslaan blijft de uitslag voor spelers vergrendeld; alleen beheerders kunnen corrigeren of verwijderen.
+- Firestore-regels gericht aangepast voor deze uitslaginvoer.
+- Versie- en cacheverwijzingen bijgewerkt naar v1.30.
+
 ## v1.29
 - Publiceren van een baanindeling is uitgesteld tot het moment waarop in het WhatsApp-voorbeeld op **Open WhatsApp** wordt gedrukt.
 - **Annuleren** in het WhatsApp-voorbeeld publiceert niets en wijzigt de bestaande publicatiestatus niet.

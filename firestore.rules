@@ -166,34 +166,13 @@ service cloud.firestore {
         match /results/{resultId} {
           allow read: if active();
 
-          // v0.29: iedere vaste speler die deze zaterdag zelf speelt mag
-          // één nog ontbrekende baanuitslag invoeren. Daarna alleen beheerder.
+          // v1.30: iedere actieve vaste speler of reserve mag een nog
+          // ontbrekende baanuitslag invoeren. Daarna alleen beheerder.
           allow create: if admin() || (
             active()
             && (me().data.participantType == 'fixed' || me().data.participantType == 'reserve')
             && request.resource.data.enteredBy == request.auth.uid
             && get(/databases/$(database)/documents/seasons/$(seasonId)/playDates/$(playDateId)/public/lineup).data.published == true
-            && (
-              (
-                get(/databases/$(database)/documents/seasons/$(seasonId)/playDates/$(playDateId)/public/lineup).data.keys().hasAny(['participantIds'])
-                && (
-                  (me().data.keys().hasAny(['playerId']) && me().data.playerId in get(/databases/$(database)/documents/seasons/$(seasonId)/playDates/$(playDateId)/public/lineup).data.participantIds)
-                  || (me().data.keys().hasAny(['reserveId']) && me().data.reserveId in get(/databases/$(database)/documents/seasons/$(seasonId)/playDates/$(playDateId)/public/lineup).data.participantIds)
-                )
-              )
-              || (
-                me().data.participantType == 'fixed'
-                && me().data.keys().hasAll(['coupleId','playerId'])
-                && get(/databases/$(database)/documents/seasons/$(seasonId)/playDates/$(playDateId)/couplePlans/$(me().data.coupleId)).data.member1Id == me().data.playerId
-                && get(/databases/$(database)/documents/seasons/$(seasonId)/playDates/$(playDateId)/couplePlans/$(me().data.coupleId)).data.member1Status == 'speelt'
-              )
-              || (
-                me().data.participantType == 'fixed'
-                && me().data.keys().hasAll(['coupleId','playerId'])
-                && get(/databases/$(database)/documents/seasons/$(seasonId)/playDates/$(playDateId)/couplePlans/$(me().data.coupleId)).data.member2Id == me().data.playerId
-                && get(/databases/$(database)/documents/seasons/$(seasonId)/playDates/$(playDateId)/couplePlans/$(me().data.coupleId)).data.member2Status == 'speelt'
-              )
-            )
             && request.resource.data.keys().hasOnly([
               'courtNumber','mode','teamA','teamB','teamAIds','teamBIds',
               'teamACoupleIds','teamBCoupleIds','coupleAId','coupleAName',
@@ -205,7 +184,6 @@ service cloud.firestore {
           allow update: if admin();
           allow delete: if admin();
         }
-      }
       match /standings/{coupleId} { allow read: if active(); allow write: if admin(); }
       match /payments/{paymentId} { allow read, create, update: if admin(); allow delete: if headAdmin(); }
     }
