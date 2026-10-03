@@ -1,11 +1,12 @@
-# Wildenhorst Badhoevedorp v1.30
+# Wildenhorst Badhoevedorp v1.31
 
-## Nieuw in v1.30
-- Op **Zaterdag** kan iedere actieve vaste speler of reservespeler een nog ontbrekende uitslag invoeren.
-- Een eenmaal opgeslagen uitslag blijft voor spelers vergrendeld; alleen een beheerder kan deze daarna wijzigen.
-- De invoer gebruikt de gepubliceerde baanindeling, zodat spelers en koppels automatisch worden overgenomen.
-- Firestore-regels zijn hiervoor gericht aangepast.
-- Alle bestaande functies en correcties uit v1.29 blijven behouden.
+## Nieuw in v1.31
+- Beheer → Uitslagen laadt een al opgeslagen uitslag direct terug zodra de speeldag en baan worden gekozen.
+- De speler die een uitslag heeft ingevoerd kan die uitslag later zelf corrigeren; andere spelers kunnen die opgeslagen uitslag niet wijzigen. Beheerders kunnen alle uitslagen blijven wijzigen of verwijderen.
+- De stand gebruikt bij gelijke competitiepunten nu het **gamesaldo** (gewonnen games min verloren games) in plaats van alleen het aantal gewonnen games.
+- De stand toont **Gamesaldo** met bijvoorbeeld `+12`, `+2` of `-4`.
+- Firestore-regels zijn aangepast zodat alleen de oorspronkelijke invoerder zijn eigen uitslag kan wijzigen.
+- Alle overige functies uit v1.30 blijven behouden.
 
 ## Publiceren
-Upload alle 18 bestanden naar GitHub Pages. Publiceer daarna ook de nieuwe `firestore.rules` in Firebase, omdat de rechten voor uitslaginvoer zijn aangepast.
+Upload alle 18 bestanden naar GitHub Pages. Publiceer daarna ook de nieuwe `firestore.rules` in Firebase.

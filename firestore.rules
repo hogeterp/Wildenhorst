@@ -166,8 +166,8 @@ service cloud.firestore {
         match /results/{resultId} {
           allow read: if active();
 
-          // v1.30: iedere actieve vaste speler of reserve mag een nog
-          // ontbrekende baanuitslag invoeren. Daarna alleen beheerder.
+          // v1.31: iedere actieve vaste speler of reserve mag een ontbrekende
+          // baanuitslag invoeren. De oorspronkelijke invoerder mag die corrigeren.
           allow create: if admin() || (
             active()
             && (me().data.participantType == 'fixed' || me().data.participantType == 'reserve')
@@ -181,7 +181,19 @@ service cloud.firestore {
               'enteredBy','enteredAt'
             ])
           );
-          allow update: if admin();
+          allow update: if admin() || (
+            active()
+            && (me().data.participantType == 'fixed' || me().data.participantType == 'reserve')
+            && resource.data.enteredBy == request.auth.uid
+            && request.resource.data.enteredBy == resource.data.enteredBy
+            && request.resource.data.keys().hasOnly([
+              'courtNumber','mode','teamA','teamB','teamAIds','teamBIds',
+              'teamACoupleIds','teamBCoupleIds','coupleAId','coupleAName',
+              'coupleBId','coupleBName','scoreText','pointsA','pointsB',
+              'pointAllocations','gamesA','gamesB','sets','lastGamePoints',
+              'enteredBy','enteredAt'
+            ])
+          );
           allow delete: if admin();
         }
       match /standings/{coupleId} { allow read: if active(); allow write: if admin(); }

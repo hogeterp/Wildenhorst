@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.31
+- Bestaande uitslagen worden in Beheer → Uitslagen automatisch in het invoerformulier geladen bij selectie van de baan.
+- De oorspronkelijke speler die een uitslag invoerde kan die uitslag zelf opnieuw openen en corrigeren.
+- Andere spelers kunnen een reeds opgeslagen uitslag niet wijzigen; beheerders behouden volledige correctierechten.
+- Rangschikking bij gelijke punten gebruikt nu gamesaldo (games voor min games tegen) in plaats van alleen gewonnen games.
+- Stand toont Gamesaldo in plaats van Games.
+- Firestore-regels en versie/cache bijgewerkt naar v1.31.
+
 ## v1.30
 - Uitslaginvoer op **Zaterdag** beschikbaar gemaakt voor iedere actieve vaste speler en reservespeler zolang voor die baan nog geen uitslag is opgeslagen.
 - Na opslaan blijft de uitslag voor spelers vergrendeld; alleen beheerders kunnen corrigeren of verwijderen.
