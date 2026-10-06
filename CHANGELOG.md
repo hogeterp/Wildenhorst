@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.32
+- Correctietermijn voor de oorspronkelijke invoerder van een uitslag vastgezet op 48 uur vanaf de eerste invoer; daarna alleen beheerder.
+- `enteredAt` blijft bij correcties ongewijzigd en Firestore dwingt de 48-uursgrens af.
+- Home → Koppels ingevuld toont beschikbare vaste spelers die Reserve kozen en nog niet als invaller zijn ingezet; als niemand beschikbaar is volgt advies om een reserve buiten de vaste groep te benaderen.
+- Beheer → Indeling toont voornamen; dubbele voornamen blijven onderscheidend met initiaal/afkorting.
+- Dubbele inzet van dezelfde persoon wordt gemarkeerd als fout, ook bij Beheer → Indeling; publiceren wordt geblokkeerd zolang de dubbeling bestaat.
+- Beheerder krijgt een extra bevestiging voordat een zelf gekozen vervanger direct als goedgekeurd wordt vastgelegd.
+- Versie- en cacheverwijzingen bijgewerkt naar v1.32.
+
 ## v1.31
 - Bestaande uitslagen worden in Beheer → Uitslagen automatisch in het invoerformulier geladen bij selectie van de baan.
 - De oorspronkelijke speler die een uitslag invoerde kan die uitslag zelf opnieuw openen en corrigeren.

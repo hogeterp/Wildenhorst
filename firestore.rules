@@ -166,12 +166,13 @@ service cloud.firestore {
         match /results/{resultId} {
           allow read: if active();
 
-          // v1.31: iedere actieve vaste speler of reserve mag een ontbrekende
-          // baanuitslag invoeren. De oorspronkelijke invoerder mag die corrigeren.
+          // v1.32: iedere actieve vaste speler of reserve mag een ontbrekende
+          // baanuitslag invoeren. De oorspronkelijke invoerder mag die 48 uur corrigeren.
           allow create: if admin() || (
             active()
             && (me().data.participantType == 'fixed' || me().data.participantType == 'reserve')
             && request.resource.data.enteredBy == request.auth.uid
+            && request.resource.data.enteredAt == request.time
             && get(/databases/$(database)/documents/seasons/$(seasonId)/playDates/$(playDateId)/public/lineup).data.published == true
             && request.resource.data.keys().hasOnly([
               'courtNumber','mode','teamA','teamB','teamAIds','teamBIds',
@@ -186,6 +187,8 @@ service cloud.firestore {
             && (me().data.participantType == 'fixed' || me().data.participantType == 'reserve')
             && resource.data.enteredBy == request.auth.uid
             && request.resource.data.enteredBy == resource.data.enteredBy
+            && request.resource.data.enteredAt == resource.data.enteredAt
+            && request.time < resource.data.enteredAt + duration.value(48, 'h')
             && request.resource.data.keys().hasOnly([
               'courtNumber','mode','teamA','teamB','teamAIds','teamBIds',
               'teamACoupleIds','teamBCoupleIds','coupleAId','coupleAName',
