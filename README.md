@@ -1,10 +1,11 @@
-# Wildenhorst Badhoevedorp v1.33
+# Wildenhorst Badhoevedorp v1.34
 
-## Nieuw in v1.33
-- Onder **Meer → Spelers & reserves** staat het bestaande telefoonnummer onder iedere vaste speler en reserve, voor zover een nummer is ingevuld.
-- Onder **Mijn koppel** kan een koppel een reeds goedgekeurde vervanger vóór de bestaande sluitingstijd zelf verwijderen. Voor verwijderen volgt eerst een bevestiging. De vervanger wordt daarna weer vrijgegeven.
-- Onder **Home → Koppels ingevuld** worden spelers kort weergegeven: alleen de voornaam, en bij dubbele voornamen een onderscheidende initiaal/afkorting van de achternaam.
-- Alle functies en verbeteringen uit v1.32 blijven behouden.
+## Nieuw in v1.34
+- **Home → Koppels ingevuld** toont per koppel compact wie speelt, wie reserve of afwezig is en, indien van toepassing, de goedgekeurde/verzochte vervanger.
+- **Home → Laatste uitslag** gebruikt dezelfde verkorte namen als de rest van de app.
+- Bij **Beheer → Indeling** zijn de twee knoppen voor automatisch indelen samengevoegd tot één knop **🎾 Indeling maken**. Als er al een gemaakte/opgeslagen indeling staat, volgt eerst een waarschuwing voordat een nieuwe automatische indeling wordt gemaakt.
+- De beheerweergave van spelers en vervangers blijft verder ongewijzigd.
+- Alle functies en verbeteringen uit v1.33 blijven behouden.
 
 ## Publiceren
-Upload alle 18 bestanden naar GitHub Pages. Publiceer daarna ook de nieuwe `firestore.rules` in Firebase, omdat v1.33 het veilig verwijderen van een goedgekeurde vervanger door het eigen koppel toestaat.
+Upload alle 18 bestanden naar GitHub Pages. De `firestore.rules` zijn in v1.34 niet gewijzigd ten opzichte van v1.33 en hoeven daarom niet opnieuw te worden gepubliceerd.

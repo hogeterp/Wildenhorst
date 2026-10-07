@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.34
+- Home → Koppels ingevuld toont per koppel: Speelt, Reserve/Afwezig en eventuele vervanger.
+- Home → Laatste uitslag gebruikt verkorte spelersnamen.
+- Beheer → Indeling heeft één knop “Indeling maken”; bij opnieuw indelen verschijnt eerst een waarschuwing.
+- Beheerweergave, publicatiewerking, WhatsApp, uitslagenlogica en Firestore-regels zijn verder niet gewijzigd.
+
 ## v1.33
 - Meer → Spelers & reserves toont het bestaande telefoonnummer onder iedere vaste speler en reserve, indien ingevuld.
 - Mijn koppel kan een goedgekeurde vervanger vóór de sluitingstijd zelf verwijderen, met bevestiging; een vaste speler die inviel wordt daarbij weer vrijgegeven.
