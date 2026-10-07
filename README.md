@@ -1,13 +1,10 @@
-# Wildenhorst Badhoevedorp v1.32
+# Wildenhorst Badhoevedorp v1.33
 
-## Nieuw in v1.32
-- De oorspronkelijke invoerder van een uitslag kan die vanaf de eerste invoer nog **48 uur** corrigeren. Daarna kan alleen een beheerder de uitslag wijzigen of verwijderen.
-- De eerste invoer van een nog ontbrekende uitslag blijft voor actieve vaste spelers en reservespelers toegestaan.
-- Onder **Home → Koppels ingevuld** staat welke vaste spelers zich als **Reserve** hebben opgegeven en nog niet ergens invallen. Is niemand beschikbaar, dan staat: **Geen vaste spelers meer beschikbaar als reserve. Benader een reserve buiten de vaste groep.**
-- Bij **Beheer → Indeling** worden spelers in de baanindeling met voornamen getoond. Alleen bij dubbele voornamen wordt een onderscheidende initiaal/afkorting gebruikt.
-- Als dezelfde persoon twee keer in de spelers-/baanindeling voorkomt, geeft de app duidelijk aan dat de indeling niet goed is. Publiceren wordt dan geblokkeerd totdat dit is opgelost. Dezelfde controle wordt ook bij **Koppels ingevuld** getoond.
-- Wanneer een beheerder zelf een vervanger vastlegt via **Beheer → Indeling**, volgt eerst een extra bevestiging. Pas na die bevestiging wordt de vervanger direct goedgekeurd opgeslagen.
-- Alle functies en verbeteringen uit v1.31 blijven behouden.
+## Nieuw in v1.33
+- Onder **Meer → Spelers & reserves** staat het bestaande telefoonnummer onder iedere vaste speler en reserve, voor zover een nummer is ingevuld.
+- Onder **Mijn koppel** kan een koppel een reeds goedgekeurde vervanger vóór de bestaande sluitingstijd zelf verwijderen. Voor verwijderen volgt eerst een bevestiging. De vervanger wordt daarna weer vrijgegeven.
+- Onder **Home → Koppels ingevuld** worden spelers kort weergegeven: alleen de voornaam, en bij dubbele voornamen een onderscheidende initiaal/afkorting van de achternaam.
+- Alle functies en verbeteringen uit v1.32 blijven behouden.
 
 ## Publiceren
-Upload alle 18 bestanden naar GitHub Pages. Publiceer daarna ook de nieuwe `firestore.rules` in Firebase, omdat de 48-uursregel daar ook wordt afgedwongen.
+Upload alle 18 bestanden naar GitHub Pages. Publiceer daarna ook de nieuwe `firestore.rules` in Firebase, omdat v1.33 het veilig verwijderen van een goedgekeurde vervanger door het eigen koppel toestaat.

@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.33
+- Meer → Spelers & reserves toont het bestaande telefoonnummer onder iedere vaste speler en reserve, indien ingevuld.
+- Mijn koppel kan een goedgekeurde vervanger vóór de sluitingstijd zelf verwijderen, met bevestiging; een vaste speler die inviel wordt daarbij weer vrijgegeven.
+- Home → Koppels ingevuld gebruikt korte namen: voornaam, en alleen bij dubbele voornamen een onderscheidende achternaaminitiaal/-afkorting.
+- Firestore-regels uitgebreid voor het gecontroleerd verwijderen/vrijgeven van een goedgekeurde vervanger.
+- Versie- en cacheverwijzingen bijgewerkt naar v1.33.
+
+
 ## v1.32
 - Correctietermijn voor de oorspronkelijke invoerder van een uitslag vastgezet op 48 uur vanaf de eerste invoer; daarna alleen beheerder.
 - `enteredAt` blijft bij correcties ongewijzigd en Firestore dwingt de 48-uursgrens af.

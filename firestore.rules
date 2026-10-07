@@ -71,6 +71,43 @@ service cloud.firestore {
           && request.resource.data.updatedAt == request.time;
     }
 
+    function validSubstituteRemoval(seasonId, playDateId, coupleId){
+      return ownCoupleBeforeClose(seasonId, playDateId, coupleId)
+          && resource.data.substituteName is string
+          && resource.data.substituteName.size() > 1
+          && resource.data.substituteApproval == 'approved'
+          && request.resource.data.member1Status == resource.data.member1Status
+          && request.resource.data.member2Status == resource.data.member2Status
+          && request.resource.data.substituteId == ''
+          && request.resource.data.substituteName == ''
+          && request.resource.data.substituteType == ''
+          && request.resource.data.substituteApproval == ''
+          && request.resource.data.substituteSourceCoupleId == ''
+          && request.resource.data.substituteSourceCoupleLabel == ''
+          && request.resource.data.updatedAt == request.time
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+            'substituteId','substituteName','substituteType','substituteApproval',
+            'substituteSubmittedBy','substituteSubmittedAt','substituteApprovedBy','substituteApprovedAt',
+            'substituteSourceCoupleId','substituteSourceCoupleLabel','updatedAt'
+          ]);
+    }
+    function validSubstituteSourceRelease(seasonId, playDateId){
+      return active()
+          && me().data.coupleId is string
+          && get(/databases/$(database)/documents/seasons/$(seasonId)/playDates/$(playDateId)).data.status == 'active'
+          && get(/databases/$(database)/documents/seasons/$(seasonId)/playDates/$(playDateId)).data.closeAt is timestamp
+          && request.time < get(/databases/$(database)/documents/seasons/$(seasonId)/playDates/$(playDateId)).data.closeAt
+          && resource.data.substituteForCoupleId == me().data.coupleId
+          && request.resource.data.substituteForCoupleId == ''
+          && request.resource.data.substituteForCoupleLabel == ''
+          && request.resource.data.substitutePlayerId == ''
+          && request.resource.data.substitutePlayerName == ''
+          && request.resource.data.updatedAt == request.time
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+            'substituteForCoupleId','substituteForCoupleLabel','substitutePlayerId','substitutePlayerName','updatedAt'
+          ]);
+    }
+
     match /users/{uid} {
       allow read: if self(uid) || admin();
       allow update: if
@@ -159,7 +196,9 @@ service cloud.firestore {
           allow update: if admin() || (
             ownCoupleBeforeClose(seasonId, playDateId, coupleId)
             && validCouplePlanUpdate(seasonId, coupleId)
-          ) || validSubstituteProposal(seasonId, playDateId, coupleId);
+          ) || validSubstituteProposal(seasonId, playDateId, coupleId)
+            || validSubstituteRemoval(seasonId, playDateId, coupleId)
+            || validSubstituteSourceRelease(seasonId, playDateId);
           allow delete: if headAdmin();
         }
         match /public/{docId} { allow read: if active(); allow write: if admin(); }

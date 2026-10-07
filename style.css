@@ -184,3 +184,8 @@
 .future-sub-row:first-of-type{border-top:0}
 .future-sub-row b{color:var(--g)}
 @media(max-width:390px){.future-sub-row{grid-template-columns:56px minmax(0,1fr);font-size:.74rem}}
+
+/* v1.33: telefoonnummers in Spelers & reserves */
+.roster-page .couple-card small,.roster-page .reserve-list small{display:block;font-weight:500;color:var(--muted);font-size:.92rem;margin-top:2px}
+.roster-page .couple-card b+small{margin-bottom:8px}
+.roster-page .reserve-list b{display:block}
