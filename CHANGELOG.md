@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.36
+- Home → Overzicht beheerder meldt nu ook dubbele inzet van dezelfde speler.
+- Verwijderen van een goedgekeurde vervanger is afgeschermd tot uitsluitend de betreffende speeldag; keuzes op andere speeldata blijven onaangeroerd.
+- Bij een vaste invaller wordt alleen het bron-koppel op diezelfde speeldag vrijgegeven, met een beperkte fallback voor oudere gegevens.
+- Firestore-regels inhoudelijk ongewijzigd ten opzichte van v1.35.
+
 ## v1.35
 - Beheerder kan per speeldag een koppel kiezen en de geldende status Speelt / Reserve / Afwezig aanpassen.
 - Bij beide spelers afwezig kan vanuit dezelfde beheerkaart direct een vervanger worden vastgelegd.

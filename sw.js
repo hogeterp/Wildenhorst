@@ -1,5 +1,5 @@
-const CACHE='wildenhorst-v1.35';
-const SHELL=['./','./index.html','./style.css?v=1.35','./app.js?v=1.35','./install.js?v=1.35','./firebase-config.js?v=1.35','./manifest.webmanifest?v=1.35','./club-logo.png','./icon-192.png','./icon-512.png','./icon-maskable-192.png','./icon-maskable-512.png','./apple-touch-icon.png'];
+const CACHE='wildenhorst-v1.36';
+const SHELL=['./','./index.html','./style.css?v=1.36','./app.js?v=1.36','./install.js?v=1.36','./firebase-config.js?v=1.36','./manifest.webmanifest?v=1.36','./club-logo.png','./icon-192.png','./icon-512.png','./icon-maskable-192.png','./icon-maskable-512.png','./apple-touch-icon.png'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)));self.skipWaiting()});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim()});
 self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;const u=new URL(e.request.url);if(u.origin!==self.location.origin)return;if(e.request.mode==='navigate'){e.respondWith(fetch(e.request).catch(()=>caches.match('./index.html')));return}e.respondWith(caches.match(e.request).then(c=>c||fetch(e.request).then(r=>{const x=r.clone();caches.open(CACHE).then(cache=>cache.put(e.request,x));return r})))});
