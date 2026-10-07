@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.35
+- Beheerder kan per speeldag een koppel kiezen en de geldende status Speelt / Reserve / Afwezig aanpassen.
+- Bij beide spelers afwezig kan vanuit dezelfde beheerkaart direct een vervanger worden vastgelegd.
+- Mijn koppel meldt wanneer de spelerskeuze door een beheerder is aangepast.
+- Teller “Invallen dit seizoen” herkent daadwerkelijk gespeelde invalbeurten robuuster via gepubliceerde baanindelingen.
+- Firestore-regels inhoudelijk ongewijzigd ten opzichte van v1.34.
+
 ## v1.34
 - Home → Koppels ingevuld toont per koppel: Speelt, Reserve/Afwezig en eventuele vervanger.
 - Home → Laatste uitslag gebruikt verkorte spelersnamen.

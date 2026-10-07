@@ -193,3 +193,8 @@
 
 /* v1.34: duidelijk koppeloverzicht op Home */
 .home-filled-row{border-top:1px solid #edf1ef;padding:9px 0}.home-filled-row:first-child{border-top:0}.home-filled-row>div{display:grid;gap:2px;margin-top:4px;font-size:.82rem}.home-filled-row>div span{display:block}.home-filled-sub{color:var(--g)}
+
+
+/* v1.35: beheerder kan spelerskeuze per koppel aanpassen */
+.admin-couple-editor select{width:100%;margin:6px 0 10px}.admin-couple-current{display:grid;gap:10px;margin-top:8px}.admin-member-edit{padding:10px;border:1px solid var(--line);border-radius:12px}.admin-member-edit>div{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:7px}.admin-status-btn.selected{background:#dff3e7;border-color:#86b99b;color:var(--g);font-weight:800}.admin-inline-sub{display:grid;gap:7px;padding:10px;background:#f7faf8;border:1px solid var(--line);border-radius:12px}.admin-inline-sub span{font-size:.86rem;color:var(--muted)}.admin-adjusted-note{margin:8px 0}
+@media(max-width:420px){.admin-member-edit>div{gap:4px}.admin-member-edit button{padding:10px 4px;font-size:.82rem}}
