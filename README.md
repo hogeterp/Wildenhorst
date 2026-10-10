@@ -1,6 +1,8 @@
-# Wildenhorst Badhoevedorp v1.37
+# Wildenhorst Badhoevedorp v1.38
 
-## Nieuw in v1.37
+## Nieuw in v1.38
+- WhatsApp Invaller gezocht: alleen vaste spelers met dagstatus Reserve; geen dubbele namen.
+- Beheerderslijst in bericht beperkt tot Eric Rijkers, Carl ter Beek en Rinze Hogeterp.
 - Nieuwe WhatsApp-knop **Invaller gezocht** bij Beheer → Indeling. Toont per gekozen zaterdag openstaande koppels, niet-ingedeelde reserves (inclusief vaste spelers met status Reserve), reeds ingezette reserves en actuele beheerders.
 - Het bericht vraagt het betreffende koppel zelf een invaller te regelen en de beheerders om hulp te vragen als dit niet lukt. Reserves krijgen het verzoek hun status naar Afwezig te wijzigen als zij niet beschikbaar zijn.
 - WhatsApp-voorbeeld blijft bewerkbaar en verstuurt niets automatisch; actuele gegevens worden opnieuw geladen bij openen.
@@ -8,4 +10,4 @@
 - Bestaande indeling, goedkeuringen, publicatie en Firestore-regels blijven ongewijzigd.
 
 ## Publiceren
-Upload alle 18 bestanden naar GitHub Pages. De `firestore.rules` zijn in v1.37 niet gewijzigd ten opzichte van v1.35 en hoeven daarom niet opnieuw te worden gepubliceerd.
+Upload alle 18 bestanden naar GitHub Pages. De `firestore.rules` zijn in v1.38 niet gewijzigd ten opzichte van v1.35 en hoeven daarom niet opnieuw te worden gepubliceerd.

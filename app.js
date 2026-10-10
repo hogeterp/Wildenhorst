@@ -2,7 +2,7 @@ import{initializeApp}from'https://www.gstatic.com/firebasejs/12.18.0/firebase-ap
 import{getAuth,onAuthStateChanged,signInWithEmailAndPassword,signOut,sendPasswordResetEmail,createUserWithEmailAndPassword,setPersistence,browserLocalPersistence}from'https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js';
 import{getFirestore,doc,getDoc,getDocFromServer,collection,query,where,getDocs,orderBy,limit,writeBatch,setDoc,updateDoc,serverTimestamp,deleteDoc}from'https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js';
 const $=id=>document.getElementById(id),cfg=window.WILDENHORST_FIREBASE||{};let auth,db,user,profile,season;
-const APP_VERSION='1.37';
+const APP_VERSION='1.38';
 let testPlayer=null,activating=false,substituteContext=null,lineupState=null,newSeasonWizard=null;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 async function emailKey(email){const bytes=new TextEncoder().encode(String(email||'').trim().toLowerCase()),hash=await crypto.subtle.digest('SHA-256',bytes);return [...new Uint8Array(hash)].map(b=>b.toString(16).padStart(2,'0')).join('')}
@@ -542,11 +542,16 @@ async function loadLineupDate(d){
         const used=r=>usedIds.has(String(r.id))||usedNames.has(String(r.name||'').trim().toLocaleLowerCase('nl'));
         const availableFixed=[];
         cp.forEach(c=>{const x=plans.get(c.id)||{};const ids=c.memberIds||[];[1,2].forEach(n=>{const id=x[`member${n}Id`]||ids[n-1];if(x[`member${n}Status`]==='reserve'&&id){const p=fixed.find(y=>String(y.id)===String(id));if(p&&!used(p))availableFixed.push(p)}})});
-        const freeRegistered=registered.filter(r=>!used(r));
+        // Alleen vaste spelers met de expliciete dagstatus Reserve zijn beschikbaar.
+        // Geregistreerde reservespelers hebben geen dagstatus in couplePlans en
+        // mogen daarom niet automatisch als beschikbaar worden gepresenteerd.
         const assignedReserves=assigned.filter(a=>a.plan.substituteType==='reserve'||registered.some(r=>String(r.id)===String(a.plan.substituteId)||String(r.name||'').trim().toLocaleLowerCase('nl')===String(a.plan.substituteName||'').trim().toLocaleLowerCase('nl')));
         const short=n=>compactName(n,names);
-        const available=[...new Map([...availableFixed,...freeRegistered].map(r=>[String(r.id),r])).values()];
-        const admins=adminUsers.docs.map(x=>x.data()).filter(x=>x.status==='active'&&(x.role==='admin'||x.role==='headAdmin')).map(x=>x.name||x.displayName||x.firstName||x.email).filter(Boolean);
+        const available=[...new Map(availableFixed.map(r=>[String(r.name||r.id).trim().toLocaleLowerCase('nl'),r])).values()];
+        const uniqueAssigned=[...new Map(assignedReserves.map(a=>[String(a.plan.substituteId||a.plan.substituteName).trim().toLocaleLowerCase('nl'),a])).values()];
+        // De beheerders van dit WhatsApp-bericht zijn expliciet afgesproken.
+        const adminNames=['Eric Rijkers','Carl ter Beek','Rinze Hogeterp'];
+        const admins=adminNames;
         const lines=[
           '🎾 *Wildenhorst – Invaller gezocht*',
           `📅 ${dateText(d.dateKey)} | ${d.startTime||season?.startTime||'10:00'}–${d.endTime||season?.endTime||'12:00'}`,
@@ -554,11 +559,11 @@ async function loadLineupDate(d){
           '🔎 *Invaller nodig*',
           ...(missing.length?missing.map(c=>`Koppel ${coupleNumber(c.id,c)} – ${String(c.name||'').split(' – ').map(short).join(' & ')}`):['Geen openstaande invallers']),
           '',
-          '🟢 *Reserves (nog niet ingedeeld)*',
+          '🟢 *Beschikbare reserves (status Reserve)*',
           ...(available.length?available.map(r=>`• ${short(r.name||r.id)}`):['Geen']),
           '',
           '✅ *Reserves die al invallen*',
-          ...(assignedReserves.length?assignedReserves.map(a=>`• ${short(a.plan.substituteName)} → Koppel ${coupleNumber(a.couple.id,a.couple)}${a.plan.substituteApproval==='pending'?' (wacht op goedkeuring)':''}`):['Geen']),
+          ...(uniqueAssigned.length?uniqueAssigned.map(a=>`• ${short(a.plan.substituteName)} → Koppel ${coupleNumber(a.couple.id,a.couple)}${a.plan.substituteApproval==='pending'?' (wacht op goedkeuring)':''}`):['Geen']),
           '',
           '📢 *Aan het koppel:* Jullie zoeken zelf een invaller. Lukt dit niet? Geef bij de beheerders aan dat jullie hulp nodig hebben.',
           '',

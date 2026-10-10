@@ -1,6 +1,12 @@
+## v1.38
+- WhatsApp Invaller gezocht toont alleen vaste spelers die voor de gekozen zaterdag expliciet op Reserve staan en nog niet invallen; geen automatische opname van alle geregistreerde reserves.
+- Dubbele namen in het reserveoverzicht voorkomen.
+- Beheerders in dit WhatsApp-bericht: Eric Rijkers, Carl ter Beek en Rinze Hogeterp; Carel Jacobs wordt niet getoond.
+- Firestore-regels ongewijzigd.
+
 # Changelog
 
-## v1.37
+## v1.38
 - WhatsApp-knop **Invaller gezocht** bij Beheer → Indeling, met actuele openstaande koppels, niet-ingedeelde reserves, al ingezette reserves en beheerders.
 - Compacte instructies voor koppels (eerst zelf zoeken, daarna hulp vragen) en reserves (bij verhindering Afwezig kiezen).
 - WhatsApp-voorbeeld blijft bewerkbaar en verandert geen competitiegegevens of publicatiestatus.
