@@ -1,10 +1,11 @@
-# Wildenhorst Badhoevedorp v1.36
+# Wildenhorst Badhoevedorp v1.37
 
-## Nieuw in v1.36
-- **Home → Overzicht beheerder** toont nu ook direct een waarschuwing wanneer dezelfde speler meer dan één keer is ingepland, met dezelfde controle die al bij Beheer → Indeling wordt gebruikt.
-- **Mijn koppel → Vervanger verwijderen** is extra afgeschermd: alleen de gekozen speeldag wordt gewijzigd. Speelt / Reserve / Afwezig-keuzes op andere speeldata worden niet aangeraakt.
-- Bij het vrijgeven van een vaste invaller wordt waar mogelijk alleen het bekende bron-koppel van diezelfde speeldag bijgewerkt; oudere gegevens zonder bron-koppel-id gebruiken uitsluitend een fallback binnen diezelfde speeldag.
-- Alle overige functies uit v1.35 blijven behouden.
+## Nieuw in v1.37
+- Nieuwe WhatsApp-knop **Invaller gezocht** bij Beheer → Indeling. Toont per gekozen zaterdag openstaande koppels, niet-ingedeelde reserves (inclusief vaste spelers met status Reserve), reeds ingezette reserves en actuele beheerders.
+- Het bericht vraagt het betreffende koppel zelf een invaller te regelen en de beheerders om hulp te vragen als dit niet lukt. Reserves krijgen het verzoek hun status naar Afwezig te wijzigen als zij niet beschikbaar zijn.
+- WhatsApp-voorbeeld blijft bewerkbaar en verstuurt niets automatisch; actuele gegevens worden opnieuw geladen bij openen.
+- Bekende foutieve verkorting `Martijnb` wordt als `Martijn` weergegeven.
+- Bestaande indeling, goedkeuringen, publicatie en Firestore-regels blijven ongewijzigd.
 
 ## Publiceren
-Upload alle 18 bestanden naar GitHub Pages. De `firestore.rules` zijn in v1.36 niet gewijzigd ten opzichte van v1.35 en hoeven daarom niet opnieuw te worden gepubliceerd.
+Upload alle 18 bestanden naar GitHub Pages. De `firestore.rules` zijn in v1.37 niet gewijzigd ten opzichte van v1.35 en hoeven daarom niet opnieuw te worden gepubliceerd.

@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.37
+- WhatsApp-knop **Invaller gezocht** bij Beheer → Indeling, met actuele openstaande koppels, niet-ingedeelde reserves, al ingezette reserves en beheerders.
+- Compacte instructies voor koppels (eerst zelf zoeken, daarna hulp vragen) en reserves (bij verhindering Afwezig kiezen).
+- WhatsApp-voorbeeld blijft bewerkbaar en verandert geen competitiegegevens of publicatiestatus.
+- Bekende naamafwijking `Martijnb` wordt als `Martijn` weergegeven.
+- Firestore-regels ongewijzigd ten opzichte van v1.36.
+
 ## v1.36
 - Home → Overzicht beheerder meldt nu ook dubbele inzet van dezelfde speler.
 - Verwijderen van een goedgekeurde vervanger is afgeschermd tot uitsluitend de betreffende speeldag; keuzes op andere speeldata blijven onaangeroerd.
