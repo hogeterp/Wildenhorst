@@ -1,3 +1,8 @@
+## v1.39
+- Duidelijkere Nederlandse herstelmelding.
+- Optionele eigen herstelpagina in clubstijl (Firebase-console-instelling vereist).
+- Geen wijzigingen aan Firestore-regels of competitiegegevens.
+
 ## v1.38
 - WhatsApp Invaller gezocht toont alleen vaste spelers die voor de gekozen zaterdag expliciet op Reserve staan en nog niet invallen; geen automatische opname van alle geregistreerde reserves.
 - Dubbele namen in het reserveoverzicht voorkomen.
