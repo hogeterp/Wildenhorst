@@ -1,3 +1,9 @@
+## v1.40
+- Voorkomt onveilige wijziging van spelers-e-mail zonder bijbehorende Firebase Authentication-wijziging.
+- Heldere foutmelding voor beheerders.
+- Cache en versienummer vernieuwd.
+- Jens’ inlogadres is nog niet gewijzigd; hiervoor is een aparte beveiligde administratieve stap nodig.
+
 ## v1.39
 - Duidelijkere Nederlandse herstelmelding.
 - Optionele eigen herstelpagina in clubstijl (Firebase-console-instelling vereist).

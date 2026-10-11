@@ -1,4 +1,4 @@
-# Wildenhorst Badhoevedorp v1.39
+# Wildenhorst Badhoevedorp v1.40
 
 ## Nieuw in v1.39
 - WhatsApp Invaller gezocht: alleen vaste spelers met dagstatus Reserve; geen dubbele namen.
@@ -10,7 +10,7 @@
 - Bestaande indeling, goedkeuringen, publicatie en Firestore-regels blijven ongewijzigd.
 
 ## Publiceren
-Upload alle 18 bestanden naar GitHub Pages. De `firestore.rules` zijn in v1.39 niet gewijzigd ten opzichte van v1.35 en hoeven daarom niet opnieuw te worden gepubliceerd.
+Upload alle 19 bestanden naar GitHub Pages. De `firestore.rules` zijn in v1.39 niet gewijzigd ten opzichte van v1.35 en hoeven daarom niet opnieuw te worden gepubliceerd.
 
 ## Nieuw in v1.39
 - Nederlandstalige, duidelijkere melding na aanvragen van een herstelmail.
@@ -18,3 +18,9 @@ Upload alle 18 bestanden naar GitHub Pages. De `firestore.rules` zijn in v1.39 n
 - Let op: de standaard Firebase-herstelmail blijft ongewijzigd. Om de nieuwe pagina te gebruiken, moet in Firebase Authentication de **custom email action handler URL** worden ingesteld op `https://hogeterp.github.io/Wildenhorst/reset.html` (als die instelling voor dit project beschikbaar is). Zonder die instelling blijft Firebase zijn eigen herstelpagina gebruiken.
 - Bestaande gebruikers, wachtwoorden, Firestore-regels en competitiefuncties blijven ongewijzigd.
 - Publiceer alle bestanden inclusief het nieuwe `reset.html` op GitHub Pages.
+
+## v1.40 – Veiligheid bij e-mailadres wijzigen
+- Beheer → Spelers: wijzigingen van een e-mailadres worden geblokkeerd met een duidelijke melding. De huidige functie wijzigt alleen Firestore, niet het Firebase Authentication-inlogadres.
+- Naam, telefoonnummer, enkelspel en speelsterkte blijven bewerkbaar.
+- Voor Jens moet het bestaande Authentication-account met behoud van UID door een bevoegd beheerproces worden bijgewerkt, gevolgd door synchronisatie van Firestore. Dit gebeurt **niet** automatisch in deze versie.
+- Versienummer en cache naar 1.40 bijgewerkt; bestaande data en Firestore-regels ongewijzigd.
