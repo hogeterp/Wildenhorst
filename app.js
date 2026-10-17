@@ -228,7 +228,12 @@ function calculateTennisResult(sets,lastGameA='0',lastGameB='0',mode='Dubbel'){
   else if(isLast&&!completedSetScore(x.a,x.b)&&(String(lastGameA)!=='0'||String(lastGameB)!=='0'))part+=` (${lastGameA||'0'}-${lastGameB||'0'})`;
   if(mode!=='Enkel'){
    if(completedSetScore(x.a,x.b)){if(x.a>x.b)pa++;else if(x.b>x.a)pb++}
-   else if(isLast&&x.a===6&&x.b===6){/* Tiebreak loopt: geen extra games of wedstrijdpunten. */}
+   else if(isLast&&x.a===6&&x.b===6){
+    // Tiebreakpunten bepalen de leider, maar tellen niet als extra games.
+    if(Number(lastGameA)>Number(lastGameB))pa+=.5;
+    else if(Number(lastGameB)>Number(lastGameA))pb+=.5;
+    else{pa+=.25;pb+=.25}
+   }
    else if(isLast&&x.a>x.b&&x.a>=3)pa+=.5;
    else if(isLast&&x.b>x.a&&x.b>=3)pb+=.5;
    else if(isLast&&x.a===x.b&&x.a>=3){
