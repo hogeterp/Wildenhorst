@@ -1,3 +1,10 @@
+## v1.41 – Setstanden en WhatsApp
+- Puntenvelden staan bij de laatst ingevulde set, ook als maar één of twee sets gespeeld zijn.
+- Bij 6–6 schakelt de punteninvoer naar tiebreakpunten (0, 1, 2 enzovoort); deze tellen niet mee als games.
+- Bij andere onvoltooide sets zijn gewone gamepunten (0, 15, 30, 40) beschikbaar.
+- WhatsApp-baanindeling krijgt een tennisbal per baan; berichttekst wordt als Unicode gecodeerd. De externe linkpreview wordt door WhatsApp zelf bepaald.
+- Geen Cloud Functions of wijzigingen in Firestore-regels; Spark blijft mogelijk.
+
 ## v1.40
 - Voorkomt onveilige wijziging van spelers-e-mail zonder bijbehorende Firebase Authentication-wijziging.
 - Heldere foutmelding voor beheerders.

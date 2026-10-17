@@ -1,4 +1,4 @@
-# Wildenhorst Badhoevedorp v1.40
+# Wildenhorst Badhoevedorp v1.41
 
 ## Nieuw in v1.39
 - WhatsApp Invaller gezocht: alleen vaste spelers met dagstatus Reserve; geen dubbele namen.
@@ -19,8 +19,11 @@ Upload alle 19 bestanden naar GitHub Pages. De `firestore.rules` zijn in v1.39 n
 - Bestaande gebruikers, wachtwoorden, Firestore-regels en competitiefuncties blijven ongewijzigd.
 - Publiceer alle bestanden inclusief het nieuwe `reset.html` op GitHub Pages.
 
-## v1.40 – Veiligheid bij e-mailadres wijzigen
+## v1.41 – Veiligheid bij e-mailadres wijzigen
 - Beheer → Spelers: wijzigingen van een e-mailadres worden geblokkeerd met een duidelijke melding. De huidige functie wijzigt alleen Firestore, niet het Firebase Authentication-inlogadres.
 - Naam, telefoonnummer, enkelspel en speelsterkte blijven bewerkbaar.
 - Voor Jens moet het bestaande Authentication-account met behoud van UID door een bevoegd beheerproces worden bijgewerkt, gevolgd door synchronisatie van Firestore. Dit gebeurt **niet** automatisch in deze versie.
-- Versienummer en cache naar 1.40 bijgewerkt; bestaande data en Firestore-regels ongewijzigd.
+- Versienummer en cache naar 1.41 bijgewerkt; bestaande data en Firestore-regels ongewijzigd.
+
+## v1.41
+Verbeterde uitslageninvoer bij de laatst ingevulde set en tiebreakpunten bij 6–6. Tennisballen toegevoegd aan WhatsApp-baanindeling. Geen betaalde Firebase-diensten nodig.
