@@ -1,0 +1,3 @@
+node_modules/
+firestore-under-test.rules
+*-debug.log
