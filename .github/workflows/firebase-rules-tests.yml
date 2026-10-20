@@ -1,0 +1,30 @@
+name: Test Firestore rules (emulator only)
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - firestore.rules
+      - tests/firebase/**
+      - .github/workflows/firebase-rules-tests.yml
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Install isolated test dependencies
+        working-directory: tests/firebase
+        run: npm install --no-audit --no-fund
+      - name: Test repository rules against a local demo database
+        working-directory: tests/firebase
+        run: npm test
