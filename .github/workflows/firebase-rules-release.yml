@@ -1,5 +1,10 @@
 name: Inspect or publish approved Firestore rules
 on:
+  push:
+    branches: [main]
+    paths:
+      - scripts/firebase_rules_release.py
+      - .github/workflows/firebase-rules-release.yml
   workflow_dispatch:
     inputs:
       mode:
@@ -49,7 +54,7 @@ jobs:
       - name: Inspect or publish the exact approved rules
         env:
           ACCESS_TOKEN: ${{ steps.auth.outputs.access_token }}
-          RELEASE_MODE: ${{ inputs.mode }}
+          RELEASE_MODE: ${{ inputs.mode || 'inspect' }}
           EXPECTED_RULES_SHA256: ${{ inputs.expected_rules_sha256 }}
           EXPECTED_LIVE_RULESET: ${{ inputs.expected_live_ruleset }}
         run: python3 scripts/firebase_rules_release.py

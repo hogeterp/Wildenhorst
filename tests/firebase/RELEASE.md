@@ -4,10 +4,12 @@ The emulator tests use only `demo-wildenhorst` with synthetic fixtures. They hav
 no Google Cloud credentials. The separate connection workflow reads production
 Rules metadata, not database records.
 
-`Inspect or publish approved Firestore rules` starts only manually on `main`.
+`Inspect or publish approved Firestore rules` can be started manually on `main`.
+Changes to its script or workflow automatically run read-only inspection.
 Every run first passes the emulator and mocked release tests on the same commit.
 The default `inspect` mode performs only two GET requests: the current default
-Firestore release and its ruleset. The run summary contains the file SHA256 and
+Firestore release and its ruleset. The inspection also compares rule tokens while ignoring formatting and comments;
+quoted strings are preserved. The run summary contains the file SHA256 and
 current live ruleset name. No live rules or database documents are changed.
 
 To publish after approval, select `publish` and provide both values from the

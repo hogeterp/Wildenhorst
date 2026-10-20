@@ -28,6 +28,20 @@ class ReleaseTests(unittest.TestCase):
         self.sha = hashlib.sha256(self.content.encode()).hexdigest()
         self.live = {'source': {'files': [{'name': 'firestore.rules', 'content': 'old rules'}]}}
 
+    def test_tokens_ignore_formatting_and_comments(self):
+        self.assertEqual(m.rule_tokens("allow read: if true; // note\n"),
+                         m.rule_tokens("/* note */ allow  read : if true ;"))
+
+    def test_tokens_keep_comment_markers_inside_strings(self):
+        self.assertEqual(m.rule_tokens("'https://example.test'"), ["'https://example.test'"])
+
+    def test_tokens_preserve_literal_spaces(self):
+        self.assertNotEqual(m.rule_tokens("'a b'"), m.rule_tokens("'ab'"))
+
+    def test_tokens_detect_permission_changes(self):
+        self.assertNotEqual(m.rule_tokens('allow read: if true;'),
+                            m.rule_tokens('allow read: if false;'))
+
     def test_inspect_uses_only_get(self):
         with patch.object(m, 'api', side_effect=[{'rulesetName': OLD}, self.live]) as api:
             m.run('inspect')

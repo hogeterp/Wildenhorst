@@ -2,12 +2,20 @@
 import hashlib
 import json
 import os
+import re
 from pathlib import Path
 import urllib.request
 
 PROJECT = 'wildenhorst-94729'
 RELEASE = f'projects/{PROJECT}/releases/cloud.firestore'
 RULES = Path(__file__).resolve().parents[1] / 'firestore.rules'
+
+
+def rule_tokens(source):
+    # Keep quoted strings intact; discard only comments and whitespace outside strings.
+    pattern = r"'(?:[^'\\]|\\.)*'|\"(?:[^\"\\]|\\.)*\"|//[^\n]*|/\*.*?\*/|[A-Za-z_][A-Za-z_0-9]*|[0-9]+|[^\s]"
+    return [m.group() for m in re.finditer(pattern, source, re.DOTALL)
+            if not m.group().startswith(('//', '/*'))]
 
 
 def api(method, resource, body=None):
@@ -32,8 +40,10 @@ def run(mode, expected_sha='', expected_live=''):
     live = api('GET', old)
     files = live['source']['files']
     same = len(files) == 1 and files[0]['content'] == content
+    equivalent = len(files) == 1 and rule_tokens(files[0]['content']) == rule_tokens(content)
     lines = [f'Rules SHA256: `{digest}`', f'Current live ruleset: `{old}`',
-             f'Exact file contents match live: {same}']
+             f'Exact file contents match live: {same}',
+             f'Rule tokens match ignoring comments and formatting: {equivalent}']
     if mode == 'publish':
         if old != expected_live:
             raise ValueError('Live ruleset changed: inspect again before publishing')
