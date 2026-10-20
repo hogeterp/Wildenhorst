@@ -1,0 +1,55 @@
+name: Inspect or publish approved Firestore rules
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Inspect is read-only. Publish changes live security rules.'
+        required: true
+        default: inspect
+        type: choice
+        options: [inspect, publish]
+      expected_rules_sha256:
+        description: 'Publish only: approved Rules SHA256 from the inspection summary'
+        required: false
+        type: string
+      expected_live_ruleset:
+        description: 'Publish only: current live ruleset name from the inspection summary'
+        required: false
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: wildenhorst-firestore-rules-release
+  cancel-in-progress: false
+jobs:
+  tests:
+    if: github.repository == 'hogeterp/Wildenhorst' && github.ref == 'refs/heads/main'
+    uses: ./.github/workflows/firebase-rules-tests.yml
+    permissions:
+      contents: read
+  release:
+    needs: tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Authenticate without a private key
+        id: auth
+        uses: google-github-actions/auth@v3
+        with:
+          project_id: wildenhorst-94729
+          workload_identity_provider: projects/1062749373950/locations/global/workloadIdentityPools/github-wildenhorst/providers/github-actions
+          service_account: github-firebase-rules@wildenhorst-94729.iam.gserviceaccount.com
+          token_format: access_token
+          create_credentials_file: false
+          access_token_lifetime: 300s
+      - name: Inspect or publish the exact approved rules
+        env:
+          ACCESS_TOKEN: ${{ steps.auth.outputs.access_token }}
+          RELEASE_MODE: ${{ inputs.mode }}
+          EXPECTED_RULES_SHA256: ${{ inputs.expected_rules_sha256 }}
+          EXPECTED_LIVE_RULESET: ${{ inputs.expected_live_ruleset }}
+        run: python3 scripts/firebase_rules_release.py

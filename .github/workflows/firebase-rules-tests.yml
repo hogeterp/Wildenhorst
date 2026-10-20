@@ -1,9 +1,11 @@
 name: Test Firestore rules (emulator only)
 on:
   workflow_dispatch:
+  workflow_call:
   push:
     branches: [main]
     paths:
+      - scripts/firebase_rules_release.py
       - firestore.rules
       - tests/firebase/**
       - .github/workflows/firebase-rules-tests.yml
@@ -28,3 +30,5 @@ jobs:
       - name: Test repository rules against a local demo database
         working-directory: tests/firebase
         run: npm test
+      - name: Test release safeguards without Firebase access
+        run: python3 tests/firebase/release_test.py
