@@ -4,6 +4,8 @@ from pathlib import Path
 import unittest
 from unittest.mock import patch
 import hashlib
+import io
+import contextlib
 
 spec = importlib.util.spec_from_file_location('release', Path(__file__).resolve().parents[2] / 'scripts/firebase_rules_release.py')
 m = importlib.util.module_from_spec(spec)
@@ -14,6 +16,14 @@ NEW = 'projects/wildenhorst-94729/rulesets/new'
 
 class ReleaseTests(unittest.TestCase):
     def setUp(self):
+        # Simulated releases must never appear in the real GitHub job summary.
+        self.output = io.StringIO()
+        console = contextlib.redirect_stdout(self.output)
+        console.__enter__()
+        self.addCleanup(console.__exit__, None, None, None)
+        summary = patch.dict(m.os.environ, {'GITHUB_STEP_SUMMARY': ''})
+        summary.start()
+        self.addCleanup(summary.stop)
         self.content = m.RULES.read_text()
         self.sha = hashlib.sha256(self.content.encode()).hexdigest()
         self.live = {'source': {'files': [{'name': 'firestore.rules', 'content': 'old rules'}]}}
