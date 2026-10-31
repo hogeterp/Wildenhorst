@@ -1,4 +1,4 @@
-# Wildenhorst Badhoevedorp v1.41
+# Wildenhorst Badhoevedorp v1.42
 
 ## Nieuw in v1.39
 - WhatsApp Invaller gezocht: alleen vaste spelers met dagstatus Reserve; geen dubbele namen.

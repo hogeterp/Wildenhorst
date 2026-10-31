@@ -1,3 +1,9 @@
+## v1.42
+- Home toont bovenaan de volgende speeldag en daaronder de laatste gespeelde speeldag.
+- De laatste speeldag blijft zichtbaar zonder uitslagen, met baanindeling en het aantal ingevoerde uitslagen.
+- De knop bij een speeldag opent direct de juiste datum bij Zaterdag.
+- Versienummer en appcache vernieuwd; geen wijzigingen aan Firebase-regels of tennisgegevens.
+
 ## v1.41 – Setstanden en WhatsApp
 - Puntenvelden staan bij de laatst ingevulde set, ook als maar één of twee sets gespeeld zijn.
 - Bij 6–6 schakelt de punteninvoer naar tiebreakpunten (0, 1, 2 enzovoort); deze tellen niet mee als games.
